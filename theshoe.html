@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Case Study of Project 1</title>
+    <meta name="description" content="Case study page of Project" />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/headshot.png"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Julian Jaako Ahlberger</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link">
+                Projects
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">The Shoe (2026)</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            Short Visual Novel-hybrid about drunk parties and having one of your shoes stolen.
+          </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="./theshoe.html" class="btn btn--bg" target="_blank">Live Link</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="./assets/gif/theshoe.gif"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+                <i><strong>The Shoe</strong> is about you, the player, waking up in the middle of the night at a home 
+                party. When you decide to put on your shoes and go home, something isn't right. You can only find 
+                <strong>one</strong> of your <strong>limited edition Matsune Hiku</strong> shoes. Where did the other
+                one go? You obviously can't walk in the cold winter snow with a bare foot, can you?</i>
+                <br>
+                <br>
+                This game was quite a passion project that me and my significant other made, me being the 
+                Game Designer/Artist/Programmer and them being the Writer/Narrative Designer. The initial idea was that the 
+                story would be something silly and the game be something simple and fun. While the idea remained in our 
+                heads for a while, we didn't find the time to actually begin working on it until the summer of 2025. We 
+                did take a break in September of that year but resumed development by January 2026.
+              </p>
+              <h3 class="project-details__content-title">Game Design</h3>
+              <p class="project-details__desc-para">
+                While I can appreciate visual novels to a certain point, I feel that they often turn into just that, a
+                visual novel...not a <strong>GAME</strong>. 
+                <br>
+                <br>
+                From my own experience, I usually end up just reading text on the screen, accompanied by some artwork 
+                in the background. After a while, I will end up skimming through the text until something interesting 
+                happens, as they are often linear, not leaving many meaningful choices or a sense of agency to the 
+                player.
+                <br>
+                <br>
+                <strong>THIS</strong> is what I wanted to change with this game. It was still going to contain what you
+                would expect from a visual novel, but also contain choices that affect the player's experience and
+                require them to act quickly during important moments of the story, making even the "skimmers" pay 
+                attention.
+              </p>
+              <h3 class="project-details__content-title">Time-Sensitive Choices</h3>
+              <p class="project-details__desc-para">
+                The first mechanic I added to the formula was <strong>Time-Sensitive Choices</strong>. The player would have a pop-up of 
+                dialogue choices they can make, and they would be on a timer while making their choice. Not making a
+                choice in time would have the game make it for them, taking away their agency.
+                <br>
+                <br>
+                The idea behind this is that I am taking away the player's ability to tackle the game at their own pace,
+                essentially challenging them. Without a mechanic like this, one might be like me and get tired of 
+                reading after a while. Having this mechanic in the game, I believe that it adds some tension/friction 
+                which could help with keeping players engaged for longer than they otherwise would.
+                <br>
+                <br>
+                Another good thing about adding a mechanic like this to the game is that if the player wants to have a
+                desirable result from the interaction, they would need to have understood what they had read before to
+                make an educated decision. This does also, in turn, put the player's focus on the story which is the 
+                main selling point of a game in this genre. 
+                <br>
+                <br>
+                This mechanic was implemented in times it felt the most natural, such as in conversations (Don't let
+                there be too much dead silence!) and when the player had to react quickly (someone is about to vomit on
+                you).
+              </p>
+              <h3 class="project-details__content-title">Quick Time Events</h3>
+              <p class="project-details__desc-para">
+                By incorporating <strong>Time-Sensitive Choices</strong>, I'm challenging the player's 
+                <strong>attention to detail</strong>. With <strong>Quick Time</strong> Events I'm challenging their 
+                <strong>motor skills</strong>.
+                <br> 
+                <br> 
+                To essentially break up the flow of the game and make it less repetitive, not just being a few
+                <strong>Time-Sensitive Choices</strong>, I needed to add something else. It needed to be something that
+                challenged a different skill from the player so that it wouldn't feel too same-y. I thought a kind of 
+                <strong>Quick Time Event</strong> would do nicely. 
+                <br>
+                <br>
+                The concept is simple, the player has a cursor that is moving from side to side, and they need to time
+                their button presses to when the cursor is within the "sweet spot". The speed of the cursor increases
+                and the width of the "sweet spot" decreases with each successful buttonpress. 
+                <br>
+                <br>
+                I decided to use this mechanic specifically for when the player in the game is performing something
+                that requires proper motor skills, such as ascending a set of stairs while intoxicated. This way it
+                feels natural for the player to be performing the task when put into the context of the scenario in 
+                the game.
+              </p>
+              <h3 class="project-details__content-title">Levels Of Intoxication</h3>
+              <p class="project-details__desc-para">
+                As <strong>The Shoe</strong> is a game about experiences when under the influence, I thought that the 
+                player should also <strong>feel</strong> like they are. Therefore, I added a shader that made the 
+                background move and would intensify/detensify depending on whether the player decided to sober up or 
+                continue drinking.
+              </p>
+              <h3 class="project-details__content-title">Art</h3>
+              <p class="project-details__desc-para">
+                All the artwork used in the game are stock photos that I heavily edited in 
+                <strong>Adobe Photoshop</strong> to give them distorted faces (caused by the player being intoxicated
+                or face-blind) and a cartoon-like appearance. 
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">Unity</div>
+                <div class="skills__skill">Yarnspinner</div>
+                <div class="skills__skill">Adobe Photoshop</div>
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">Download the game here!</h3>
+              <a
+                href="#"
+                class="btn btn--med btn--theme project-details__links-btn"
+                target="_blank"
+                >Itch.io<
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/julian-jaako-ahlberger/">
+                <img
+                        class="main-footer__icon"
+                        src="./assets/png/linkedin-ico.png"
+                        alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://olaf-firebeard.itch.io">
+                <img 
+                        class="main-footer__icon"
+                        src="./assets/png/itch-io-logo.png"
+                        alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Julian Jaako Ahlberger</h4>
+            <p class="main-footer__short-desc">
+              E-mail: <strong>jaako.julian@gmail.com</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
