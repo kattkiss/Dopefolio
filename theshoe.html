@@ -85,26 +85,43 @@
     </header>
     <section class="project-cs-hero">
       <div class="project-cs-hero__content">
-        <h1 class="heading-primary">The Shoe (2026)</h1>
+        <h1 class="heading-primary">The Shoe (2026) (PC)</h1>
         <div class="project-cs-hero__info">
           <p class="text-primary">
             Short Visual Novel-hybrid about drunk parties and having one of your shoes stolen.
+            <br>
+            <br>
+            Jun 2025 - Aug 2025, Jan 2026
           </p>
         </div>
         <div class="project-cs-hero__cta">
-          <a href="./theshoe.html" class="btn btn--bg" target="_blank">Live Link</a>
+          <a href="./theshoe.html" class="btn btn--bg" target="_blank">Download the game here</a>
         </div>
       </div>
     </section>
     <section class="project-details">
       <div class="main-container">
         <div class="project-details__content">
+          <div class="project-details__tools-used">
           <div class="project-details__showcase-img-cont">
             <img
               src="./assets/gif/theshoe.gif"
               alt="Project Image"
               class="project-details__showcase-img"
             />
+          </div>
+            <h3 class="project-details__content-title">Role(s) in project</h3>
+            <div class="skills">
+              <div class="skills__skill">Game Designer</div>
+              <div class="skills__skill">Artist</div>
+              <div class="skills__skill">Programmer</div>
+            </div>
+            <h3 class="project-details__content-title">Tools Used</h3>
+            <div class="skills">
+              <div class="skills__skill">Unity</div>
+              <div class="skills__skill">Yarnspinner</div>
+              <div class="skills__skill">Adobe Photoshop</div>
+            </div>
           </div>
           <div class="project-details__content-main">
             <div class="project-details__desc">
@@ -211,30 +228,83 @@
                 player should also <strong>feel</strong> like they are. Therefore, I added a shader that made the 
                 background move and would intensify/detensify depending on whether the player decided to sober up or 
                 continue drinking.
+                <br>
+                <br>
+                Below you can see examples of two different levels of intoxication.
               </p>
+              <div class="project-details__showcase-img-cont">
+                <img
+                        src="./assets/gif/BaseDrunk.gif"
+                        alt="Project Image"
+                        class="project-details__showcase-img"
+                />
+              </div>
+              <div class="project-details__showcase-img-cont">
+                <img
+                        src="./assets/gif/SevereDrunk.gif"
+                        alt="Project Image"
+                        class="project-details__showcase-img"
+                />
+              </div>
               <h3 class="project-details__content-title">Art</h3>
               <p class="project-details__desc-para">
                 All the artwork used in the game are stock photos that I heavily edited in 
                 <strong>Adobe Photoshop</strong> to give them distorted faces (caused by the player being intoxicated
                 or face-blind) and a cartoon-like appearance. 
               </p>
-            </div>
-            <div class="project-details__tools-used">
-              <h3 class="project-details__content-title">Tools Used</h3>
-              <div class="skills">
-                <div class="skills__skill">Unity</div>
-                <div class="skills__skill">Yarnspinner</div>
-                <div class="skills__skill">Adobe Photoshop</div>
-              </div>
-            </div>
-            <div class="project-details__links">
-              <h3 class="project-details__content-title">Download the game here!</h3>
-              <a
-                href="#"
-                class="btn btn--med btn--theme project-details__links-btn"
-                target="_blank"
-                >Itch.io
-              </a>
+              <h3 class="project-details__content-title">Feedback from Playtesting</h3>
+              <p class="project-details__desc-para">
+                During development, we had two playtests. One was done once we had an MVP (Minimal Viable Product), 
+                primarily to gauge whether we were on the right track or not and another by the end of the summer when 
+                we were starting to wrap up development. 
+                <br>
+                <br>
+                It was during the first playtest that we got the feedback that players didn't really feel the effect of 
+                drinking alcohol in the game. It was after this that I decided to implement the 
+                <strong>Levels Of Intoxication</strong> as a response. 
+                <br>
+                <br>
+                The second playtest showed that the mechanics I had added were generally appreciated, but that there 
+                were a few bugs left in the game since several new systems were added since the last playtest. The bugs 
+                were related to saving, accessibility options and music. The visual effects of increasing and decreasing
+                the <strong>Levels Of Intoxication</strong> was a bit too gradual and needed to be intensified slightly 
+                to truly be felt by the player. Overall, we (the team) collectively saw that the game needed just a 
+                little more time in the oven to get that golden crust. 
+              </p>
+              <h3 class="project-details__content-title">Lessons learned</h3>
+              <p class="project-details__desc-para">
+                <strong>Programming</strong>
+                <br>
+                First of all, I got to practice my programming skills with something small in scale that left me with 
+                a lot of room to experiment. I want to specifically highlight the <strong>Saving System</strong> as one 
+                of those, as I had never worked with anything like it previously. 
+                <br>
+                Another little highlight would be that I learnt how to make functions in my c# scripts compatible to be 
+                used within <strong>Yarnspinner's yarn scripts</strong>. It was crucial for the person writing the 
+                dialogue in the yarn scripts to be able to access my functions.
+                <br>
+                <br>
+                <strong>Design</strong>
+                <br>
+                Design-wise, I got to challenge myself by trying to expand the boundaries of a genre that I perceive as
+                quite limited. I also really had to keep the focus of the game, being dialogue, in mind with all design
+                decision I had to make. 
+                <br>
+                <br>
+                <strong>Shaders</strong>
+                <br>
+                I got the chance to learn how shaders work in 2D space of Unity. For example, the effect for
+                <strong>Levels Of Intoxication</strong> would, at first, not work with <strong>2D elements</strong> and 
+                I had to jump through some hoops to make it work as it should.
+                <br>
+                <br>
+                <strong>Art</strong>
+                <br>
+                For the art, I had to learn to use quite a few new tools in <strong>Adobe Photoshop</strong> to get the 
+                effects that I wanted. I mainly used the existing <strong>filters</strong> in the software but also made
+                use of <strong>masks</strong> and the <strong>smudge 
+                tool</strong>.  
+              </p>
             </div>
           </div>
         </div>
