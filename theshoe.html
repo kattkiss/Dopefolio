@@ -91,7 +91,15 @@
             Short Visual Novel-hybrid about drunk parties and having one of your shoes stolen.
             <br>
             <br>
-            Jun 2025 - Aug 2025, Jan 2026
+            <strong>Engine/Tools:</strong> Unity, Yarnspinner & Adobe Photoshop
+            <br>
+            <strong>Role(s):</strong> Game Designer, Programmer, Artist
+            <br>
+            <strong>Team Size:</strong> 2
+            <br>
+            <strong>Duration:</strong> Jun 2025 - Aug 2025, Jan 2026
+            <br>
+            <strong>Type:</strong> Passion project
           </p>
         </div>
         <div class="project-cs-hero__cta">
@@ -102,7 +110,6 @@
     <section class="project-details">
       <div class="main-container">
         <div class="project-details__content">
-          <div class="project-details__tools-used">
           <div class="project-details__showcase-img-cont">
             <img
               src="./assets/gif/theshoe.gif"
@@ -110,22 +117,10 @@
               class="project-details__showcase-img"
             />
           </div>
-            <h3 class="project-details__content-title">Role(s) in project</h3>
-            <div class="skills">
-              <div class="skills__skill">Game Designer</div>
-              <div class="skills__skill">Artist</div>
-              <div class="skills__skill">Programmer</div>
-            </div>
-            <h3 class="project-details__content-title">Tools Used</h3>
-            <div class="skills">
-              <div class="skills__skill">Unity</div>
-              <div class="skills__skill">Yarnspinner</div>
-              <div class="skills__skill">Adobe Photoshop</div>
-            </div>
-          </div>
           <div class="project-details__content-main">
             <div class="project-details__desc">
-              <h3 class="project-details__content-title">Project Overview</h3>
+              <h2 class="project-details__content-title">Description of project</h2>
+            </div>
               <p class="project-details__desc-para">
                 <i><strong>The Shoe</strong> is about you, the player, waking up in the middle of the night at a home 
                 party. When you decide to put on your shoes and go home, something isn't right. You can only find 
@@ -139,36 +134,68 @@
                 heads for a while, we didn't find the time to actually begin working on it until the summer of 2025. We 
                 did take a break in September of that year but resumed development by January 2026.
               </p>
-              <h3 class="project-details__content-title">Game Design</h3>
+              <h3 class="project-details__content-title">Design Goal</h3>
               <p class="project-details__desc-para">
                 While I can appreciate visual novels to a certain point, I feel that they often turn into just that, a
-                visual novel...not a <strong>GAME</strong>. 
+                visual novel...not a <strong>GAME</strong>. My design thinking ended up being boiled down to this:
                 <br>
                 <br>
-                From my own experience, I usually end up just reading text on the screen, accompanied by some artwork 
-                in the background. After a while, I will end up skimming through the text until something interesting 
-                happens, as they are often linear, not leaving many meaningful choices or a sense of agency to the 
-                player.
+                <strong>The Problem</strong>
+                <br>
+                - Visual novels often become <strong>passive</strong> reading experiences (IMO).
+                <br>
+                - Traditional visual novels allow players to skim text and skip interaction with little consequence.
+                <br>
+                - Meaningful choices are uncommon, reducing attention investment.
                 <br>
                 <br>
-                <strong>THIS</strong> is what I wanted to change with this game. It was still going to contain what you
-                would expect from a visual novel, but also contain choices that affect the player's experience and
-                require them to act quickly during important moments of the story, making even the "skimmers" pay 
-                attention.
+                <strong>The Objective</strong>
+                <br>
+                - Create a visual novel that feels like a <strong>game</strong>.
+                <br>
+                - Make reading <strong>active</strong> and <strong>engaging</strong>.
+                <br>
+                - Introduce mechanics that <strong>reinforce attention and consequence</strong>. 
+                <br>
+                <br>
+                <strong>The Approach</strong>
+                <br>
+                - Mechanics should <strong>support narrative engagement</strong>, not distract from it. 
+                <br>
+                - Players should not be feel like they are being punished arbitrarily.  
+                <br>
               </p>
-              <h3 class="project-details__content-title">Time-Sensitive Choices</h3>
+              <h3 class="project-details__content-title">System: Time-Sensitive Choices</h3>
               <p class="project-details__desc-para">
-                The first mechanic I added to the formula was <strong>Time-Sensitive Choices</strong>. The player would have a pop-up of 
-                dialogue choices they can make, and they would be on a timer while making their choice. Not making a
-                choice in time would have the game make it for them, taking away their agency.
+                <strong>Why this mechanic exists</strong>
+                <br>
+                - Discourages dialogue skimming and encourages engagement.
+                <br>
+                - Makes choices <strong>matter</strong> by putting them on a timer.
                 <br>
                 <br>
-                The idea behind this is that I am taking away the player's ability to tackle the game at their own pace,
-                essentially challenging them. Without a mechanic like this, one might be like me and get tired of 
-                reading after a while. Having this mechanic in the game, I believe that it adds some tension/friction 
-                which could help with keeping players engaged for longer than they otherwise would.
+                <strong>Tradeoffs</strong>
+                <br>
+                - No timer → Possibility of low engagement.
+                <br>
+                - Overly long timer → Risk of player skimming.
+                <br>
+                - Too short timer → Player frustration.
                 <br>
                 <br>
+                <strong>Final decision</strong>
+                <br>
+                - Timers appear when dialogue choices matter the most.
+                <br>
+                - If the player doesn't respond in time, the game makes the choice for them, 
+                <strong>reducing agency</strong>.
+                <br>
+                <br>
+                <strong>Expected outcome</strong>
+                <br>
+                - Encouraged attentive reading.
+                <br>
+                - Added tension and consequence to dialogue.
               </p>
                   <div class="project-details__showcase-img-cont">
                     <img
@@ -177,31 +204,30 @@
                             class="project-details__showcase-img"
                     />
                   </div>
-              <p class="project-details__desc-para">
-                Another good thing about adding a mechanic like this to the game is that if the player wants to have a
-                desirable result from the interaction, they would need to have understood what they had read before to
-                make an educated decision. This does also, in turn, put the player's focus on the story which is the 
-                main selling point of a game in this genre. 
-                <br>
-                <br>
-                This mechanic was implemented in times it felt the most natural, such as in conversations (Don't let
-                there be too much dead silence!) and when the player had to react quickly (someone is about to vomit on
-                you).
-              </p>
               
-              <h3 class="project-details__content-title">Quick Time Events</h3>
+              <h3 class="project-details__content-title">System: Quick Time Events (QTEs)</h3>
               <p class="project-details__desc-para">
-                By incorporating <strong>Time-Sensitive Choices</strong>, I'm challenging the player's 
-                <strong>attention to detail</strong>. With <strong>Quick Time</strong> Events I'm challenging their 
-                <strong>motor skills</strong>.
-                <br> 
-                <br> 
-                To essentially break up the flow of the game and make it less repetitive, not just being a few
-                <strong>Time-Sensitive Choices</strong>, I needed to add something else. It needed to be something that
-                challenged a different skill from the player so that it wouldn't feel too same-y. I thought a kind of 
-                <strong>Quick Time Event</strong> would do nicely. 
+                <strong>Why this mechanic exists</strong>
+                <br>
+                - Breaks up narrative flow with a <strong>different interactive challenge</strong>.
+                <br>
+                - Encourages attention to motor skills as well as reading.
                 <br>
                 <br>
+                <strong>How it works</strong>
+                <br>
+                - A cursor moves back and forth.
+                <br>
+                - The player must press a button when the cursor is within a target "sweet spot". 
+                <br>
+                - Successful presses get harder over time (speed increases, window shrinks).
+                <br>
+                <br>
+                <strong>Expected outcome</strong>
+                <br>
+                - Adds variation in challenge.
+                <br>
+                - Reinforces <strong>embodied attention</strong> during important moments. 
               </p>
               <div class="project-details__showcase-img-cont">
                 <img
@@ -210,27 +236,26 @@
                         class="project-details__showcase-img"
                 />
               </div>
+            
+              <h3 class="project-details__content-title">System: Levels Of Intoxication</h3>
               <p class="project-details__desc-para">
-                The concept is simple, the player has a cursor that is moving from side to side, and they need to time
-                their button presses to when the cursor is within the "sweet spot". The speed of the cursor increases
-                and the width of the "sweet spot" decreases with each successful buttonpress. 
+                <strong>Why this mechanic exists</strong>
+                <br>
+                - Narrative support! The player is drunk and their preception should reflect that.
                 <br>
                 <br>
-                I decided to use this mechanic specifically for when the player in the game is performing something
-                that requires proper motor skills, such as ascending a set of stairs while intoxicated. This way it
-                feels natural for the player to be performing the task when put into the context of the scenario in 
-                the game.
-              </p>
-              
-              <h3 class="project-details__content-title">Levels Of Intoxication</h3>
-              <p class="project-details__desc-para">
-                As <strong>The Shoe</strong> is a game about experiences when under the influence, I thought that the 
-                player should also <strong>feel</strong> like they are. Therefore, I added a shader that made the 
-                background move and would intensify/detensify depending on whether the player decided to sober up or 
-                continue drinking.
+                <strong>How it works</strong>
+                <br>
+                - Uses a shader to distort visuals progressively.
+                <br>
+                - Intoxication changes with drinking or sobering up.
                 <br>
                 <br>
-                Below you can see examples of two different levels of intoxication.
+                <strong>Expected outcome</strong>
+                <br>
+                - Visually communicates the state of the player without numbers.
+                <br>
+                - Altered perception links directly to the emotional and gameplay experience.
               </p>
               <div class="project-details__showcase-img-cont">
                 <img
@@ -246,67 +271,83 @@
                         class="project-details__showcase-img"
                 />
               </div>
-              <h3 class="project-details__content-title">Art</h3>
+              <h3 class="project-details__content-title">Art & Presentation</h3>
               <p class="project-details__desc-para">
-                All the artwork used in the game are stock photos that I heavily edited in 
-                <strong>Adobe Photoshop</strong> to give them distorted faces (caused by the player being intoxicated
-                or face-blind) and a cartoon-like appearance. 
+                - Used stock photos heavily edited in Photoshop.
+                <br>
+                - Faces were distorted to reflect intoxication and narrative tone.
               </p>
-              <h3 class="project-details__content-title">Feedback from Playtesting</h3>
+              <h3 class="project-details__content-title">Playtesting & Iteration</h3>
               <p class="project-details__desc-para">
-                During development, we had two playtests. One was done once we had an MVP (Minimal Viable Product), 
-                primarily to gauge whether we were on the right track or not and another by the end of the summer when 
-                we were starting to wrap up development. 
+                <strong>What was tested</strong>
+                <br>
+                - The impact of interaction mechanics on player engagement.
+                <br>
+                - Whether intoxication visuals were <strong>felt</strong> by players.
                 <br>
                 <br>
-                It was during the first playtest that we got the feedback that players didn't really feel the effect of 
-                drinking alcohol in the game. It was after this that I decided to implement the 
-                <strong>Levels Of Intoxication</strong> as a response. 
+                <strong>Feedback summary</strong>
+                <br>
+                - Early playtest showed intoxication effects were <strong>not obvious enough</strong>.
+                <br>
+                - Final playtest highlighted bugs in:
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Saving system
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Accessibility options
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;- Music
+                <br>
+                - Visual effects needed to be <strong>more pronounced</strong>.
                 <br>
                 <br>
-                The second playtest showed that the mechanics I had added were generally appreciated, but that there 
-                were a few bugs left in the game since several new systems were added since the last playtest. The bugs 
-                were related to saving, accessibility options and music. The visual effects of increasing and decreasing
-                the <strong>Levels Of Intoxication</strong> was a bit too gradual and needed to be intensified slightly 
-                to truly be felt by the player. Overall, we (the team) collectively saw that the game needed just a 
-                little more time in the oven to get that golden crust. 
+                <strong>Changes made</strong>
+                <br>
+                - Added <strong>Levels Of Intoxication</strong> system based on early feedback.
+                <br>
+                - Increased effect intensity of intoxication. 
+                <br>
+                - Bug fixes based on later playtesting.
               </p>
+            <h3 class="project-details__content-title">Summary of outcome</h3>
+            <p class="project-details__desc-para">
+             - Players appreciated added mechanics.
+              <br>
+              - Interact made narrative feel more engaging.
+              <br>
+              - Playtests revealed areas for improvement, especially tech and visuals. 
+            </p>
               <h3 class="project-details__content-title">Lessons learned</h3>
               <p class="project-details__desc-para">
                 <strong>Programming</strong>
                 <br>
-                First of all, I got to practice my programming skills with something small in scale that left me with 
-                a lot of room to experiment. I want to specifically highlight the <strong>Saving System</strong> as one 
-                of those, as I had never worked with anything like it previously. 
-                <br>
-                Another little highlight would be that I learnt how to make functions in my c# scripts compatible to be 
-                used within <strong>Yarnspinner's yarn scripts</strong>. It was crucial for the person writing the 
-                dialogue in the yarn scripts to be able to access my functions.
+                - Practiced making saving systems for the first time.
+               <br>
+                - Learned to make C# functions compatible with Yarnspinner scripts.
                 <br>
                 <br>
                 <strong>Design</strong>
                 <br>
-                Design-wise, I got to challenge myself by trying to expand the boundaries of a genre that I perceive as
-                quite limited. I also really had to keep the focus of the game, being dialogue, in mind with all design
-                decision I had to make. 
+               - Challenged genre conventions of visual novels. 
+                <br>
+                - Reinforced focus on narrative in mechanical choices. 
                 <br>
                 <br>
-                <strong>Shaders</strong>
+                <strong>Technical Growth</strong>
                 <br>
-                I got the chance to learn how shaders work in 2D space of Unity. For example, the effect for
-                <strong>Levels Of Intoxication</strong> would, at first, not work with <strong>2D elements</strong> and 
-                I had to jump through some hoops to make it work as it should.
+                - Explored shaders with 2D elements in unity. 
                 <br>
-                <br>
-                <strong>Art</strong>
-                <br>
-                For the art, I had to learn to use quite a few new tools in <strong>Adobe Photoshop</strong> to get the 
-                effects that I wanted. I mainly used the existing <strong>filters</strong> in the software but also made
-                use of <strong>masks</strong> and the <strong>smudge 
-                tool</strong>.  
+                - Learned Photoshop techniques such as masking and other effects.
               </p>
+            <div class="project-details__links">
+              <a
+                      href="#"
+                      class="btn btn--med btn--theme project-details__links-btn"
+                      target="_blank"
+              >Download the game here</a
+              >
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </section>
