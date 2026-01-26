@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="128ad961-a412-4e53-b1a9-daf7fc1fbda3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/project-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theshoe.html" beforeDir="false" afterPath="$PROJECT_DIR$/theshoe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project-3.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$APPLICATION_HOME_DIR$/lib/modules/intellij.relaxng.jar!/resources/html5-schema/html5/phrase.rnc" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="PackageJsonUpdateNotifier">
@@ -69,7 +70,10 @@
       <workItem from="1767368916461" duration="761000" />
       <workItem from="1767871951925" duration="1393000" />
       <workItem from="1767873347911" duration="10833000" />
-      <workItem from="1768658533428" duration="15490000" />
+      <workItem from="1768658533428" duration="16227000" />
+      <workItem from="1768906073281" duration="3218000" />
+      <workItem from="1768926638233" duration="1000" />
+      <workItem from="1769427300717" duration="12082000" />
     </task>
     <servers />
   </component>
