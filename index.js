@@ -36,3 +36,20 @@ const headerLogoConatiner = document.querySelector('.header__logo-container')
 headerLogoConatiner.addEventListener('click', () => {
   location.href = 'index.html'
 })
+
+const elements = document.querySelectorAll(
+    '.case-section, .case-split, .case-full-image'
+);
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+elements.forEach(el => {
+  el.classList.add('fade-in');
+  observer.observe(el);
+});
