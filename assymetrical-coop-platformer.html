@@ -150,97 +150,124 @@
                     <p class="project-details__desc-para">
                         <strong>Why this mechanic exists</strong>
                         <br>
-                        - 
+                        - To navigate the world.
                         <br>
                         <br>
                         <strong>How it works</strong>
                         <br>
-                        - 
+                        - The player can move, jump and wall jump by using <strong>the keyboard</strong>.
+                        <br>
+                        - The player can move slightly in the air.
+                        <br>
+                        - Jumping has <strong>Coyote time</strong>.
                         <br>
                         <br>
                         <strong>Expected outcome</strong>
                         <br>
-                        - 
+                        - The player <strong>feels in control</strong> of their own movement and not restricted by the
+                        game in any way.
                     </p>
                     <h3 class="project-details__content-title">Guard: Attack</h3>
                     <p class="project-details__desc-para">
                         <strong>Why this mechanic exists</strong>
                         <br>
-                        -
+                        - To allow the player to eliminate any threats.
                         <br>
                         <br>
                         <strong>How it works</strong>
                         <br>
-                        -
+                        - When the player presses the button, a shield appears for a brief time around them.
+                        <br>
+                        - Any threat that makes contact with the shield will be eliminated.
+                        <br>
+                        - Has a short cooldown between presses. 
                         <br>
                         <br>
                         <strong>Expected outcome</strong>
                         <br>
-                        -
+                        - The player uses the attack to <strong>protect</strong> the NPC they are escorting from any 
+                        threats. 
+                        <br>
+                        - The player pays attention to only press the button <strong>when needed</strong>, 
+                        rather than <strong>spamming</strong>. 
                     </p>
                     <h3 class="project-details__content-title">Planner: Movement</h3>
                     <p class="project-details__desc-para">
                         <strong>Why this role exists</strong>
                         <br>
-                        -
+                        - To navigate the world. 
                         <br>
                         <br>
                         <strong>How it works</strong>
                         <br>
-                        -
+                        - The player clicks and holds a button on <strong>the mouse</strong> to pan their view.
                         <br>
                         <br>
                         <strong>Expected outcome</strong>
                         <br>
-                        -
+                        - The player doesn't feel restricted and move to the part of the level that they want without 
+                        trouble.
                     </p>
                     <h3 class="project-details__content-title">Planner: Object manipulation</h3>
                     <p class="project-details__desc-para">
                         <strong>Why this mechanic exists</strong>
                         <br>
-                        -
+                        - To allow creating paths for the NPC to move on. 
                         <br>
                         <br>
                         <strong>How it works</strong>
                         <br>
-                        -
+                        - The player clicks and drags a path and drops it at a highlighted spot in the level. 
                         <br>
                         <br>
                         <strong>Expected outcome</strong>
                         <br>
-                        -
+                        - The player controls the tempo of the game by deciding when it's time to move on, cooperating 
+                        with the Guard. 
                     </p>
                     <h3 class="project-details__content-title">NPC: Behaviour</h3>
                     <p class="project-details__desc-para">
                         <strong>Why this mechanic exists</strong>
                         <br>
-                        -
+                        - Allow the NPC to move in a predictable way. 
                         <br>
                         <br>
                         <strong>How it works</strong>
                         <br>
-                        -
+                        - Will move in a direction until it reaches a wall.
+                        <br>
+                        - If it reaches a wall, move in the opposite direction.
+                        <br>
+                        - If it collides with an enemy or falls into a hoe, causes a <strong>Game Over</strong>.
+                        <br>
+                        - If it collides with the goalpost at the end of the level, both players <strong>win</strong>. 
                         <br>
                         <br>
                         <strong>Expected outcome</strong>
                         <br>
-                        -
+                        - Becomes a <strong>ticking time bomb</strong> that forces the players to act.
+                        <br>
+                        - Can be controlled by the players if they cooperate.
                     </p>
                     <h3 class="project-details__content-title">System: Enemy spawner</h3>
                     <p class="project-details__desc-para">
                         <strong>Why this mechanic exists</strong>
                         <br>
-                        -
+                        - To provide pressure on the players.
                         <br>
                         <br>
                         <strong>How it works</strong>
                         <br>
-                        -
+                        - When the NPC comes in contact with a hitbox, spawns enemies in a fixed pattern.
+                        <br>
+                        - Will not spawn enemies more than once per hitbox. 
                         <br>
                         <br>
                         <strong>Expected outcome</strong>
                         <br>
-                        -
+                        - The players strategizes their approaches to each encounter. 
+                        <br>
+                        - The players don't feel pressured if they would backtrack to get some breathing room. 
                     </p>
                     <h3 class="project-details__content-title">Design Goal</h3>
                     <p class="project-details__desc-para">
@@ -255,6 +282,8 @@
                         <br>
                         - Players cannot share an input-unit.
                         <br>
+                        - Cannot be played <strong>alone</strong>.
+                        <br>
                         <br>
                         <strong>The Approach</strong>
                         <br>
@@ -265,7 +294,10 @@
                     </p>
                     <h3 class="project-details__content-title">Lessons learned</h3>
                     <p class="project-details__desc-para">
-                        -
+                        - Programming behavior for moving up/down slopes in GML is not very obvious. 
+                        <br>
+                        - Don't use empty game space as a split-screen divider, as it will cause unintended behavior 
+                        for the planner if the mouse would slip into it by accident, causing frustration. 
                     </p>
                 </div>
             </div>
