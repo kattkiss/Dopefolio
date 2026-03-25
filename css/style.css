@@ -944,6 +944,77 @@ iframe {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
+.gallery-carousel {
+  max-width: 90rem;
+  margin: 5rem auto;
+}
+
+.gallery-carousel__main {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-carousel__main-img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.gallery-carousel__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(65, 0, 75, 0.7);
+  color: #fff;
+  border: none;
+  font-size: 3rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.gallery-carousel__nav--prev {
+  left: 1rem;
+}
+.gallery-carousel__nav--next {
+  right: 1rem;
+}
+
+.gallery-carousel__thumbnails {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.gallery-carousel__thumb {
+  flex: 0 0 auto;
+  width: 10rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.gallery-carousel__thumb.active {
+  opacity: 1;
+  transform: scale(1.05);
+  border: 2px solid #41004b;
+}
+
+.gallery-carousel__thumbnails::-webkit-scrollbar {
+  display: none;
+}
+.gallery-carousel__thumbnails {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     --bg: #0f0f0f;
