@@ -893,6 +893,19 @@ textarea {
   animation: wheel 1.3s infinite;
   -webkit-animation: wheel 1.3s infinite;
 }
+.video-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
 @keyframes wheel {
   to {
