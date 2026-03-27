@@ -54,32 +54,43 @@ elements.forEach(el => {
   observer.observe(el);
 });
 
-const mainImg = document.querySelector('.gallery-carousel__main-img');
-const thumbs = document.querySelectorAll('.gallery-carousel__thumb');
-const prevBtn = document.querySelector('.gallery-carousel__nav--prev');
-const nextBtn = document.querySelector('.gallery-carousel__nav--next');
+document.querySelectorAll(".gallery").forEach(gallery => {
 
-let currentIndex = 0;
+  const mainImg = gallery.querySelector(".gallery-image");
+  const thumbs = gallery.querySelectorAll(".gallery-thumbs img");
+  const next = gallery.querySelector(".next");
+  const prev = gallery.querySelector(".prev");
 
-function updateMainImage(index) {
-  thumbs.forEach(t => t.classList.remove('active'));
-  thumbs[index].classList.add('active');
-  mainImg.src = thumbs[index].src;
-  currentIndex = index;
-}
+  let index = 0;
 
-thumbs.forEach((thumb, i) => {
-  thumb.addEventListener('click', () => updateMainImage(i));
-});
+  function show(i) {
+    index = (i + thumbs.length) % thumbs.length;
 
-prevBtn.addEventListener('click', () => {
-  let newIndex = currentIndex - 1;
-  if (newIndex < 0) newIndex = thumbs.length - 1;
-  updateMainImage(newIndex);
-});
+    mainImg.src = thumbs[index].src;
 
-nextBtn.addEventListener('click', () => {
-  let newIndex = currentIndex + 1;
-  if (newIndex >= thumbs.length) newIndex = 0;
-  updateMainImage(newIndex);
+    thumbs.forEach(t => t.classList.remove("active"));
+    thumbs[index].classList.add("active");
+  }
+
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener("click", () => show(i));
+  });
+
+  next.addEventListener("click", () => show(index + 1));
+  prev.addEventListener("click", () => show(index - 1));
+
+  // swipe support
+  let startX = 0;
+
+  mainImg.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  mainImg.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) show(index + 1);
+    if (endX - startX > 50) show(index - 1);
+  });
+
 });
