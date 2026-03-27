@@ -91,8 +91,6 @@ a {
   color: inherit;
 }
 
-
-
 input:focus,
 button:focus,
 a:focus,
@@ -675,26 +673,26 @@ iframe {
   margin: 0;
 }
 
-./* Project text lists */
+/* Project text lists */
 .project-details__list {
-  list-style: disc;
-  padding-left: 2.2rem;
   margin: 1.5rem 0 2.5rem 0;
-  font-size: 1.8rem;
-  line-height: 1.7;
+  padding-left: 2.2rem;
+  font-size: 1.9rem;
+  line-height: 1.8;
   color: var(--text-main);
 }
 
 .project-details__list li {
+  list-style: disc;
   margin-bottom: 0.8rem;
 }
 
 /* Numbered steps */
-.project-details__list--numbered {
+.project-details__list--numbered li{
   list-style: decimal;
 }
 
-/* Nested lists (optional) */
+/* Nested lists */
 .project-details__list li ul {
   list-style: circle;
   margin-top: 0.6rem;
@@ -713,6 +711,9 @@ iframe {
   z-index: 1000;
   box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+}
+.header li {
+  list-style: none;
 }
 .header__content {
   display: flex;

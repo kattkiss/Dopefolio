@@ -131,59 +131,50 @@
                         class="project-details__showcase-img"
                 />
               </div>
-              <p class="project-details__desc-para">
-                <strong>Why this mechanic exists</strong>
-                <br>
-                - Represents the player's "health".
-                <br>
-                - Punishes indecisiveness and...
-                <br>
-                - ...Pressures the player to make quick decisions.
-                <br>
-                <br>
-                <strong>How it works</strong>
-                <br>
-                - Counts down in seconds from a predetermined number.
-                <br>
-                - Time can be added by pickups.
-                <br>
-                - Becomes red when getting close to 0.
-                <br>
-                - Game Over when reaching 0.
-                <br>
-                <br>
-                <strong>Expected outcome</strong>
-                <br>
-                - Player uses an "Act first, think later" behavior to finish levels.
+              
+              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
+              <ul class="project-details__list">
+                <li>Represents the player's "health".</li>
+                <li>Punishes indecisiveness and...</li>
+                <li>...Pressures the player to make quick decisions.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>How it works</strong></p>
+              <ul class="project-details__list">
+                <li>Counts down in seconds from a predetermined number.</li>
+                <li>Time can be added by pickups.</li>
+                <li>Becomes red when getting close to 0.</li>
+                <li>Game Over when reaching 0.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
+              <p class="project-details__desc-para">  
+                Player uses an "Act first, think later" behavior to finish levels.
               </p>
+              
               <h3 class="project-details__content-title">System: Candy pickups</h3>
-              <p class="project-details__desc-para">
-                <strong>Why this mechanic exists</strong>
-                <br>
-                - To allow a timer to be <strong>shorter</strong> than <strong>the time to complete</strong> the level 
-                and...
-                <br>
-                - ...Give the player a way to prevent a Game Over which in turn...
-                <br>
-                - ...Contributes to more complexity in choices that the player can make.
-                <br>
-                <br>
-                <strong>How it works</strong>
-                <br>
-                - <strong>Adds time</strong> to the timer when picked up.
-                <br>
-                - Player picks it up by <strong>moving into it</strong>.
-                <br>
-                - Multiple pickups are <strong>spread among the level</strong>.
-                <br>
-                - Pickups can be <strong>dropped</strong> by <strong>defeating enemies</strong>. 
-                <br>
-                <br>
-                <strong>Expected outcome</strong>
-                <br>
-                - The player makes <strong>decisions</strong> based upon whether they should be prioritizing 
+              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
+              <ul class="project-details__list">
+                <li>To allow a timer to be <strong>shorter</strong> than <strong>the time to complete</strong> the level
+                and...</li>
+                <li>...Give the player a way to prevent a Game Over which in turn...</li>
+                <li>...Contributes to more complexity in choices that the player can make.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>How it works</strong></p>
+              <ul class="project-details__list">
+                <li><strong>Adds time</strong> to the timer when picked up.</li>
+                <li>Player picks it up by <strong>moving into it</strong>.</li>
+                <li>Multiple pickups are <strong>spread among the level</strong>.</li>
+                <li>Pickups can be <strong>dropped</strong> by <strong>defeating enemies</strong>.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
+              <p class="project-details__desc-para">  
+                The player makes <strong>decisions</strong> based upon whether they should be prioritizing 
                 <strong>speed</strong> or <strong>safety</strong> in a given scenario.
               </p>
+              
               <h3 class="project-details__content-title">System: Enemy Behavior</h3>
               <div class="project-details__showcase-img-cont">
                 <img
@@ -192,37 +183,34 @@
                         class="project-details__showcase-img"
                 />
               </div>
-              <p class="project-details__desc-para">
-                <strong>Why this mechanic exists</strong>
-                - Be a <strong>moving</strong> obstacle.
-                <br>
-                - To <strong>reward</strong> the player who manages to defeat it.
-                <br>
-                <br>
-                <strong>How it works</strong>
-                <br>
-                - Moves towards the player when in their <strong>sight range</strong>.
-                <br>
-                - When colliding with the player:
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Knocks player <strong>up</strong> and <strong>back</strong>
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Player momentarily <strong>loses control</strong> of character.
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Knockback is put on a <strong>cooldown</strong>.
-                <br>
-                - Drops a pickup when defeated by the player.
-                <br>
-                <br>
-                <strong>Expected outcome</strong>
-                <br>
-                - Increased perceived challenge.
-                <br>
-                - Player decides if they want to <strong>defeat the enemy</strong> for the pickup or 
-                <strong>avoid them</strong> entirely.
-                <br>
-                - A more <strong>dynamic</strong> gameplay experience.
-              </p>
+              
+              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
+              <ul class="project-details__list">
+                <li>Be a <strong>moving</strong> obstacle.</li>
+                <li>To <strong>reward</strong> the player who manages to defeat it.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>How it works</strong></p>
+              <ul class="project-details__list">
+                <li>Moves towards the player when in their <strong>sight range</strong>.</li>
+                <li>When colliding with the player:
+                  <ul>
+                    <li>Knocks player <strong>up</strong> and <strong>back</strong>.</li>
+                    <li>Player momentarily <strong>loses control</strong> of character.</li>
+                    <li>Knockback is put on a <strong>cooldown</strong>.</li>
+                  </ul>
+                </li>
+                <li>Drops a pickup when defeated by the player.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
+              <ul class="project-details__list">
+                <li>Increased perceived challenge.</li>
+                <li>Player decides if they want to <strong>defeat the enemy</strong> for the pickup or
+                <strong>avoid them</strong> entirely.</li>
+                <li>A more <strong>dynamic</strong> gameplay experience.</li>
+              </ul>
+              
               <h3 class="project-details__content-title">System: Attacking</h3>
               <div class="project-details__showcase-img-cont">
                 <img
@@ -231,29 +219,26 @@
                         class="project-details__showcase-img"
                 />
               </div>
+              
+              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
+              <ul class="project-details__list">
+                <li>To defeat enemies.</li>
+                <li>Provide more options for the player in decision-making when playing.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>How it works</strong></p>
+              <ul class="project-details__list">
+                <li>The player presses the attack button.</li>
+                <li>After a brief moment, raycast forwards from the center of the screen.</li>
+                <li>If an enemy is hit, deal damage.</li>
+                <li>If enemy is defeated, ragdoll and knock them back.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
               <p class="project-details__desc-para">
-                <strong>Why this mechanic exists</strong>
-                <br>
-                - To defeat enemies.
-                <br>
-                - Provide more options for the player in decision-making when playing.
-                <br>
-                <br>
-                <strong>How it works</strong>
-                <br>
-                - The player presses the attack button.
-                <br>
-                - After a brief moment, raycast forwards from the center of the screen.
-                <br>
-                - If an enemy is hit, deal damage.
-                <br>
-                - If enemy is defeated, ragdoll and knock them back.
-                <br>
-                <br>
-                <strong>Expected outcome</strong>
-                <br>
-                - Player feels like they have more agency by being able to remove obstacles.
+                Player feels like they have more agency by being able to remove obstacles.
               </p>
+              
               <h3 class="project-details__content-title">System: Slide & Crouch</h3>
               <div class="project-details__showcase-img-cont">
                 <img
@@ -262,58 +247,52 @@
                         class="project-details__showcase-img"
                 />
               </div>
+              
+              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
+              <ul class="project-details__list">
+                <li>Provide the player with more freedom in movement.</li>
+                <li>Open up more possibilities for level design.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>How it works</strong></p>
+              <ul class="project-details__list">
+                <li>The player presses the crouch button.</li>
+                <li>Their height gets reduced to half but can still move at a slower pace.</li>
+                <li>If the player is sprinting, it first becomes a slide.
+                  <ul>
+                    <li>Slide speed is decided by how steep the ground is.
+                      <ul>
+                        <li>Sliding down will increase the speed, while sliding up does the opposite.</li>
+                      </ul>
+                    </li>
+                    <li>Slide ends by returning to the crouch state.</li>
+                  </ul>
+                </li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
               <p class="project-details__desc-para">
-                <strong>Why this mechanic exists</strong>
-                <br>
-                - Provide the player with more freedom in movement.
-                <br>
-                - Open up more possibilities for level design.
-                <br>
-                <br>
-                <strong>How it works</strong>
-                <br>
-                - The player presses the crouch button.
-                <br>
-                - Their height gets reduced to half but can still move at a slower pace.
-                <br>
-                - If the player is sprinting, it first becomes a slide.
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Slide speed is decided by how steep the ground is.
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;- Sliding down will increase the speed, while sliding up does the opposite.
-                <br>
-                &nbsp;&nbsp;&nbsp;&nbsp;- Slide ends by returning to the crouch state.
-                <br>
-                <br>
-                <strong>Expected outcome</strong>
-                <br>
-                - The player feels like they have more opportunities for skill expression.
+                The player feels like they have more opportunities for skill expression.
               </p>
+              
               <h3 class="project-details__content-title">Overall Level Design</h3>
-              <p class="project-details__desc-para">
-                <strong>Expected experience</strong>
-                <br>
-                - The player feels immersed in the world of an indoor playground.
-                <br>
-                - The player feels like they have more than one way to traverse the level.
-                <br>
-                - The player doesn't always feel restrained.
-                <br>
-                - The player can make use of all of their movement abilities.
-                <br>
-                <br>
-                <strong>Features</strong>
-                <br>
-                - Ball pits → Slow down the player if fallen into.
-                <br>
-                - Net walls → The player can see future parts of the level, feels more open.
-                <br>
-                - "Slip N' Slide" → Immersion feel and obvious use of slide if wanted. 
-                <br>
-                - Verticality → Level feels less flat.
-                <br>
-                - Open and Restrained parts → Perceived player tension and relief.
-              </p>
+              <p class="project-details__desc-para"><strong>Expected experience</strong></p>
+              <ul class="project-details__list">
+                <li>The player feels immersed in the world of an indoor playground.</li>
+                <li>The player feels like they have more than one way to traverse the level.</li>
+                <li>The player doesn't always feel restrained.</li>
+                <li>The player can make use of all of their movement abilities.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>Features</strong></p>
+              <ul class="project-details__list">
+                <li>Ball pits → Slow down the player if fallen into.</li>
+                <li>Net walls → The player can see future parts of the level, feels more open.</li>
+                <li>"Slip N' Slide" → Immersion feel and obvious use of slide if wanted.</li>
+                <li>Verticality → Level feels less flat.</li>
+                <li>Open and Restrained parts → Perceived player tension and relief.</li>
+              </ul>
+              
               <h3 class="project-details__content-title">Level Screenshots (With iterations)</h3>
               <section class="gallery">
                 <div class="gallery-main">
@@ -342,39 +321,37 @@
                   <img src="./assets/png/postvoidLevel4.3.png" alt="">
                 </div>
               </section>
+              
               <h3 class="project-details__content-title">Design Goal</h3>
               <p class="project-details__desc-para">
                 While the focus of the project was learning the engine and its programming language, I still had some 
                 goals for the design of the prototype.
-                <br>
-                <br>
-                <strong>The Problem</strong>
-                <br>
-                - Games like Post Void & Mullet MadJack are too often relying on claustrophobia in their level design 
-                to infuse player tension.
-                <br>
-                - The same games also combine health and a timer into the same entity.
-                <br>
-                <br>
-                <strong>The Objective</strong>
-                <br>
-                - Introduce a different take on the genre.
-                <br>
-                <br>
-                <strong>The Approach</strong>
-                <br>
-                - Make use of a more open level design, compared to other games in the genre.
-                <br>
-                - Use other methods for punishing the player rather than directly reducing health/time.
-              </p>
-              <h3 class="project-details__content-title">Lessons learned</h3>
+                </p>
+
+              <p class="project-details__desc-para"><strong>The Problem</strong></p>
+              <ul class="project-details__list">
+                <li>Games like Post Void & Mullet MadJack are too often relying on claustrophobia in their level design
+                to infuse player tension.</li>
+                <li>The same games also combine health and a timer into the same entity.</li>
+              </ul>
+
+              <p class="project-details__desc-para"><strong>The Objective</strong></p>
               <p class="project-details__desc-para">
-                - A grasp of the basics of Blueprints.
-                <br>
-                - While Unreal Engine supports 2D games, it's far better adapted to 3D.
-                <br>
-                - A reduction in scope of the project would have been appropriate. 
-              </p>
+                Introduce a different take on the genre.
+                </p>
+
+              <p class="project-details__desc-para"><strong>The Approach</strong></p>
+              <ul class="project-details__list">
+                <li>Make use of a more open level design, compared to other games in the genre.</li>
+                <li>Use other methods for punishing the player rather than directly reducing health/time.</li>
+              </ul>
+              
+              <h3 class="project-details__content-title">Lessons learned</h3>
+              <ul class="project-details__list">
+                <li>A grasp of the basics of Blueprints.</li>
+                <li>While Unreal Engine supports 2D games, it's far better adapted to 3D.</li>
+                <li>A reduction in scope of the project would have been appropriate.</li>
+              </ul>
             </div>
           </div>
         </div>
