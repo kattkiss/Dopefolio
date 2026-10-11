@@ -1,4 +1,3 @@
-// ---
 const hamMenuBtn = document.querySelector('.header__main-ham-menu-cont')
 const smallMenu = document.querySelector('.header__sm-menu')
 const headerHamMenuBtn = document.querySelector('.header__main-ham-menu')
@@ -91,6 +90,87 @@ document.querySelectorAll(".gallery").forEach(gallery => {
 
     if (startX - endX > 50) show(index + 1);
     if (endX - startX > 50) show(index - 1);
+  });
+
+});
+
+document.querySelectorAll(".project-preview").forEach(preview => {
+
+  const video = preview.querySelector(".project-preview__video");
+  const button = preview.querySelector(".project-preview__toggle");
+  const link = preview.querySelector(".project-preview__link");
+
+  if (!video || !button || !link) return;
+
+  // Update the visual state.
+  function updateState(isPlaying) {
+    preview.classList.toggle("is-playing", isPlaying);
+
+    button.textContent = isPlaying ? "❚❚ Pause" : "▶ Preview";
+
+    button.setAttribute(
+        "aria-label",
+        isPlaying ? "Pause gameplay preview" : "Play gameplay preview"
+    );
+
+    button.setAttribute("aria-pressed", String(isPlaying));
+  }
+
+  // Start video playback.
+  async function playPreview() {
+    try {
+      await video.play();
+      updateState(true);
+    } catch (error) {
+      updateState(false);
+    }
+  }
+
+  // Stop playback and reset the video.
+  function stopPreview() {
+    video.pause();
+
+    if (video.readyState > 0) {
+      video.currentTime = 0;
+    }
+
+    updateState(false);
+  }
+
+  // Play or pause using the button.
+  button.addEventListener("click", () => {
+    if (preview.classList.contains("is-playing")) {
+      stopPreview();
+    } else {
+      playPreview();
+    }
+  });
+
+  // Enable hover playback on desktop.
+  const canHover = window.matchMedia(
+      "(hover: hover) and (pointer: fine)"
+  ).matches;
+
+  const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (canHover && !reducedMotion) {
+    preview.addEventListener("mouseenter", playPreview);
+    preview.addEventListener("mouseleave", stopPreview);
+  }
+
+  // Keyboard users can also preview the video.
+  if (!reducedMotion) {
+    link.addEventListener("focus", playPreview);
+    link.addEventListener("blur", stopPreview);
+  }
+
+  // Stop the video when switching browser tabs.
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopPreview();
+    }
   });
 
 });

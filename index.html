@@ -124,14 +124,47 @@
           </div>
           
           <div class="projects__row">
-            <div class="projects__row-img-cont">
+            <div class="projects__row-img-cont project-preview">
+              <a
+                      href="./squeaknserve.html"
+                      class="project-preview__link"
+                      aria-label="Explore"
+              >
+                
+              
               <img
                       src="./assets/png/Poster.png"
                       alt="Software Screenshot"
                       class="projects__row-img"
                       loading="lazy"
               />
+                
+              <video
+                class="projects__preview__video"
+                muted
+                playsinline
+                loop
+                preload="none"
+                aria-hidden="true"
+                tabindex="-1"
+                >
+                <source src="./assets/video/Squeak.mp4" t
+                        type="video/mp4" 
+                />
+              </video>
+                
+              </a>
+              
+              <button
+                class="projects__preview__toggle"
+                type="button"
+                aria-label="Play Preview"
+                aria-pressed="false"
+                >
+                ▶ Preview
+              </button>
             </div>
+            
             <div class="projects__row-content">
               
               <p class="projects__specialty">
