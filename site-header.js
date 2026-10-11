@@ -53,22 +53,30 @@
             ${desktopLinks}
           </ul>
 
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="/assets/svg/ham-menu.svg"
-              alt="Open menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="/assets/svg/ham-menu-close.svg"
-              alt="Close menu"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
+          <button
+          type="button"
+          class="header__main-ham-menu-cont"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="mobile-navigation"
+          >
+          
+          <img
+            src="/assets/svg/ham-menu.svg"
+            alt=""
+            class="header__main-ham-menu"
+          />
+        
+          <img
+            src="/assets/svg/ham-menu-close.svg"
+            alt=""
+            class="header__main-ham-menu-close d-none"
+          />
+        </button>
         </div>
       </div>
 
-      <div class="header__sm-menu">
+      <div class="header__sm-menu" id="mobile-navigation">
         <div class="header__sm-menu-content">
           <ul class="header__sm-menu-links">
             ${mobileLinks}
@@ -77,4 +85,114 @@
       </div>
     </header>
   `;
+
+    // ------------------------------------
+// Mobile menu functionality
+// ------------------------------------
+
+    const menuButton = header.querySelector(
+        ".header__main-ham-menu-cont"
+    );
+
+    const mobileMenu = header.querySelector(
+        ".header__sm-menu"
+    );
+
+    const openIcon = header.querySelector(
+        ".header__main-ham-menu"
+    );
+
+    const closeIcon = header.querySelector(
+        ".header__main-ham-menu-close"
+    );
+
+// Keep the menu and button state synchronized.
+    function setMenuOpen(isOpen) {
+        mobileMenu.classList.toggle(
+            "header__sm-menu--active",
+            isOpen
+        );
+
+        openIcon.classList.toggle("d-none", isOpen);
+        closeIcon.classList.toggle("d-none", !isOpen);
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
+    }
+
+// Toggle when the hamburger is pressed.
+    menuButton.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.contains(
+            "header__sm-menu--active"
+        );
+
+        setMenuOpen(!isOpen);
+    });
+
+// Close when a navigation link is selected.
+    header.querySelectorAll(".header__sm-menu-link a")
+        .forEach(link => {
+            link.addEventListener("click", () => {
+                setMenuOpen(false);
+            });
+        });
+
+// Allow Escape to close the menu.
+    document.addEventListener("keydown", event => {
+        if (
+            event.key === "Escape" &&
+            mobileMenu.classList.contains("header__sm-menu--active")
+        ) {
+            setMenuOpen(false);
+            menuButton.focus();
+        }
+    });
+    
+// ------------------------------------
+// Active navigation link
+// ------------------------------------
+
+    const navLinks = header.querySelectorAll(
+        ".header__link, .header__sm-menu-link a"
+    );
+
+    function updateActiveNavigation() {
+
+        const onHomepage =
+            window.location.pathname === "/" ||
+            window.location.pathname.endsWith("/index.html");
+
+        const currentDestination = onHomepage
+            ? "/index.html" + window.location.hash
+            : null;
+
+        navLinks.forEach(link => {
+
+            const isActive =
+                currentDestination !== null &&
+                link.getAttribute("href") === currentDestination;
+
+            link.classList.toggle("header__link--active", isActive);
+
+            if (isActive) {
+                link.setAttribute(
+                    "aria-current",
+                    window.location.hash ? "location" : "page"
+                );
+            } else {
+                link.removeAttribute("aria-current");
+            }
+
+        });
+    }
+
+    updateActiveNavigation();
+
+    window.addEventListener(
+        "hashchange",
+        updateActiveNavigation
+    );
+
 })();

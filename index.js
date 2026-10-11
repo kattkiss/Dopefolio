@@ -84,6 +84,7 @@ document.querySelectorAll(".project-preview").forEach(preview => {
       await video.play();
       updateState(true);
     } catch (error) {
+      console.error("Video preview failed:", error);
       updateState(false);
     }
   }
