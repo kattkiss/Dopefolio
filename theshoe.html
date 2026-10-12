@@ -1,262 +1,604 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>The Shoe</title>
-    <link rel="icon" href="./assets/png/headshot.png">
-    <meta name="description" content="Case study page of Project" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Shoe — Systems & Technical Design | Julian Jaako Ahlberger</title>
+  <meta name="description" content="Case study of The Shoe: designing interactive dialogue, quick-time events, and visual intoxication systems in Unity." />
+  <link rel="icon" href="./assets/png/headshot.png" />
+  <link rel="stylesheet" href="./css/style.css" />
+  
+  <link rel="stylesheet" href="./css/case-study-layout.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
 
-    <link rel="stylesheet" href="./css/style.css" />
+  <div id="site-header"></div>
+  <script src="/site-header.js"></script>
+  
+  <section class="project-cs-hero shoe-hero" id="top" aria-labelledby="shoe-title">
+    <div class="project-cs-hero__content">
+      <p class="shoe-hero__eyebrow">CASE STUDY · TECHNICAL &amp; SYSTEMS DESIGN</p>
+      <h1 class="heading-primary" id="shoe-title">The Shoe</h1>
+      <p class="shoe-hero__lead">A short visual novel hybrid about a party, a stolen shoe, and interactions intended to make the story feel more actively played.</p>
+      <div class="shoe-hero__meta" aria-label="Project facts">
+        <span>Unity · Yarn Spinner · Photoshop</span>
+        <span>PC · 2026</span>
+        <span>Team of 2</span>
+        <span>Passion project</span>
+      </div>
+      <p class="shoe-hero__role"><strong>My roles:</strong> Game design, programming and art.</p>
+      <div class="project-cs-hero__cta">
+        <a href="https://tinyfandompal.itch.io/the-shoe" class="btn btn--bg" target="_blank" rel="noopener noreferrer">Play The Shoe <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="site-header"></div>
-    <script src="/site-header.js"></script>
-    
-    <section class="project-cs-hero">
-      <div class="project-cs-hero__content">
-        <h1 class="heading-primary">The Shoe (2026) (PC)</h1>
-        <div class="project-cs-hero__info">
-          <p class="text-primary">
-            Short Visual Novel-hybrid about drunk parties and having one of your shoes stolen.
-            <br>
-            <br>
-            <strong>Engine/Tools:</strong> Unity, Yarnspinner & Adobe Photoshop
-            <br>
-            <strong>My Role(s):</strong> Game Designer, Programmer, Artist
-            <br>
-            <strong>Team Size:</strong> 2
-            <br>
-            <strong>Duration:</strong> 3 months - Full time + 2 months - Half-time
-            <br>
-            <strong>Type:</strong> Passion project
+  <main class="project-details shoe-case-study">
+    <div class="main-container shoe-case-study__layout">
+
+      <nav class="shoe-jumpnav" aria-label="On this page">
+        <a href="#overview">Overview</a>
+        <a href="#design-vision">Design vision</a>
+        <a href="#gameplay-systems">Gameplay systems</a>
+        <a href="#technical-work">Technical work</a>
+        <a href="#playtesting">Playtesting</a>
+        <a href="#reflections">Reflections</a>
+      </nav>
+
+      <section class="shoe-section" id="overview" aria-labelledby="overview-title">
+        <div class="shoe-section__heading">
+          <span class="shoe-section__index">01 / OVERVIEW</span>
+          <h2 id="overview-title">What I contributed</h2>
+        </div>
+        <img class="shoe-feature-media" src="./assets/gif/theshoe.gif" alt="Gameplay footage from The Shoe" loading="lazy" />
+        <p class="shoe-copy">
+          I worked on The Shoe with a writer and narrative designer. Development took place primarily 
+          during summer 2025 and resumed in January 2026 for final polish. The work lasted 
+          approximately three months full-time and two months half-time.
+        </p>
+        <div class="shoe-contributions">
+          <div>
+            <span class="shoe-contributions__number">01</span>
+            <h3>Interactive dialogue</h3>
+            <p>Designed and implemented timed dialogue decisions intended to give urgent choices more weight.</p>
+          </div>
+          <div>
+            <span class="shoe-contributions__number">02</span>
+            <h3>Quick-time events</h3>
+            <p>Introduced a timing-based mini-game to bring mechanical variety to the game.</p>
+          </div>
+          <div>
+            <span class="shoe-contributions__number">03</span>
+            <h3>Intoxication feedback</h3>
+            <p>Worked with progressive visual distortion and heavily edited photographic art to 
+              communicate the protagonist's state.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="shoe-section" id="design-vision" aria-labelledby="vision-title">
+        <div class="shoe-section__heading">
+          <span class="shoe-section__index">02 / DESIGN VISION</span>
+          <h2 id="vision-title">Make the narrative feel interactive</h2>
+        </div>
+        <p class="shoe-copy">
+          My goal was to create a visual novel that felt like a <strong>game</strong>, 
+          rather than reading a novel. I wanted players to pay attention to the dialogue 
+          and feel like their input had consequences.</p>
+        <div class="shoe-callout">
+          <h3>The Main Design Challenge</h3>
+          <p>How can mechanics encourage attention and meaningful decisions without interrupting the story or 
+            frustrating the player?
           </p>
         </div>
-        <div class="project-cs-hero__cta">
-          <a href="https://tinyfandompal.itch.io/the-shoe" class="btn btn--bg" target="_blank">Download the game here</a>
+        <p class="shoe-copy">The design challenge guided me towards three systems: 
+          timed choices to add urgency, 
+          quick-time events to introduce a different form of interaction, 
+          and intoxication effects to connect the player's perception to both the narrative and their choices.
+        </p>
+      </section>
+      
+      <section class="shoe-section" id="gameplay-systems" aria-labelledby="systems-title">
+        <div class="shoe-section__heading">
+          <span class="shoe-section__index">03 / GAMEPLAY SYSTEMS</span>
+          <h2 id="systems-title">How the mechanics support the goal</h2>
         </div>
-      </div>
-    </section>
-    <section class="project-details">
-      <div class="main-container">
-        <div class="project-details__content">
-          <div class="project-details__content-main">
-            <div class="project-details__desc">
-              <div class="project-details__showcase-img-cont">
-                <img
-                        src="./assets/gif/theshoe.gif"
-                        alt="Project Image"
-                        class="project-details__showcase-img"
-                />
-              </div>
-              <h2 class="project-details__content-title">Description of project</h2>
-            </div>
-              <p class="project-details__desc-para">
-                This game was quite a passion project that me and my significant other made, them being the 
-                Writer/Narrative Designer. The initial idea was that the story would be something silly and the game be 
-                something simple and fun.
-                <br>
-                <br>
-                The game was primarily developed throughout the summer of 2025, but resumed development in January for
-                final polish. 
-              </p>
-              <h3 class="project-details__content-title">System: Time-Sensitive Choices</h3>
-              <div class="project-details__showcase-img-cont">
-                <img
-                        src="./assets/gif/timesensitive.gif"
-                        alt="Project Image"
-                        class="project-details__showcase-img"
-                />
-              </div>
-            <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
-            <ul class="project-details__list">
-              <li>Discourages dialogue skimming and encourages engagement.</li>
-              <li>Makes choices <strong>matter</strong> by putting them on a timer.</li>
-            </ul>
 
-            <p class="project-details__desc-para"><strong>Tradeoffs</strong></p>
-            <ul class="project-details__list">
-              <li>No timer → Possibility of low engagement.</li>
-              <li>Overly long timer → Risk of player skimming.</li>
-              <li>Too short timer → Player frustration.</li>
-            </ul>
-
-            <p class="project-details__desc-para"><strong>Final decision</strong></p>
-            <ul class="project-details__list">
-              <li>Timers appear when dialogue choices matter the most.</li>
-              <li>If the player doesn't respond in time, the game makes the choice for them, <strong>reducing agency</strong>.</li>
-            </ul>
-
-            <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
-            <ul class="project-details__list">
-              <li>Encouraged attentive reading.</li>
-              <li>Added tension and consequence to dialogue.</li>
-            </ul>
+        <article class="shoe-system" aria-labelledby="timed-title">
+          <div class="shoe-system__header">
+            <span class="shoe-system__number">SYSTEM 01 · DIALOGUE</span>
+            <h3 id="timed-title">Time-sensitive choices</h3>
+            <p>Urgent decisions should be just that, <strong>URGENT</strong>.</p>
+          </div>
+          <img class="shoe-feature-media" src="./assets/gif/timesensitive.gif" alt="A timed dialogue choice shown during gameplay" loading="lazy" />
+          <div class="shoe-system__rows">
+            <div><h4>My intent</h4><p>Discourage dialogue skimming and encourage players to engage with consequential choices.</p></div>
+            <div><h4>Player-facing behavior</h4><p>If the player does not respond before the timer expires, the game makes the choice for them.</p></div>
+            
+            <figure class="shoe-spectrum" aria-labelledby="timer-spectrum-title">
+              <figcaption id="timer-spectrum-title" class="shoe-spectrum__title">
+                Design tradeoff - Timer Duration
+              </figcaption>
               
-            <h3 class="project-details__content-title">System: Quick Time Events (QTEs)</h3>
-            <div class="project-details__showcase-img-cont">
-              <img
-                      src="./assets/gif/quicktime.gif"
-                      alt="Project Image"
-                      class="project-details__showcase-img"
-              />
-            </div>
-            <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
-            <ul class="project-details__list">
-              <li>Breaks up narrative flow with a <strong>different interactive challenge</strong>.</li>
-              <li>Encourages attention to motor skills as well as reading.</li>
-            </ul>
-
-            <p class="project-details__desc-para"><strong>How it works</strong></p>
-            <ul class="project-details__list">
-              <li>A cursor moves back and forth.</li>
-              <li>The player must press a button when the cursor is within a target "sweet spot". </li>
-              <li>Successful presses get harder over time (speed increases, window shrinks).</li>
-            </ul>
-          
-            <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
-            <ul class="project-details__list">
-              <li>Adds variation in challenge.</li>
-              <li>Reinforces <strong>embodied attention</strong> during important moments.</li>
-            </ul>
-          
-            <h3 class="project-details__content-title">System: Levels Of Intoxication</h3>
-            <section class="gallery">
-              <div class="gallery-main">
-                <button class="gallery-btn prev">&#10094;</button>
-                <img src="./assets/gif/BaseDrunk.gif" alt="Main Image" class="gallery-image" />
-                <button class="gallery-btn next">&#10095;</button>
+              <div class="shoe-spectrum__labels">
+                <div>
+                  <strong>Long Timer</strong>
+                  <span>Low Urgency</span>
+                </div>
+                
+                <div>
+                  <strong>"Balanced"</strong>
+                  <span>Design Target</span>
+                </div>
+                
+                <div>
+                  <strong>Short Timer</strong>
+                  <span>Frustration risk</span>
+                </div>
               </div>
-              <div class="gallery-thumbs">
-                <img src="./assets/gif/BaseDrunk.gif" class="active" alt="">
-                <img src="./assets/gif/SevereDrunk.gif" alt="">
+              
+              <div class="shoe-spectrum__track" aria-hidden="true">
+                <span></span>
+                <span class="shoe-spectrum__highlight"></span>
+                <span></span>
+              </div>
+              
+              <p class="shoe-spectrum__takeaway">
+                <strong>My decision:</strong>
+                Only use timed choices selectively and appropriately.
+              </p>
+            </figure>
+            
+            <div><h4>Intended effect</h4><p>More attentive reading, tension, and a stronger sense of consequence.</p></div>
+          </div>
+        </article>
+
+        <article class="shoe-system" aria-labelledby="qte-title">
+          <div class="shoe-system__header">
+            <span class="shoe-system__number">SYSTEM 02 · TIMING CHALLENGE</span>
+            <h3 id="qte-title">Quick-time events</h3>
+            <p>A minigame that forces the player to respond with good timing rather than a dialogue selection.</p>
+          </div>
+          <img class="shoe-feature-media" src="./assets/gif/quicktime.gif" alt="A quick-time event with a moving cursor and target zone" loading="lazy" />
+          <div class="shoe-system__rows">
+            <div><h4>My intent</h4><p>Break up the narrative flow with a different interactive challenge, using <strong>performative uncertainty</strong>, while still supporting the story.</p></div>
+            <div><h4>Player-facing behavior</h4><p>A cursor travels from side to side. The player presses a button while it is within a target zone to progress.</p></div>
+
+            <figure class="shoe-qte-comparison" aria-labelledby="qte-difficulty-title">
+              <figcaption class="shoe-qte-comparison__heading">
+                <h4 id="qte-difficulty-title">Difficulty progression</h4>
+              </figcaption>
+
+              <div class="shoe-qte-comparison__stages">
+                <div class="shoe-qte-stage shoe-qte-stage--initial">
+                  <h5>First attempt</h5>
+                  
+                  <div class="shoe-qte-stage__track" aria-hidden="true">
+                    <span class="shoe-qte-stage__target"></span>
+                  </div>
+
+                  <p>Slow cursor</p>
+                  <p>Wide sweet-spot</p>
+
+                </div>
+
+                <div class="shoe-qte-stage shoe-qte-stage--advanced">
+
+                  <h5>Later attempt</h5>
+
+                  <div class="shoe-qte-stage__track" aria-hidden="true">
+                    <span class="shoe-qte-stage__target"></span>
+                  </div>
+
+                  <p>Faster cursor</p>
+                  <p>Narrower sweet-spot</p>
+                </div>
+              </div>
+
+              <p class="shoe-qte-comparison__takeaway">
+                <strong>My decision:</strong>
+                Successful attempts progressively increase the challenge,
+                requiring more precise timing for that instance of the minigame, 
+                resetting by the next one.
+              </p>
+            </figure>
+            
+            <div><h4>Intended effect</h4><p>Add variation to the challenge and encourage physical attention during significant moments.</p></div>
+          </div>
+        </article>
+
+        <article class="shoe-system" aria-labelledby="intoxication-title">
+          <div class="shoe-system__header">
+            <span class="shoe-system__number">SYSTEM 03 · VISUAL FEEDBACK</span>
+            <h3 id="intoxication-title">Levels of intoxication</h3>
+            <p>Communicating the protagonist's level of intoxication through distorted visuals.</p>
+          </div>
+
+          <figure class="gallery shoe-intox-gallery" aria-labelledby="intox-gallery-title">
+
+            <h4 id="intox-gallery-title" class="shoe-intox-gallery__title">
+              How intoxication levels changes perception
+            </h4>
+
+            <div class="gallery-main">
+              <button class="gallery-btn prev" type="button" aria-label="Previous intoxication example">
+                &#10094;
+              </button>
+
+              <img
+                      src="./assets/gif/BaseDrunk.gif"
+                      alt="Lower intoxication effect in The Shoe"
+                      class="gallery-image"
+              />
+
+              <button class="gallery-btn next" type="button" aria-label="Next intoxication example">
+                &#10095;
+              </button>
+            </div>
+
+            <div class="gallery-thumbs" role="group" aria-label="Select intoxication level">
+              <button
+                      type="button" class="shoe-intox-gallery__thumb" aria-label="Show lower intoxication" aria-pressed="true">
+                <img
+                        src="./assets/gif/BaseDrunk.gif"
+                        class="active"
+                        alt=""
+                        data-title="Lower intoxication"
+                        data-description="Subtle background distortion."
+                        data-alt="Lower intoxication effect in The Shoe"
+                />
+              </button>
+
+              <button type="button" class="shoe-intox-gallery__thumb" aria-label="Show higher intoxication" aria-pressed="false">
+                <img
+                        src="./assets/gif/SevereDrunk.gif"
+                        alt=""
+                        data-title="Higher intoxication"
+                        data-description="Stronger distortion of the background."
+                        data-alt="Higher intoxication effect in The Shoe"
+                />
+              </button>
+            </div>
+
+            <figcaption class="shoe-intox-gallery__caption" aria-live="polite" aria-atomic="true">
+              <strong class="shoe-intox-gallery__caption-title">
+                Lower intoxication
+              </strong>
+
+              <span class="shoe-intox-gallery__caption-description">
+                Subtle background distortion.
+              </span>
+            </figcaption>
+          </figure>
+          
+          <div class="shoe-system__rows">
+            <div><h4>My intent</h4><p> Reflect the protagonist's intoxication through the environment, reinforcing the consequences of drinking and sobering up.</p></div>
+            <div><h4>Iteration</h4><p>Early feedback showed that differences between intoxication levels were too subtle. I introduced more levels and strengthened the distortion.</p></div>
+          </div>
+        </article>
+      </section>
+      
+      <section class="shoe-section" id="technical-work" aria-labelledby="technical-title">
+        <div class="shoe-section__heading">
+          <span class="shoe-section__index">04 / TECHNICAL DESIGN</span>
+          <h2 id="technical-title">Solving problems behind the systems</h2>
+        </div>
+        <p class="shoe-copy">
+          Making the narrative more interactive required more than designing new mechanics.
+          I also had to connect Yarn Spinner with Unity gameplay systems, preserve narrative
+          progress between sessions, and create visual feedback that worked with the game's rendering setup.
+        </p>
+        
+        <article class="shoe-tech-feature" aria-labelledby="yarn-integration-title">
+          <span class="shoe-section__index">TECHNICAL CHALLENGE 01 · UNITY · YARN SPINNER</span>
+          <h3 id="yarn-integration-title">Connecting narrative and gameplay</h3>
+          <p class="shoe-copy">
+            Yarn Spinner controlled the story, but the dialogue also needed to trigger
+            gameplay events such as changing the character's intoxication, start timed choices 
+            or QTEs, and narrative events needed to affect audio and presentation.
+          </p>
+
+          <div class="shoe-system__rows">
+            <div>
+              <h4>The challenge</h4>
+              <p>Give the narrative designer control over gameplay events directly from Yarn dialogue, without needing to modify C# scripts.</p>
+            </div>
+            <div>
+              <h4>My approach</h4>
+              <p>I exposed functionality through separate Unity managers and controllers using custom Yarn commands and functions. Each controller remained responsible for its own gameplay behavior.</p>
+            </div>
+          </div>
+
+          <figure class="case-study-panel shoe-flow" aria-labelledby="shoe-flow-caption">
+            <figcaption id="shoe-flow-caption" class="shoe-flow__caption">
+              How narrative and gameplay interacts with eachother
+            </figcaption>
+
+            <section class="shoe-flow__lane">
+              <h4>Narrative triggers gameplay</h4>
+
+              <div class="shoe-flow__steps">
+                <div class="shoe-flow__step">
+                  <strong>Yarn Spinner</strong>
+                  <span>Dialogue events</span>
+                </div>
+
+                <span class="shoe-flow__arrow" aria-hidden="true"> &rarr; </span>
+
+                <div class="shoe-flow__step">
+                  <strong>Custom C# methods</strong>
+                  <span>Commands and functions</span>
+                </div>
+
+                <span class="shoe-flow__arrow" aria-hidden="true"> &rarr; </span>
+
+                <div class="shoe-flow__step">
+                  <strong>Unity controllers</strong>
+                  <span>Execute gameplay behavior</span>
+                </div>
+              </div>
+
+              <div class="shoe-flow__systems">
+                <div>
+                  <strong>Timed dialogue</strong>
+                  <span>Starts a countdown</span>
+                </div>
+
+                <div>
+                  <strong>QTE controller</strong>
+                  <span>Starts a timing challenge</span>
+                </div>
+
+                <div>
+                  <strong>Drunk manager</strong>
+                  <span>Changes intoxication and distortion</span>
+                </div>
+
+                <div>
+                  <strong>Audio controllers</strong>
+                  <span>Control sound and music</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="shoe-flow__lane">
+
+              <h4>Gameplay influences narrative</h4>
+
+              <div class="shoe-flow__steps">
+
+                <div class="shoe-flow__step">
+                  <strong>Gameplay outcome</strong>
+                  <span>QTE result or timer expiration</span>
+                </div>
+
+                <span class="shoe-flow__arrow" aria-hidden="true"> &rarr; </span>
+                
+                <div class="shoe-flow__step">
+                  <strong>Controller</strong>
+                  <span>Selects the next node</span>
+                </div>
+                
+                <span class="shoe-flow__arrow" aria-hidden="true"> &rarr; </span>
+
+                <div class="shoe-flow__step">
+                  <strong>Yarn Spinner</strong>
+                  <span>Continues the story</span>
+                </div>
+              </div>
+            </section>
+
+            <p class="shoe-flow__note">
+              QTEs and timed choices can redirect dialogue.
+              Other controllers primarily change gameplay
+              and presentation.
+            </p>
+          </figure>
+        </article>
+        
+        <article class="shoe-tech-feature" aria-labelledby="checkpoint-title">
+          <span class="shoe-section__index">TECHNICAL CHALLENGE 02 · PERSISTENT PROGRESS</span>
+          <h3 id="checkpoint-title">Saving narrative progress without separate scenes</h3>
+          <p class="shoe-copy">
+            I wanted players to be able to close the game and
+            resume and keep their progress without splitting
+            the story into separate Unity scenes.
+
+            My solution was to use Yarn Spinner's dialogue nodes
+            as checkpoints, storing their identifiers and
+            additional progression data through Unity's PlayerPrefs.
+          </p>
+
+          <figure class="case-study-panel shoe-save-flow" aria-labelledby="save-flow-title">
+            <figcaption id="save-flow-title" class="shoe-save-flow__title">
+              Saving and resuming narrative progress
+            </figcaption>
+          
+            <section class="shoe-save-flow__phase" aria-labelledby="save-phase-title">
+              <h4 id="save-phase-title">01 / Saving a checkpoint</h4>
+            
+              <div class="shoe-save-flow__sequence">
+                <div class="shoe-save-flow__step">
+                  <strong>Capture current node</strong>
+                  <p>
+                    Read the active dialogue node name
+                    using CurrentNodeName.
+                  </p>
+                </div>
+            
+                <span class="shoe-save-flow__arrow" aria-hidden="true">
+                  &rarr;
+                </span>
+            
+                <div class="shoe-save-flow__step">
+                  <strong>Store checkpoint</strong>
+                  <p>
+                    Save the captured node name and
+                    progression counter in PlayerPrefs.
+                  </p>
+                </div>
               </div>
             </section>
             
-            <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
-            <ul class="project-details__list">  
-            <li>Narrative support! The player is drunk and their preception should reflect that.</li>
-            </ul>
-            
-            <p class="project-details__desc-para"><strong>How it works</strong></p>
-            <ul class="project-details__list">  
-            <li>Uses a shader to distort visuals progressively.</li>
-            <li>Intoxication changes with drinking or sobering up.</li>
-            </ul>
-            
-            <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
-            <ul class="project-details__list">  
-            <li>Visually communicates the state of the player without numbers.</li>
-            <li>Altered perception links directly to the emotional and gameplay experience.</li>
-            </ul>
-            
-            <h3 class="project-details__content-title">Design Goal</h3>
-            <p class="project-details__desc-para">
-              While I can appreciate visual novels to a certain point, I feel that they often turn into just that, a
-              visual novel...not a <strong>GAME</strong>. My design thinking ended up being boiled down to this:
-              <br>
-              <br>
-              <strong>The Problem</strong></p>
+            <section class="shoe-save-flow__phase" aria-labelledby="load-phase-title">
+              <h4 id="load-phase-title">02 / Loading a game</h4>
+              <div class="shoe-save-flow__decision">
+                <strong>Saved checkpoint exists?</strong>
+                <p>Check PlayerPrefs for SavedNode.</p>
+              </div>
               
-              <ul class="project-details__list"> 
-              <li>Visual novels often become <strong>passive</strong> reading experiences (IMO).</li>
-              <li>Traditional visual novels allow players to skim text and skip interaction with little consequence.</li>
-              <li>Meaningful choices are uncommon, reducing attention investment.</li>
-              </ul>
+              <div class="shoe-save-flow__branches">
+                <div class="shoe-save-flow__branch">
+                  <span class="shoe-save-flow__branch-label">YES — CHECKPOINT FOUND</span>
+                  <strong>Resume progress</strong>
+                  <p>
+                    Restore the saved progress counter
+                    and begin dialogue from the saved node.
+                  </p>
+                </div>
+                
+                <div class="shoe-save-flow__branch">
+                  <span class="shoe-save-flow__branch-label">NO — NO CHECKPOINT</span>
+                    <strong>Start new game</strong>
+                    <p>
+                      Begin dialogue from the default
+                      starting node.
+                    </p>
+                  </div>
+                </div>
+              </section>
 
-            <p class="project-details__desc-para"><strong>The Objective</strong></p>
-            <ul class="project-details__list"> 
-              <li>Create a visual novel that feels like a <strong>game</strong>.</li>
-              <li>Make reading <strong>active</strong> and <strong>engaging</strong>.</li>
-              <li>Introduce mechanics that <strong>reinforce attention and consequence</strong>.</li>
-            </ul>
-            
-            <p class="project-details__desc-para"><strong>The Approach</strong></p>
-            <ul class="project-details__list"> 
-              <li>Mechanics should <strong>support narrative engagement</strong>, not distract from it.</li>
-              <li>Players should not be feel like they are being punished arbitrarily.</li>
-            </ul>
-              
-              <h3 class="project-details__content-title">Art & Presentation</h3>
-              <ul class="project-details__list"> 
-                <li>Used stock photos heavily edited in Photoshop.</li>
-                <li>Faces were distorted to reflect intoxication and narrative tone.</li>
-                </ul>
-              <h3 class="project-details__content-title">Playtesting & Iteration</h3>
-              <p class="project-details__desc-para"><strong>What was tested</strong></p>
-              <ul class="project-details__list"> 
-                <li>The impact of interaction mechanics on player engagement.</li>
-                <li>Whether intoxication visuals were <strong>felt</strong> by players.</li>
-              </ul>
-            
-              <p class="project-details__desc-para"><strong>Feedback summary</strong></p>
-              <ul class="project-details__list"> 
-                <li>Early playtest showed intoxication effects were <strong>not obvious enough</strong>.</li>
-                <li>Final playtest highlighted bugs in:
-                  <ul>
-                    <li>Saving system</li>
-                    <li>Accessibility options</li>
-                    <li>Music</li>
-                  </ul>
-                </li> 
-                <li>Visual effects needed to be <strong>more pronounced.</strong></li>
-              </ul>
+            <div class="shoe-save-flow__takeaway">
+              <strong>Technical tradeoff</strong>
+              <p>
+                Progress is restored at the beginning of
+                a saved dialogue node, not the exact line
+                where the player stopped.
+              </p>
+            </div>
+          </figure>
+        </article>
+        
+        <article class="shoe-tech-feature" aria-labelledby="shader-challenge-title">
+          <span class="shoe-section__index">TECHNICAL CHALLENGE 03 · SHADER GRAPH</span>
+          <h3 id="shader-challenge-title">Creating intoxication distortion without screen grabbing</h3>
+          <p class="shoe-copy">
+            To visually communicate intoxication, I wanted the
+            environment to wobble as the protagonist drank.
 
-              <p class="project-details__desc-para"><strong>Changes made</strong></p>
-              <ul class="project-details__list">
-                <li>Added <strong>Levels Of Intoxication</strong> system based on early feedback.</li>
-                <li>Increased effect intensity of intoxication.</li>
-                <li>Bug fixes based on later playtesting.</li>
-              </ul>
-            
-            <h3 class="project-details__content-title">Summary of outcome</h3>
-            <ul class="project-details__list">
-              <li>Players appreciated added mechanics.</li>
-              <li>Interact made narrative feel more engaging.</li>
-              <li>Playtests revealed areas for improvement, especially tech and visuals.</li> 
-            </ul>
-            <h3 class="project-details__content-title">Lessons learned</h3>
-            <p class="project-details__desc-para"><strong>Programming</strong></p>
-            <ul class="project-details__list">
-              <li>Practiced making saving systems for the first time.</li>
-              <li>Learned to make C# functions compatible with Yarnspinner scripts.</li>
-            </ul>
-            
-            <p class="project-details__desc-para"><strong>Design</strong></p>
-            <ul class="project-details__list">
-              <li>Challenged genre conventions of visual novels.</li>
-              <li>Reinforced focus on narrative in mechanical choices.</li>
-            </ul>
-            
-            <p class="project-details__desc-para"><strong>Technical Growth</strong></p>
-            <ul class="project-details__list">
-              <li>Explored shaders with 2D elements in unity.</li>
-              <li>Learned Photoshop techniques such as masking and other effects.</li>
-            </ul>
-            
-            <div class="project-details__links">
-              <a
-                      href="https://tinyfandompal.itch.io/the-shoe"
-                      class="btn btn--med btn--theme project-details__links-btn"
-                      target="_blank"
-              >Download the game here</a
-              >
+            When an overlay-based shader tutorial didn't work
+            with my project's background rendering setup,
+            I developed an alternative approach.
+          </p>
+
+          <figure class="case-study-panel shoe-shader-compare" aria-labelledby="shader-compare-title">
+            <figcaption id="shader-compare-title" class="shoe-shader-compare__title">
+              Solving the background distortion problem
+            </figcaption>
+
+            <div class="shoe-shader-compare__cards">
+              <div class="shoe-shader-compare__card">
+                <span class="shoe-shader-compare__label">01 / ORIGINAL APPROACH</span>
+                <h4>Overlay shader</h4>
+
+                <div class="shoe-shader-compare__steps">
+                  <div class="shoe-shader-compare__step">
+                    Separate distortion overlay
+                  </div>
+
+                  <span class="shoe-shader-compare__arrow" aria-hidden="true">&darr;</span>
+
+                  <div class="shoe-shader-compare__step">
+                    Sample rendered background behind the overlay
+                  </div>
+                </div>
+
+                <p class="shoe-shader-compare__result">
+                  <strong>Obstacle:</strong>
+                  The overlay couldn't access the background
+                  pixels as intended in my Unity URP project.
+                </p>
+              </div>
+
+              <div class="shoe-shader-compare__card">
+                <span class="shoe-shader-compare__label">02 / WORKING SOLUTION</span>
+
+                <h4>Background shader</h4>
+
+                <div class="shoe-shader-compare__steps">
+                  <div class="shoe-shader-compare__step">
+                    Apply noise-based distortion to the background image
+                  </div>
+
+                  <span class="shoe-shader-compare__arrow" aria-hidden="true"> &darr; </span>
+                  <div class="shoe-shader-compare__step">
+                    Distort the background directly
+                  </div>
+                </div>
+
+                <p class="shoe-shader-compare__result">
+                  <strong>Result:</strong>
+                  The distortion works without relying on
+                  sampling the image behind an overlay.
+                </p>
+              </div>
             </div>
+
+            <div class="shoe-shader-compare__integration">
+              <h4>Connected to gameplay</h4>
+              <p>
+                I connected the shader to my DrunkManager.
+                Yarn commands can change the character's intoxication
+                level, while the manager gradually adjusts the
+                shader's noise-scale parameter using an animation
+                curve.
+              </p>
             </div>
+          </figure>
+              <p class="shoe-tech-feature__media-link">
+            See the <a href="#intoxication-title">intoxication comparison above</a>
+            for examples of the final effect at different intensities.
+          </p>
+        </article>
+      </section>
+      
+      <section class="shoe-section" id="playtesting" aria-labelledby="testing-title">
+        <div class="shoe-section__heading">
+          <span class="shoe-section__index">05 / PLAYTESTING</span>
+          <h2 id="testing-title">What changed after feedback</h2>
         </div>
-      </div>
-    </section>
-    <div id="site-footer"></div>
-    <script src="/site-footer.js"></script>
-    <script src="./index.js"></script>
-    <script src="./index.js"></script>
-  </body>
+        <div class="shoe-testing">
+          <div><span class="shoe-testing__label">OBSERVATION</span><h3>Intoxication was too subtle</h3><p>Early playtesting suggested the effects were not noticeable enough when going from one level to the other.</p></div>
+          <div><span class="shoe-testing__label">RESPONSE</span><h3>Make the effect stronger</h3><p>I introduced more levels of intoxication and strengthened the visual distortion considerably.</p></div>
+        </div>
+        <p class="shoe-copy">In other news, players did report appreciation of the added gameplay mechanics and that interaction made the narrative feel more engaging overall.</p>
+      </section>
+
+      <section class="shoe-section" id="reflections" aria-labelledby="reflection-title">
+        <div class="shoe-section__heading">
+          <span class="shoe-section__index">06 / REFLECTIONS</span>
+          <h2 id="reflection-title">What I learned</h2>
+        </div>
+        <div class="shoe-detail-list">
+          <div><h3>Design</h3><p>The project challenged me to find mechanics that support the narrative, rather than distract from it.</p></div>
+          <div><h3>Programming</h3><p>I gained experience with save systems and interoperability between Unity and Yarn Spinner scripts.</p></div>
+          <div><h3>Visual communication</h3><p>I experimented with shaders, masking, and image editing to visually communicate the player's state.</p></div>
+        </div>
+        <div class="shoe-bottom-cta">
+          <p>Want to see the mechanics in action?</p>
+          <a href="https://tinyfandompal.itch.io/the-shoe" class="btn btn--med btn--theme" target="_blank" rel="noopener noreferrer">Play The Shoe <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  
+  <div id="site-footer"></div>
+  <script src="/site-footer.js"></script>
+  <script src="./index.js"></script>
+</body>
 </html>

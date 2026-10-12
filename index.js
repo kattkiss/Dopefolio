@@ -21,20 +21,55 @@ document.querySelectorAll(".gallery").forEach(gallery => {
   const thumbs = gallery.querySelectorAll(".gallery-thumbs img");
   const next = gallery.querySelector(".next");
   const prev = gallery.querySelector(".prev");
+  const captionTitle = gallery.querySelector(".shoe-intox-gallery__caption-title");
+  const captionDescription = gallery.querySelector(".shoe-intox-gallery__caption-description");
 
   let index = 0;
 
   function show(i) {
+
     index = (i + thumbs.length) % thumbs.length;
 
-    mainImg.src = thumbs[index].src;
+    const selectedThumb = thumbs[index];
+    
+    mainImg.src = selectedThumb.src;
+    
+    if (selectedThumb.dataset.alt) {
+      mainImg.alt = selectedThumb.dataset.alt;
+    }
+    
+    if (captionTitle && selectedThumb.dataset.title) {
+      captionTitle.textContent = selectedThumb.dataset.title;
+    }
 
-    thumbs.forEach(t => t.classList.remove("active"));
-    thumbs[index].classList.add("active");
+    if (captionDescription && selectedThumb.dataset.description) {
+      captionDescription.textContent =
+          selectedThumb.dataset.description;
+    }
+    
+    thumbs.forEach((thumb, thumbIndex) => {
+
+      const isSelected = thumbIndex === index;
+
+      thumb.classList.toggle("active", isSelected);
+
+      const button = thumb.closest("button");
+
+      if (button) {
+        button.setAttribute(
+            "aria-pressed",
+            String(isSelected)
+        );
+      }
+    });
   }
 
+
   thumbs.forEach((thumb, i) => {
-    thumb.addEventListener("click", () => show(i));
+    const control = thumb.closest("button") || thumb;
+    
+    control.addEventListener("click", () => {show(i);
+    });
   });
 
   next.addEventListener("click", () => show(index + 1));
