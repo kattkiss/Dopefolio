@@ -1,4 +1,4 @@
-/* THE SHOE ONLY — loaded after style.css.
+/* Loaded after style.css.
    The --variables are declared in style.css. We reuse them so the page
    automatically follows the site's light/dark mode. Do not duplicate
    the entire shared stylesheet here. */
@@ -94,6 +94,8 @@
   color: var(--text-main);
   font-size: max(20px, 2.1rem);
   line-height: 1.7;
+  text-align: justify;
+  text-align-last: left;
 }
 .shoe-feature-media {
   display: block;
@@ -183,6 +185,8 @@
   color: var(--text-main);
   font-size: max(20px, 2.1rem);
   line-height: 1.65;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .shoe-spectrum {
@@ -595,8 +599,36 @@
 .shoe-testing { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.8rem; margin-bottom: 3rem; }
 .shoe-testing > div { padding: 2.5rem; }
 .shoe-testing__label { color: var(--accent); font-weight: 700; font-size: max(16px, 1.6rem); }
-.shoe-bottom-cta { margin-top: 3rem; }
-.shoe-bottom-cta p { font-size: max(20px, 2.1rem); margin-bottom: 2rem; }
+.shoe-bottom-cta { 
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  padding: 64px 24px;
+}
+.shoe-bottom-cta p {
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.shoe-bottom-cta > .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 20px;
+  padding: 20px 40px;
+  min-width: 280px;
+  max-width: 100%;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
 .shoe-case-study a:focus-visible,
 .shoe-case-study button:focus-visible {
   outline: 3px solid var(--accent);
@@ -1024,4 +1056,1120 @@
     grid-template-columns: 1fr;
   }
 
+}
+
+/* Wider paragraphs throughout The Shoe */
+.shoe-case-study .shoe-copy {
+  width: 100%;
+  max-width: 85ch;
+}
+
+/* Wider descriptions beneath gameplay system headings */
+.shoe-system__header > p {
+  width: 100%;
+  max-width: 85ch;
+  text-align: justify;
+  text-align-last: left;
+}
+
+
+/* ==========================================================
+   SHARED CASE STUDY COMPONENTS
+   ========================================================== */
+
+/* HERO */
+
+.case-study-hero__eyebrow {
+  color: var(--hero-eyebrow);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.6rem;
+}
+
+.case-study-hero__lead {
+  max-width: 72rem;
+  margin: 2.6rem auto 0;
+  color: #FFFFFF;
+  font-size: max(20px, 2.2rem);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.case-study-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2.6rem auto;
+}
+
+.case-study-hero__meta span {
+  padding: 0.65rem 1.25rem;
+  color: #FFFFFF;
+  background: rgba(12, 4, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50px;
+  font-size: max(16px, 1.6rem);
+}
+
+.case-study-hero__role {
+  max-width: 72rem;
+  margin: 0 auto;
+  color: #FFFFFF;
+  font-size: max(18px, 1.8rem);
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* MAIN CONTENT LAYOUT */
+
+.case-study-layout {
+  max-width: 108rem;
+  padding: 5rem 0 9rem;
+}
+
+.case-study-jumpnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.case-study-jumpnav a {
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.squeak-case-study [id] {
+  scroll-margin-top: 11rem;
+}
+
+/* SECTIONS */
+
+.case-study-section {
+  padding: clamp(4rem, 6vw, 7rem) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.case-study-section__heading {
+  margin-bottom: 2.6rem;
+}
+
+.case-study-section__index {
+  display: block;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: max(16px, 1.6rem);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.1rem;
+}
+
+.case-study-section__heading h2 {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.4vw, 42px);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+/* PARAGRAPHS */
+
+.case-study-copy {
+  width: 100%;
+  max-width: 85ch;
+  margin: 0 0 2.2rem;
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+  text-align: justify;
+  text-align-last: left;
+  overflow-wrap: break-word;
+}
+
+/* CONTRIBUTION CARDS */
+
+.case-study-contributions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+  margin-top: 3rem;
+}
+
+.case-study-contributions > div,
+.case-study-callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.case-study-contributions > div {
+  padding: 2.2rem;
+}
+
+.case-study-contributions__number {
+  color: var(--accent);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.case-study-contributions h3,
+.case-study-callout h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  line-height: 1.3;
+  margin: 1rem 0;
+}
+
+.case-study-contributions p,
+.case-study-callout p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+/* DESIGN QUESTION */
+
+.case-study-callout {
+  max-width: 80rem;
+  padding: clamp(2.4rem, 4vw, 3.8rem);
+  border-left: 5px solid var(--accent);
+  margin: 3rem 0;
+}
+
+/* SQUEAK N' SERVE: EXISTING CONTENT AND VIDEO */
+
+.squeak-case-study .video-wrapper {
+  max-width: 100%;
+  margin: 0 0 3rem;
+}
+
+.squeak-case-study .project-details__content-main {
+  max-width: 90rem;
+  margin: 0;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 56.25em) {
+  .case-study-contributions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 42em) {
+  .case-study-layout {
+    padding-top: 3rem;
+  }
+}
+
+
+/* ==========================================================
+   SQUEAK N' SERVE — CORE GAMEPLAY LOOP
+   ========================================================== */
+
+.squeak-loop {
+  margin: 3rem 0 5rem;
+  padding: clamp(2rem, 3vw, 3.5rem);
+
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+/* Diagram heading */
+
+.squeak-loop__caption {
+  margin-bottom: 3rem;
+}
+
+.squeak-loop__caption h3 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.7vw, 34px);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.squeak-loop__caption p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+/* Four stages */
+
+.squeak-loop__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.8rem;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.squeak-loop__step {
+  position: relative;
+
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-loop__number {
+  display: block;
+  margin-bottom: 1.5rem;
+
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.squeak-loop__step h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.2rem);
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+}
+
+.squeak-loop__step p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Arrows between the stages */
+
+.squeak-loop__step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -2.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: var(--accent);
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+/* Design takeaway */
+
+.squeak-loop__takeaway {
+  margin-top: 3rem;
+  padding-top: 2rem;
+
+  border-top: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+/* Responsive layout */
+
+@media (max-width: 62em) {
+
+  .squeak-loop__steps {
+    grid-template-columns: 1fr;
+    gap: 3.8rem;
+  }
+
+  .squeak-loop__step:not(:last-child)::after {
+    content: "↓";
+    right: auto;
+    left: 50%;
+    top: calc(100% + 0.25rem);
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ==========================================================
+   CASE STUDY — SYSTEM BREAKDOWNS
+   ========================================================== */
+
+.case-study-system {
+  padding: clamp(2rem, 3.5vw, 3.5rem);
+  margin: 2rem 0 4rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+/* System headings */
+
+.case-study-system__header {
+  margin-bottom: 2.5rem;
+}
+
+.case-study-system__number {
+  display: block;
+  margin-bottom: 1.1rem;
+
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.case-study-system__header h3 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.2;
+  margin-bottom: 1.4rem;
+}
+
+.case-study-system__header p {
+  max-width: 85ch;
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+
+  text-align: justify;
+  text-align-last: left;
+}
+
+/* Design explanation rows */
+
+.case-study-system__rows > div {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.35fr) minmax(0, 1fr);
+  gap: 2rem;
+
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.case-study-system__rows h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(18px, 1.9rem);
+  font-weight: 600;
+}
+
+.case-study-system__rows p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+/* Ordering example */
+
+.case-study-system__example {
+  margin: 2.5rem 0;
+  padding: 2.5rem;
+
+  background: var(--surface-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0.8rem;
+}
+
+.case-study-system__example-label {
+  display: block;
+  margin-bottom: 1.5rem;
+
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.case-study-system__example blockquote {
+  margin: 0 0 1.5rem;
+
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.case-study-system__example p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+/* Recipe composition */
+
+.case-study-recipe {
+  margin: 2.5rem 0;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.case-study-recipe > h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.4rem);
+  margin-bottom: 2rem;
+}
+
+.case-study-recipe__parts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.case-study-recipe__parts li {
+  min-width: 0;
+  padding: 2rem;
+
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.case-study-recipe__parts span {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.case-study-recipe__parts h5 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(20px, 2.1rem);
+  margin-bottom: 1rem;
+}
+
+.case-study-recipe__parts p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+/* Mobile layout */
+
+@media (max-width: 56.25em) {
+
+  .case-study-system__rows > div {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .case-study-recipe__parts {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================
+   SQUEAK N' SERVE — COOKING STATIONS
+   ========================================================== */
+
+.squeak-cooking-stations {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.squeak-cooking-stations > h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.4rem);
+  margin-bottom: 2rem;
+}
+
+.squeak-cooking-stations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.squeak-cooking-stations__station {
+  padding: 2rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-cooking-stations__station span {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.squeak-cooking-stations__station h5 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(20px, 2.1rem);
+  margin-bottom: 1rem;
+}
+
+.squeak-cooking-stations__station p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   SQUEAK N' SERVE — GRADING TIERS
+   ========================================================== */
+
+.squeak-grades {
+  padding: 2.5rem 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.squeak-grades > figcaption {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.squeak-grades__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.squeak-grades__list li {
+  padding: 2rem;
+
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-grades__label {
+  display: block;
+  margin-bottom: 1.5rem;
+
+  color: var(--accent);
+  font-size: max(18px, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.squeak-grades__list h5 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(20px, 2.1rem);
+  margin-bottom: 1rem;
+}
+
+.squeak-grades__list p,
+.squeak-grades__note {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+.squeak-grades__note {
+  margin-top: 2rem;
+}
+
+/* ==========================================================
+   GRADING — DESIGN ITERATION
+   ========================================================== */
+
+.squeak-grading-iteration {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.squeak-grading-iteration > h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 30px);
+  margin-bottom: 1.5rem;
+}
+
+.squeak-grading-iteration > p {
+  max-width: 85ch;
+  margin-bottom: 2rem;
+
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+}
+
+.squeak-grading-iteration__comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.squeak-grading-iteration__comparison > div {
+  padding: 2rem;
+
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-grading-iteration__comparison span {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.squeak-grading-iteration__comparison h5 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.squeak-grading-iteration__comparison p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+/* Original scoring diagram */
+
+.squeak-grading-iteration__image {
+  margin: 2.5rem 0 0;
+}
+
+.squeak-grading-iteration__image img {
+  display: block;
+  width: 100%;
+  max-height: 60rem;
+  object-fit: contain;
+
+  background: var(--surface-soft);
+  border-radius: 0.8rem;
+}
+
+.squeak-grading-iteration__image figcaption {
+  margin-top: 1.2rem;
+
+  color: var(--text-muted);
+  font-size: max(18px, 1.8rem);
+  line-height: 1.6;
+}
+
+/* Responsive layouts */
+
+@media (max-width: 56.25em) {
+  .squeak-cooking-stations__grid,
+  .squeak-grades__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 42em) {
+  .squeak-grading-iteration__comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================
+   SQUEAK N' SERVE — DESIGN ITERATION
+   ========================================================== */
+
+.squeak-concepts {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.squeak-concept {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 3rem;
+
+  padding: clamp(2rem, 3.5vw, 3.5rem);
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-concept--text-only {
+  grid-template-columns: 1fr;
+}
+
+.squeak-concept__status {
+  display: block;
+  margin-bottom: 1.2rem;
+
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.squeak-concept h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.8vw, 34px);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-concept p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-concept p:last-child {
+  margin-bottom: 0;
+}
+
+/* Concept illustrations */
+
+.squeak-concept__media {
+  margin: 0;
+  min-width: 0;
+}
+
+.squeak-concept__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 35rem;
+
+  object-fit: contain;
+  background: var(--surface-soft);
+  border-radius: 0.8rem;
+}
+
+.squeak-concept__media figcaption {
+  margin-top: 1rem;
+
+  color: var(--text-muted);
+  font-size: max(18px, 1.8rem);
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   SQUEAK N' SERVE — PLAYER ONBOARDING
+   ========================================================== */
+
+.squeak-onboarding {
+  margin-top: 3rem;
+}
+
+.squeak-onboarding > h3,
+.squeak-onboarding__feedback h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 30px);
+  margin-bottom: 2rem;
+}
+
+/* Three onboarding principles */
+
+.squeak-onboarding__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.squeak-onboarding__steps > div {
+  min-width: 0;
+  padding: 2.5rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-onboarding__steps span {
+  display: block;
+  margin-bottom: 1.2rem;
+
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.squeak-onboarding__steps h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.4rem);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-onboarding__steps p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+/* Tutorial feedback */
+
+.squeak-onboarding__feedback {
+  margin-top: 3rem;
+  padding: 3rem;
+
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-onboarding__feedback p {
+  max-width: 85ch;
+  margin-bottom: 1.5rem;
+
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+}
+
+.squeak-onboarding__feedback p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive layout */
+
+@media (max-width: 56.25em) {
+  .squeak-concept {
+    grid-template-columns: 1fr;
+  }
+
+  .squeak-onboarding__steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================================
+   SQUEAK N' SERVE — PLAYTESTING
+   ========================================================== */
+
+.squeak-testing {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.8rem;
+  margin: 3rem 0;
+}
+
+.squeak-testing__card,
+.squeak-testing__response {
+  padding: clamp(2.2rem, 3vw, 3rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-testing__label {
+  display: block;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.2rem;
+}
+
+.squeak-testing h3,
+.squeak-testing__response h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-testing p,
+.squeak-testing li,
+.squeak-testing__response p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-testing p:last-child,
+.squeak-testing__response p:last-of-type {
+  margin-bottom: 0;
+}
+
+.squeak-testing ul {
+  padding-left: 2.5rem;
+  margin: 1.5rem 0 0;
+}
+
+.squeak-testing li {
+  margin-bottom: 0.8rem;
+}
+
+.squeak-testing__response {
+  border-left: 5px solid var(--accent);
+}
+
+.squeak-testing__response a {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--accent);
+  font-size: max(18px, 1.9rem);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* ==========================================================
+   SQUEAK N' SERVE — VISUAL EFFECTS
+   ========================================================== */
+
+.squeak-vfx {
+  margin-top: 3rem;
+  padding: clamp(2rem, 3vw, 3rem);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-vfx > h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 30px);
+  margin-bottom: 1.5rem;
+}
+
+.squeak-vfx > p {
+  max-width: 85ch;
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+}
+
+.squeak-vfx__examples {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.squeak-vfx__examples > div {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-vfx__examples span {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.squeak-vfx__examples h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.squeak-vfx__examples p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+/* ==========================================================
+   SHARED CASE STUDY — REFLECTIONS
+   ========================================================== */
+
+.squeak-reflections {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.squeak-reflections > div {
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-reflections h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.3vw, 28px);
+  margin-bottom: 1rem;
+}
+
+.squeak-reflections p {
+  max-width: 85ch;
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+}
+
+/* ==========================================================
+   SHARED CASE STUDY — BOTTOM CALL TO ACTION
+   ========================================================== */
+
+.case-study-bottom-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  margin-top: 3rem;
+  padding: 64px 24px;
+}
+
+.case-study-bottom-cta > p {
+  color: var(--text-main);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.case-study-bottom-cta > .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: fit-content;
+  min-width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  font-size: 20px;
+  padding: 20px 40px;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVENESS
+   ========================================================== */
+
+@media (max-width: 56.25em) {
+  .squeak-testing,
+  .squeak-vfx__examples {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,0 +1,881 @@
+/* Squeak N' Serve — project-specific components.
+   Loaded after case-study-layout.css.
+
+   NAVIGATION
+   01 Core cooking loop and system breakdowns
+   02 Grading and design iteration
+   03 Onboarding, playtesting, VFX, reflections
+   04 Responsive rules
+*/
+
+
+/* ---------- 01 Core gameplay loop ---------- */
+
+.squeak-loop {
+  margin: 3rem 0 5rem;
+  padding: clamp(2rem, 3vw, 3.5rem);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-loop__caption {
+  margin-bottom: 3rem;
+}
+
+.squeak-loop__caption h3 {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.7vw, 34px);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.squeak-loop__caption p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+.squeak-loop__steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.squeak-loop__step {
+  position: relative;
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-loop__number {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.squeak-loop__step h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.2rem);
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+}
+
+.squeak-loop__step p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+  text-align: left;
+}
+
+.squeak-loop__step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -2.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 2.6rem;
+  font-weight: 700;
+}
+
+.squeak-loop__takeaway {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+
+/* ---------- 01 System breakdown cards ---------- */
+
+.case-study-system {
+  padding: clamp(2rem, 3.5vw, 3.5rem);
+  margin: 2rem 0 4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.case-study-system__header {
+  margin-bottom: 2.5rem;
+}
+
+.case-study-system__number {
+  display: block;
+  margin-bottom: 1.1rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.case-study-system__header h3 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 36px);
+  line-height: 1.2;
+  margin-bottom: 1.4rem;
+}
+
+.case-study-system__header p {
+  max-width: 85ch;
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.case-study-system__rows h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(18px, 1.9rem);
+  font-weight: 600;
+}
+
+.case-study-system__rows p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+.case-study-system__example {
+  margin: 2.5rem 0;
+  padding: 2.5rem;
+  background: var(--surface-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 0.8rem;
+}
+
+.case-study-system__example-label {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.case-study-system__example blockquote {
+  margin: 0 0 1.5rem;
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.case-study-system__example p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+
+/* ---------- 01 Recipes ---------- */
+
+.case-study-recipe {
+  margin: 2.5rem 0;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.case-study-recipe > h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.4rem);
+  margin-bottom: 2rem;
+}
+
+.case-study-recipe__parts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.case-study-recipe__parts li {
+  min-width: 0;
+  padding: 2rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.case-study-recipe__parts span {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.case-study-recipe__parts h5 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(20px, 2.1rem);
+  margin-bottom: 1rem;
+}
+
+.case-study-recipe__parts p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+
+/* ---------- 01 Cooking ---------- */
+
+.squeak-cooking-stations {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.squeak-cooking-stations > h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.4rem);
+  margin-bottom: 2rem;
+}
+
+.squeak-cooking-stations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.squeak-cooking-stations__station {
+  padding: 2rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-cooking-stations__station span {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.squeak-cooking-stations__station h5 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(20px, 2.1rem);
+  margin-bottom: 1rem;
+}
+
+.squeak-cooking-stations__station p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+
+/* ---------- 02 Grading ---------- */
+
+.squeak-grades {
+  padding: 2.5rem 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+
+.squeak-grades > figcaption {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.squeak-grades__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.squeak-grades__list li {
+  padding: 2rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-grades__label {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  font-size: max(18px, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.squeak-grades__list h5 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(20px, 2.1rem);
+  margin-bottom: 1rem;
+}
+
+.squeak-grades__list p,
+.squeak-grades__note {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+.squeak-grades__note {
+  margin-top: 2rem;
+}
+
+
+/* ---------- 02 Iteration: comparing scoring systems ---------- */
+
+.squeak-grading-iteration {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.squeak-grading-iteration > h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 30px);
+  margin-bottom: 1.5rem;
+}
+
+.squeak-grading-iteration > p {
+  max-width: 85ch;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+}
+
+.squeak-grading-iteration__comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.squeak-grading-iteration__comparison > div {
+  padding: 2rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-grading-iteration__comparison span {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.squeak-grading-iteration__comparison h5 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.squeak-grading-iteration__comparison p {
+  color: var(--text-muted);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+.squeak-grading-iteration__image {
+  margin: 2.5rem 0 0;
+}
+
+.squeak-grading-iteration__image img {
+  display: block;
+  width: 100%;
+  max-height: 60rem;
+  object-fit: contain;
+  background: var(--surface-soft);
+  border-radius: 0.8rem;
+}
+
+.squeak-grading-iteration__image figcaption {
+  margin-top: 1.2rem;
+  color: var(--text-muted);
+  font-size: max(18px, 1.8rem);
+  line-height: 1.6;
+}
+
+
+/* ---------- 02 Proposed mechanics ---------- */
+
+.squeak-concepts {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.squeak-concept {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  align-items: center;
+  gap: 3rem;
+  padding: clamp(2rem, 3.5vw, 3.5rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-concept--text-only {
+  grid-template-columns: 1fr;
+}
+
+.squeak-concept__status {
+  display: block;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.squeak-concept h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.8vw, 34px);
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-concept p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-concept p:last-child {
+  margin-bottom: 0;
+}
+
+.squeak-concept__media {
+  margin: 0;
+  min-width: 0;
+}
+
+.squeak-concept__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 35rem;
+  object-fit: contain;
+  background: var(--surface-soft);
+  border-radius: 0.8rem;
+}
+
+.squeak-concept__media figcaption {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: max(18px, 1.8rem);
+  line-height: 1.5;
+}
+
+
+/* ---------- 03 Player onboarding ---------- */
+
+.squeak-onboarding {
+  margin-top: 3rem;
+}
+
+.squeak-onboarding > h3,
+.squeak-onboarding__feedback h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 30px);
+  margin-bottom: 2rem;
+}
+
+.squeak-onboarding__steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.squeak-onboarding__steps > div {
+  min-width: 0;
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-onboarding__steps span {
+  display: block;
+  margin-bottom: 1.2rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.squeak-onboarding__steps h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.4rem);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-onboarding__steps p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+.squeak-onboarding__feedback {
+  margin-top: 3rem;
+  padding: 3rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-onboarding__feedback p {
+  max-width: 85ch;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+}
+
+.squeak-onboarding__feedback p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ---------- 03 Playtesting ---------- */
+
+.squeak-testing {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.8rem;
+  margin: 3rem 0;
+}
+
+.squeak-testing__card,
+.squeak-testing__response {
+  padding: clamp(2.2rem, 3vw, 3rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-testing__label {
+  display: block;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.2rem;
+}
+
+.squeak-testing h3,
+.squeak-testing__response h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-testing p,
+.squeak-testing li,
+.squeak-testing__response p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.squeak-testing p:last-child,
+.squeak-testing__response p:last-of-type {
+  margin-bottom: 0;
+}
+
+.squeak-testing ul {
+  padding-left: 2.5rem;
+  margin: 1.5rem 0 0;
+}
+
+.squeak-testing li {
+  margin-bottom: 0.8rem;
+}
+
+.squeak-testing__response {
+  border-left: 5px solid var(--accent);
+}
+
+.squeak-testing__response a {
+  display: inline-block;
+  margin-top: 2rem;
+  color: var(--accent);
+  font-size: max(18px, 1.9rem);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+
+/* ---------- 03 Art and VFX ---------- */
+
+.squeak-vfx {
+  margin-top: 3rem;
+  padding: clamp(2rem, 3vw, 3rem);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-vfx > h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.5vw, 30px);
+  margin-bottom: 1.5rem;
+}
+
+.squeak-vfx > p {
+  max-width: 85ch;
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+}
+
+.squeak-vfx__examples {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.squeak-vfx__examples > div {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.squeak-vfx__examples span {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+}
+
+.squeak-vfx__examples h4 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: max(22px, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.squeak-vfx__examples p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+
+/* ---------- 03 Reflections ---------- */
+
+.squeak-reflections {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.squeak-reflections > div {
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.squeak-reflections h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.3vw, 28px);
+  margin-bottom: 1rem;
+}
+
+.squeak-reflections p {
+  max-width: 85ch;
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+}
+
+.case-study-bottom-cta > p {
+  color: var(--text-main);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+
+/* ---------- 04 Responsive rules ---------- */
+
+@media (max-width: 62em) {
+  .squeak-loop__steps {
+    grid-template-columns: 1fr;
+    gap: 3.8rem;
+  }
+
+  .squeak-loop__step:not(:last-child)::after {
+    content: "↓";
+    right: auto;
+    left: 50%;
+    top: calc(100% + 0.25rem);
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 56.25em) {
+  .case-study-system__rows > div {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .case-study-recipe__parts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .squeak-cooking-stations__grid,
+    .squeak-grades__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 42em) {
+  .squeak-grading-iteration__comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .squeak-concept {
+    grid-template-columns: 1fr;
+  }
+
+  .squeak-onboarding__steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 56.25em) {
+  .squeak-testing,
+    .squeak-vfx__examples {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Targeted layout refinements --- */
+.squeak-case-study .project-details__content-main {
+  max-width: 100%;
+}
+
+.squeak-case-study .case-study-section {
+  padding-block: clamp(3rem, 5vw, 6rem);
+}
+
+.squeak-case-study .case-study-system {
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 62em) and (min-width: 42.01em) {
+  .squeak-loop__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  .squeak-loop__step:not(:last-child)::after {
+    content: none;
+  }
+}
+
+@media (max-width: 56.25em) and (min-width: 42.01em) {
+  .squeak-case-study .case-study-recipe__parts,
+  .squeak-case-study .squeak-cooking-stations__grid,
+  .squeak-case-study .squeak-grades__list,
+  .squeak-case-study .squeak-onboarding__steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 42em) {
+  .squeak-loop__steps {
+    grid-template-columns: 1fr;
+    gap: 3.8rem;
+  }
+  .squeak-loop__step:not(:last-child)::after {
+    content: "↓";
+    left: 50%;
+    right: auto;
+    top: calc(100% + 0.25rem);
+    transform: translateX(-50%);
+  }
+  .squeak-case-study .case-study-recipe__parts,
+  .squeak-case-study .squeak-cooking-stations__grid,
+  .squeak-case-study .squeak-grades__list,
+  .squeak-case-study .squeak-onboarding__steps {
+    grid-template-columns: 1fr;
+  }
+  /* Horizontal scrolling stops eight links from becoming a wall of navigation. */
+  .squeak-case-study .case-study-jumpnav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.5rem;
+    scrollbar-width: thin;
+    padding-bottom: 1.5rem;
+  }
+  .squeak-case-study .case-study-jumpnav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+  .squeak-case-study .case-study-copy,
+  .squeak-case-study .case-study-system__header p {
+    text-align: left;
+  }
+  .squeak-case-study .case-study-section {
+    padding-block: 3rem;
+  }
+}
+
+/* Reduce the oversized hero whitespace without changing The Shoe. */
+.squeak-hero .project-cs-hero__content {
+  padding-top: clamp(13rem, 14vw, 18rem);
+  padding-bottom: clamp(7rem, 8vw, 11rem);
+}
+
+@media (max-width: 42em) {
+  .squeak-hero .project-cs-hero__content {
+    padding-top: 12rem;
+    padding-bottom: 7rem;
+  }
+}
