@@ -1,0 +1,872 @@
+/* ==========================================
+   POST VOID — SHARED LAYOUT OVERRIDES
+   ========================================== */
+.postvoid-case-study__layout {
+    max-width: 108rem;
+    padding: 5rem 0 9rem;
+}
+
+.postvoid-case-study .project-details__content {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+}
+
+.postvoid-case-study .project-details__content-main {
+    max-width: none;
+    margin: 0;
+}
+
+.postvoid-case-study .project-details__desc {
+    margin: 0;
+}
+
+.postvoid-case-study .video-wrapper {
+    max-width: 100%;
+    margin-bottom: 3rem;
+}
+
+/* ==========================================
+   SECTION NAVIGATION
+   ========================================== */
+.postvoid-jumpnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.postvoid-jumpnav a {
+    color: var(--accent);
+    font-size: max(16px, 1.6rem);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.postvoid-case-study [id] {
+    scroll-margin-top: 11rem;
+}
+
+/* ==========================================
+   OVERVIEW — CONTRIBUTIONS
+   ========================================== */
+.postvoid-contributions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+    margin-top: 3rem;
+}
+
+.postvoid-contributions > div {
+    padding: 2.2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+}
+
+.postvoid-contributions__number {
+    color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.postvoid-contributions h3 {
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2vw, 26px);
+    margin: 1rem 0;
+}
+
+.postvoid-contributions p {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.65;
+}
+
+/* ==========================================
+   DESIGN VISION — PRINCIPLES
+   ========================================== */
+.postvoid-vision__subtitle {
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.5vw, 30px);
+    margin: 3rem 0 2rem;
+}
+
+.postvoid-vision__principles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.6rem;
+}
+
+.postvoid-vision__principles > div {
+    padding: 2.2rem;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+}
+
+.postvoid-vision__principles span {
+    color: var(--accent);
+    font-size: max(16px, 1.6rem);
+    font-weight: 700;
+}
+
+.postvoid-vision__principles h4 {
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2vw, 24px);
+    margin: 1.2rem 0;
+}
+
+.postvoid-vision__principles p {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.65;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+@media (max-width: 56.25em) {
+    .postvoid-contributions,
+    .postvoid-vision__principles {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 42em) {
+    .postvoid-jumpnav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 1.5rem;
+    }
+
+    .postvoid-jumpnav a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+}
+
+
+/* ==========================================
+   03 GAMEPLAY — PLAYER DECISION DIAGRAM
+   ========================================== */
+
+.postvoid-decision {
+    margin: 4rem 0 5rem;
+    padding: clamp(2rem, 3vw, 3.5rem);
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+    text-align: center;
+}
+
+.postvoid-decision__heading h3 {
+    margin-bottom: 3rem;
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(26px, 2.8vw, 34px);
+}
+
+/* Shared starting point */
+
+.postvoid-decision__start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.postvoid-decision__node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    width: min(100%, 28rem);
+    padding: 2rem;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.8rem;
+}
+
+.postvoid-decision__node strong {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+}
+
+/* Existing Post Void SVG icons */
+
+.postvoid-decision__icon {
+    display: inline-block;
+    flex: 0 0 auto;
+    width: 4.5rem;
+    height: 4.5rem;
+
+    background-color: var(--accent);
+
+    -webkit-mask: var(--diagram-icon) center / contain no-repeat;
+    mask: var(--diagram-icon) center / contain no-repeat;
+}
+
+.postvoid-decision__icon--timer {
+    --diagram-icon:
+            url("../assets/icons/patterns/postvoid/stopwatch.svg");
+}
+
+.postvoid-decision__icon--candy {
+    --diagram-icon:
+            url("../assets/icons/patterns/postvoid/candy.svg");
+}
+
+/* Enemy encounter symbol */
+
+.postvoid-decision__alert {
+    display: grid;
+    place-items: center;
+
+    width: 4.5rem;
+    height: 4.5rem;
+
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+
+    color: var(--text-main);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* Connectors */
+
+.postvoid-decision__arrow,
+.postvoid-decision__branch-arrow {
+    display: block;
+    color: var(--accent);
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* The two player choices */
+
+.postvoid-decision__branches {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.postvoid-decision__branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    gap: 1rem;
+}
+
+.postvoid-decision__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    width: 100%;
+    height: 100%;
+    padding: clamp(2rem, 3vw, 3rem);
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+}
+
+.postvoid-decision__card h4 {
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.5vw, 30px);
+}
+
+.postvoid-decision__card p,
+.postvoid-decision__reward {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.5;
+}
+
+.postvoid-decision__reward {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.postvoid-decision__result {
+    color: var(--text-main);
+    font-size: clamp(22px, 2.5vw, 28px);
+    font-weight: 700;
+}
+
+/* Short explanation below the diagram */
+
+.postvoid-decision__footer {
+    max-width: 68ch;
+    margin: 3rem auto 0;
+    padding-top: 2rem;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-muted);
+    font-size: max(18px, 1.8rem);
+    line-height: 1.6;
+}
+
+/* Responsive layout */
+
+@media (max-width: 56.25em) {
+    .postvoid-decision__branches {
+        grid-template-columns: 1fr;
+    }
+
+    .postvoid-decision__branch-arrow {
+        font-size: 0;
+    }
+
+    .postvoid-decision__branch-arrow::after {
+        content: "↓";
+        font-size: 3rem;
+    }
+}
+
+/* ==========================================
+   03 GAMEPLAY — VISUAL DEMONSTRATIONS
+   ========================================== */
+
+.postvoid-gameplay-demos {
+    margin: 3rem 0;
+}
+
+/* Image and short explanation */
+
+.postvoid-gameplay-demo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 4vw, 4rem);
+
+    margin: 0;
+    padding: 3rem 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.postvoid-gameplay-demo:first-child {
+    border-top: 1px solid var(--border);
+}
+
+/* Gameplay footage */
+
+.postvoid-gameplay-demo > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 32rem;
+    object-fit: contain;
+
+    background: var(--surface-soft);
+    border-radius: 0.8rem;
+}
+
+/* Short captions */
+
+.postvoid-gameplay-demo__caption {
+    min-width: 0;
+}
+
+.postvoid-gameplay-demo__caption > span {
+    display: block;
+    margin-bottom: 1rem;
+
+    color: var(--accent);
+    font-size: max(16px, 1.6rem);
+    font-weight: 700;
+}
+
+.postvoid-gameplay-demo__caption h3 {
+    margin-bottom: 1.5rem;
+
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.3;
+}
+
+.postvoid-gameplay-demo__caption p {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.65;
+}
+
+/* Additional design context */
+
+.postvoid-gameplay-note {
+    max-width: 75ch;
+    margin-top: 2rem;
+
+    color: var(--text-muted);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.6;
+}
+
+/* Mobile */
+
+@media (max-width: 56.25em) {
+
+    .postvoid-gameplay-demo {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .postvoid-gameplay-demo > img {
+        max-height: none;
+    }
+}
+
+/* ==========================================
+   04 MOVEMENT — VISUAL DEMONSTRATION
+   ========================================== */
+
+.postvoid-movement-demo {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(2rem, 4vw, 4rem);
+
+    margin: 3rem 0;
+    padding: 3rem 0;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.postvoid-movement-demo > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 32rem;
+    object-fit: contain;
+
+    background: var(--surface-soft);
+    border-radius: 0.8rem;
+}
+
+.postvoid-movement-demo__caption > span {
+    display: block;
+    margin-bottom: 1rem;
+
+    color: var(--accent);
+    font-size: max(16px, 1.6rem);
+    font-weight: 700;
+}
+
+.postvoid-movement-demo__caption h3 {
+    margin-bottom: 1.5rem;
+
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.3;
+}
+
+.postvoid-movement-demo__caption p {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.65;
+}
+
+/* ==========================================
+   04 MOVEMENT — COMPACT LOGIC DIAGRAM
+   ========================================== */
+
+.postvoid-movement-logic {
+    margin: 3rem 0 2rem;
+    padding: clamp(2rem, 3vw, 3rem);
+
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+}
+
+.postvoid-movement-logic figcaption h3 {
+    margin-bottom: 2.5rem;
+
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.6vw, 32px);
+    text-align: center;
+}
+
+.postvoid-movement-logic__paths {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+}
+
+.postvoid-movement-logic__path {
+    min-width: 0;
+    padding: 2rem;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.8rem;
+}
+
+.postvoid-movement-logic__path > span {
+    display: block;
+    margin-bottom: 1.5rem;
+
+    color: var(--accent);
+    font-size: max(16px, 1.6rem);
+    font-weight: 700;
+}
+
+.postvoid-movement-logic__sequence {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.postvoid-movement-logic__sequence span:not(.postvoid-movement-logic__arrow) {
+    padding: 1rem 1.4rem;
+
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 0.6rem;
+
+    color: var(--text-main);
+    font-size: max(16px, 1.6rem);
+    font-weight: 600;
+}
+
+.postvoid-movement-logic__arrow {
+    color: var(--accent);
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+/* Terrain effects */
+
+.postvoid-movement-logic__terrain {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.6rem;
+
+    margin-top: 2rem;
+    padding-top: 2rem;
+
+    border-top: 1px solid var(--border);
+}
+
+.postvoid-movement-logic__terrain > div {
+    padding: 2rem;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.8rem;
+}
+
+.postvoid-movement-logic__terrain span {
+    display: block;
+    margin-bottom: 1rem;
+
+    color: var(--accent);
+    font-size: max(16px, 1.6rem);
+    font-weight: 700;
+}
+
+.postvoid-movement-logic__terrain p {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.6;
+}
+
+/* Short note */
+
+.postvoid-movement-note {
+    max-width: 75ch;
+    margin-top: 2rem;
+
+    color: var(--text-muted);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 56.25em) {
+    .postvoid-movement-demo,
+    .postvoid-movement-logic__paths,
+    .postvoid-movement-logic__terrain {
+        grid-template-columns: 1fr;
+    }
+
+    .postvoid-movement-demo {
+        gap: 2rem;
+    }
+
+    .postvoid-movement-demo > img {
+        max-height: none;
+    }
+}
+
+/* ==========================================
+   05 LEVEL DESIGN
+   ========================================== */
+
+/* Level screenshots */
+.postvoid-level__gallery-intro {
+    margin: 2rem 0 0;
+}
+
+.postvoid-level__gallery-intro h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.5vw, 30px);
+}
+
+.postvoid-level__gallery-intro p {
+    max-width: 85ch;
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.65;
+}
+
+.postvoid-case-study #level-design .gallery {
+    width: 100%;
+    max-width: none;
+    margin: 2rem 0 4rem;
+}
+
+.postvoid-case-study #level-design .gallery-main {
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.postvoid-case-study #level-design .gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Keep the 18 thumbnails in a horizontally scrollable row */
+.postvoid-case-study #level-design .gallery-thumbs {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.6rem 0 1.4rem;
+}
+
+.postvoid-case-study #level-design .gallery-thumbs img {
+    flex: 0 0 110px;
+    width: 110px;
+    height: 70px;
+    object-fit: cover;
+}
+
+/* Design takeaway */
+.postvoid-level__takeaway {
+    padding: clamp(2rem, 3vw, 3rem);
+    background: var(--surface-soft);
+    border-left: 5px solid var(--accent);
+    border-radius: 0.8rem;
+}
+
+.postvoid-level__takeaway h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.3vw, 28px);
+}
+
+.postvoid-level__takeaway p {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.7;
+}
+
+/* ==========================================
+   07 REFLECTIONS
+   ========================================== */
+.postvoid-reflections {
+    display: grid;
+    gap: 1.6rem;
+    margin-top: 3rem;
+}
+
+.postvoid-reflections article {
+    padding: clamp(2rem, 3vw, 3rem);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+}
+
+.postvoid-reflections h3{
+    margin-bottom: 1.2rem;
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.3vw, 28px);
+}
+
+.postvoid-reflections p {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.7;
+}
+
+/* Remove the divider after the final section */
+.postvoid-case-study .case-study-section:last-child {
+    border-bottom: 0;
+}
+
+
+/* Technical challenge */
+
+.postvoid-technical-challenge {
+    padding: clamp(2rem, 3vw, 3.5rem);
+    margin: 3rem 0;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 1.2rem;
+}
+
+.postvoid-technical-challenge__label {
+    display: block;
+    margin-bottom: 1.2rem;
+    color: var(--accent);
+    font-size: max(16px, 1.6rem);
+    font-weight: 700;
+}
+
+.postvoid-technical-challenge h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.6vw, 32px);
+}
+
+.postvoid-technical-challenge > p {
+    max-width: 85ch;
+    margin-bottom: 1.5rem;
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.65;
+}
+
+.postvoid-technical-challenge__sequence {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.postvoid-technical-challenge__sequence > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.8rem;
+}
+
+.postvoid-technical-challenge__sequence strong {
+    color: var(--accent);
+    font-size: max(18px, 1.8rem);
+}
+
+.postvoid-technical-challenge__sequence span {
+    color: var(--text-main);
+    font-size: max(20px, 2.1rem);
+    line-height: 1.5;
+}
+
+@media (max-width: 56.25em) {
+    .postvoid-technical-challenge__sequence {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   POST VOID — DECORATION THEME
+   ========================================== */
+.postvoid-case-study {
+    --pattern-color: var(--accent);
+    --pattern-opacity: 0.16;
+}
+
+/* Timer icon */
+.postvoid-case-study .pattern-timer {
+    --icon: url("../assets/icons/patterns/postvoid/stopwatch.svg");
+}
+
+/* Candy icon */
+.postvoid-case-study .pattern-candy {
+    --icon: url("../assets/icons/patterns/postvoid/candy.svg");
+}
+
+/* Crosshair icon */
+.postvoid-case-study .pattern-crosshair {
+    --icon: url("../assets/icons/patterns/postvoid/syringe.svg");
+}
+
+
+/* ==========================================
+   FINAL POLISH — MOBILE DIAGRAMS
+   ========================================== */
+
+@media (max-width: 56.25em) {
+
+    .postvoid-movement-logic__sequence {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .postvoid-movement-logic__sequence
+    span:not(.postvoid-movement-logic__arrow) {
+        text-align: center;
+    }
+
+    .postvoid-movement-logic__arrow {
+        font-size: 0;
+        text-align: center;
+    }
+
+    .postvoid-movement-logic__arrow::after {
+        content: "↓";
+        font-size: 2.4rem;
+    }
+}
+
+
+/* Keyboard accessibility */
+
+.postvoid-jumpnav a:focus-visible,
+.postvoid-case-study .gallery-btn:focus-visible,
+.postvoid-case-study .gallery-thumbs img:focus-visible,
+.postvoid-case-study .gallery-thumbs button:focus-visible {
+    outline: 3px solid var(--text-main);
+    outline-offset: 4px;
+}
+
+
+/* Comfortable gallery controls */
+
+.postvoid-case-study .gallery-btn {
+    min-width: 44px;
+    min-height: 44px;
+}

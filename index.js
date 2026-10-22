@@ -24,6 +24,11 @@ document.querySelectorAll(".gallery").forEach(gallery => {
   const captionTitle = gallery.querySelector(".shoe-intox-gallery__caption-title");
   const captionDescription = gallery.querySelector(".shoe-intox-gallery__caption-description");
 
+  if (!mainImg || !thumbs.length || !next || !prev) {
+    console.warn("Gallery is missing required elements.", gallery);
+    return;
+  }
+
   let index = 0;
 
   function show(i) {
@@ -31,12 +36,14 @@ document.querySelectorAll(".gallery").forEach(gallery => {
     index = (i + thumbs.length) % thumbs.length;
 
     const selectedThumb = thumbs[index];
-    
+
     mainImg.src = selectedThumb.src;
-    
-    if (selectedThumb.dataset.alt) {
-      mainImg.alt = selectedThumb.dataset.alt;
-    }
+
+    const galleryName =
+        gallery.getAttribute("aria-label") || "Image gallery";
+
+    mainImg.alt = selectedThumb.dataset.alt ||
+        `${galleryName}, image ${index + 1} of ${thumbs.length}`;
     
     if (captionTitle && selectedThumb.dataset.title) {
       captionTitle.textContent = selectedThumb.dataset.title;
@@ -53,28 +60,50 @@ document.querySelectorAll(".gallery").forEach(gallery => {
 
       thumb.classList.toggle("active", isSelected);
 
-      const button = thumb.closest("button");
+      const control = thumb.closest("button") || thumb;
 
-      if (button) {
-        button.setAttribute(
-            "aria-pressed",
-            String(isSelected)
-        );
-      }
+      control.setAttribute(
+          "aria-pressed",
+          String(isSelected)
+      );
+
     });
   }
 
 
   thumbs.forEach((thumb, i) => {
+
+    // Use the real button when one exists.
+    // Otherwise, make the image itself interactive.
     const control = thumb.closest("button") || thumb;
-    
-    control.addEventListener("click", () => {show(i);
-    });
+
+    const label = thumb.dataset.title ||
+        `image ${i + 1} of ${thumbs.length}`;
+
+    control.setAttribute("aria-label", `Show ${label}`);
+
+    if (control === thumb) {
+
+      thumb.tabIndex = 0;
+      thumb.setAttribute("role", "button");
+
+      thumb.addEventListener("keydown", event => {
+
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          show(i);
+        }
+
+      });
+    }
+
+    control.addEventListener("click", () => show(i));
   });
 
   next.addEventListener("click", () => show(index + 1));
   prev.addEventListener("click", () => show(index - 1));
-
+  show(0);
+  
   // swipe support
   let startX = 0;
 

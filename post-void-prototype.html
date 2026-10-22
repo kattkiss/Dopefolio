@@ -4,11 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Post Void-like prototype (2024) (PC)</title>
+    <title>Post Void-Inspired FPS Prototype — Systems & Level Design</title>
     <link rel="icon" href="./assets/png/headshot.png">
-    <meta name="description" content="Case study page of Project" />
+    <meta name="description" content="A game design case study exploring time pressure, interconnected gameplay systems, movement mechanics, and level design in Unreal Engine."/>
 
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/case-study-shared.css" />
+    <link rel="stylesheet" href="./css/post-void-case-study.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,284 +22,496 @@
   <body>
     <div id="site-header"></div>
     <script src="/site-header.js"></script>
-    
-    <section class="project-cs-hero">
+    <section class="project-cs-hero postvoid-hero" id="top" aria-labelledby="postvoid-title">
       <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Post Void-like prototype (2024) (PC)</h1>
-        <div class="project-cs-hero__info">
-          <p class="text-primary">
-           A fast-paced FPS about a diabetic kid lost in an indoor playground. 
-            <br>
-            <br>
-            <strong>Engine/Tools:</strong> Unreal & Blueprints
-            <br>
-            <strong>My Role(s):</strong> Game/Level Designer & Programmer
-            <br>
-            <strong>Team Size:</strong> 2
-            <br>
-            <strong>Duration:</strong> 3 Months - Half-time
-            <br>
-            <strong>Type:</strong> Summer project
-          </p>
+        <p class="case-study-hero__eyebrow">CASE STUDY · SYSTEMS & LEVEL DESIGN</p>
+        <h1 class="heading-primary" id="postvoid-title">Post Void-Inspired FPS Prototype</h1>
+        <p class="case-study-hero__lead">
+          A fast-paced FPS prototype where an
+          ever-decreasing timer forces players to balance 
+          speed, safety, and reward as they navigate the space 
+          of an indoor playground.
+        </p>
+        <div class="case-study-hero__meta" aria-label="Project facts">
+          <span>Unreal Engine · Blueprints</span>
+          <span>PC · 2024</span>
+          <span>Team of 2</span>
+          <span>3 months · Half-time</span>
         </div>
+        <p class="case-study-hero__role"><strong>My roles:</strong> Game Designer, Level Designer & Programmer.</p>
       </div>
     </section>
-    <section class="project-details">
-      <div class="main-container">
+
+
+    <main class="project-details postvoid-case-study case-study-decorated">
+      <div class="case-study-pattern" aria-hidden="true" data-icons="timer,candy,crosshair" data-seed="42891"></div>
+      <div class="main-container postvoid-case-study__layout">
+
+      <!-- CASE STUDY NAVIGATION -->
+        <nav class="postvoid-jumpnav" aria-label="On this page">
+          <a href="#overview">Overview</a>
+          <a href="#design-vision">Design vision</a>
+          <a href="#gameplay-systems">Gameplay systems</a>
+          <a href="#movement">Movement</a>
+          <a href="#level-design">Level design</a>
+          <a href="#technical-work">Technical work</a>
+          <a href="#reflections">Reflections</a>
+        </nav>
+
         <div class="project-details__content">
-          <div class="video-wrapper">
-            <iframe
-                    src="https://drive.google.com/file/d/12LWi9zO386PqHHW0AZcm7K1fsGgV6HM1/preview"
-                    allowfullscreen>
-            </iframe>
-          </div>
           <div class="project-details__content-main">
             <div class="project-details__desc">
-              <br>
-              <h2 class="project-details__content-title">Description of project</h2>
-              <p class="project-details__desc-para">
-                This prototype was made by me and a friend. I was the designated <strong>Designer/Programmer</strong>
-                while my friend was the artist. The purpose of this project was mostly to <strong>learn the basics of 
-                Unreal Engine</strong> and for me to <strong>try a new programming language (Blueprints)</strong>.
-              </p>
-            
-              <h3 class="project-details__content-title">System: Timer</h3>
-              <div class="project-details__showcase-img-cont">
-                <img
-                        src="./assets/gif/postvoidtimer.gif"
-                        alt="Project Image"
-                        class="project-details__showcase-img"
-                />
-              </div>
-              
-              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
-              <ul class="project-details__list">
-                <li>Represents the player's "health".</li>
-                <li>Punishes indecisiveness and...</li>
-                <li>...Pressures the player to make quick decisions.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>How it works</strong></p>
-              <ul class="project-details__list">
-                <li>Counts down in seconds from a predetermined number.</li>
-                <li>Time can be added by pickups.</li>
-                <li>Becomes red when getting close to 0.</li>
-                <li>Game Over when reaching 0.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
-              <p class="project-details__desc-para">  
-                Player uses an "Act first, think later" behavior to finish levels.
-              </p>
-              
-              <h3 class="project-details__content-title">System: Candy pickups</h3>
-              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
-              <ul class="project-details__list">
-                <li>To allow a timer to be <strong>shorter</strong> than <strong>the time to complete</strong> the level
-                and...</li>
-                <li>...Give the player a way to prevent a Game Over which in turn...</li>
-                <li>...Contributes to more complexity in choices that the player can make.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>How it works</strong></p>
-              <ul class="project-details__list">
-                <li><strong>Adds time</strong> to the timer when picked up.</li>
-                <li>Player picks it up by <strong>moving into it</strong>.</li>
-                <li>Multiple pickups are <strong>spread among the level</strong>.</li>
-                <li>Pickups can be <strong>dropped</strong> by <strong>defeating enemies</strong>.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
-              <p class="project-details__desc-para">  
-                The player makes <strong>decisions</strong> based upon whether they should be prioritizing 
-                <strong>speed</strong> or <strong>safety</strong> in a given scenario.
-              </p>
-              
-              <h3 class="project-details__content-title">System: Enemy Behavior</h3>
-              <div class="project-details__showcase-img-cont">
-                <img
-                        src="./assets/gif/postvoidenemy.gif"
-                        alt="Project Image"
-                        class="project-details__showcase-img"
-                />
-              </div>
-              
-              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
-              <ul class="project-details__list">
-                <li>Be a <strong>moving</strong> obstacle.</li>
-                <li>To <strong>reward</strong> the player who manages to defeat it.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>How it works</strong></p>
-              <ul class="project-details__list">
-                <li>Moves towards the player when in their <strong>sight range</strong>.</li>
-                <li>When colliding with the player:
-                  <ul>
-                    <li>Knocks player <strong>up</strong> and <strong>back</strong>.</li>
-                    <li>Player momentarily <strong>loses control</strong> of character.</li>
-                    <li>Knockback is put on a <strong>cooldown</strong>.</li>
-                  </ul>
-                </li>
-                <li>Drops a pickup when defeated by the player.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
-              <ul class="project-details__list">
-                <li>Increased perceived challenge.</li>
-                <li>Player decides if they want to <strong>defeat the enemy</strong> for the pickup or
-                <strong>avoid them</strong> entirely.</li>
-                <li>A more <strong>dynamic</strong> gameplay experience.</li>
-              </ul>
-              
-              <h3 class="project-details__content-title">System: Attacking</h3>
-              <div class="project-details__showcase-img-cont">
-                <img
-                        src="./assets/gif/postvoidattack.gif"
-                        alt="Project Image"
-                        class="project-details__showcase-img"
-                />
-              </div>
-              
-              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
-              <ul class="project-details__list">
-                <li>To defeat enemies.</li>
-                <li>Provide more options for the player in decision-making when playing.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>How it works</strong></p>
-              <ul class="project-details__list">
-                <li>The player presses the attack button.</li>
-                <li>After a brief moment, raycast forwards from the center of the screen.</li>
-                <li>If an enemy is hit, deal damage.</li>
-                <li>If enemy is defeated, ragdoll and knock them back.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
-              <p class="project-details__desc-para">
-                Player feels like they have more agency by being able to remove obstacles.
-              </p>
-              
-              <h3 class="project-details__content-title">System: Slide & Crouch</h3>
-              <div class="project-details__showcase-img-cont">
-                <img
-                        src="./assets/gif/postvoidslide.gif"
-                        alt="Project Image"
-                        class="project-details__showcase-img"
-                />
-              </div>
-              
-              <p class="project-details__desc-para"><strong>Why this mechanic exists</strong></p>
-              <ul class="project-details__list">
-                <li>Provide the player with more freedom in movement.</li>
-                <li>Open up more possibilities for level design.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>How it works</strong></p>
-              <ul class="project-details__list">
-                <li>The player presses the crouch button.</li>
-                <li>Their height gets reduced to half but can still move at a slower pace.</li>
-                <li>If the player is sprinting, it first becomes a slide.
-                  <ul>
-                    <li>Slide speed is decided by how steep the ground is.
-                      <ul>
-                        <li>Sliding down will increase the speed, while sliding up does the opposite.</li>
-                      </ul>
-                    </li>
-                    <li>Slide ends by returning to the crouch state.</li>
-                  </ul>
-                </li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>Expected outcome</strong></p>
-              <p class="project-details__desc-para">
-                The player feels like they have more opportunities for skill expression.
-              </p>
-              
-              <h3 class="project-details__content-title">Overall Level Design</h3>
-              <p class="project-details__desc-para"><strong>Expected experience</strong></p>
-              <ul class="project-details__list">
-                <li>The player feels immersed in the world of an indoor playground.</li>
-                <li>The player feels like they have more than one way to traverse the level.</li>
-                <li>The player doesn't always feel restrained.</li>
-                <li>The player can make use of all of their movement abilities.</li>
-              </ul>
-
-              <p class="project-details__desc-para"><strong>Features</strong></p>
-              <ul class="project-details__list">
-                <li>Ball pits → Slow down the player if fallen into.</li>
-                <li>Net walls → The player can see future parts of the level, feels more open.</li>
-                <li>"Slip N' Slide" → Immersion feel and obvious use of slide if wanted.</li>
-                <li>Verticality → Level feels less flat.</li>
-                <li>Open and Restrained parts → Perceived player tension and relief.</li>
-              </ul>
-              
-              <h3 class="project-details__content-title">Level Screenshots (With iterations)</h3>
-              <section class="gallery">
-                <div class="gallery-main">
-                  <button class="gallery-btn prev">&#10094;</button>
-                  <img src="./assets/png/postvoidLevel1.png" alt="Main Image" class="gallery-image"/>
-                  <button class="gallery-btn next">&#10095;</button>
+              <!-- 01 / OVERVIEW -->
+              <section class="case-study-section" id="overview" aria-labelledby="overview-title">
+                <div class="case-study-section__heading"><span class="case-study-section__index">01 / OVERVIEW</span>
+                  <h2 id="overview-title">Exploring fast-paced gameplay in Unreal Engine</h2>
                 </div>
-                <div class="gallery-thumbs">
-                  <img src="./assets/png/postvoidLevel1.png" class="active" alt="">
-                  <img src="./assets/png/postvoidLevel1.1.png" alt="">
-                  <img src="./assets/png/postvoidLevel1.2.png" alt="">
-                  <img src="./assets/png/postvoidLevel1.3.png" alt="">
-                  <img src="./assets/png/postvoidLevel1.4.png" alt="">
-                  <img src="./assets/png/postvoidLevel1.5.png" alt="">
-                  <img src="./assets/png/postvoidLevel2.png" alt="">
-                  <img src="./assets/png/postvoidLevel2.1.png" alt="">
-                  <img src="./assets/png/postvoidLevel2.2.png" alt="">
-                  <img src="./assets/png/postvoidLevel2.3.png" alt="">
-                  <img src="./assets/png/postvoidLevel3.png" alt="">
-                  <img src="./assets/png/postvoidLevel3.1.png" alt="">
-                  <img src="./assets/png/postvoidLevel3.2.png" alt="">
-                  <img src="./assets/png/postvoidLevel3.3.png" alt="">
-                  <img src="./assets/png/postvoidLevel4.png" alt="">
-                  <img src="./assets/png/postvoidLevel4.1.png" alt="">
-                  <img src="./assets/png/postvoidLevel4.2.png" alt="">
-                  <img src="./assets/png/postvoidLevel4.3.png" alt="">
+                <div class="video-wrapper">
+                  <iframe
+                          src="https://drive.google.com/file/d/12LWi9zO386PqHHW0AZcm7K1fsGgV6HM1/preview"
+                          title="Post Void-inspired FPS prototype gameplay"
+                          loading="lazy"
+                          allowfullscreen>
+                  </iframe>
+                </div>
+
+                <p class="case-study-copy">
+                  I developed this prototype with an artist
+                  as part of a summer project to learn Unreal Engine
+                  and Blueprint visual scripting.
+
+                  As the team's designer and programmer,
+                  I focused on gameplay systems, player
+                  movement, and level design.
+                </p>
+
+                <div class="postvoid-contributions">
+                  <div>
+                    <span class="postvoid-contributions__number">01</span>
+                    <h3>Systems design</h3>
+                    <p>
+                      Designed the timer, pickups,
+                      enemy interactions, and combat
+                      around urgency and risk-reward decisions.
+                    </p>
+                  </div>
+                  <div>
+                    <span class="postvoid-contributions__number">02</span>
+                    <h3>Level design</h3>
+                    <p>
+                      Explored open and restrictive spaces,
+                      verticality, and opportunities
+                      to use movement mechanics.
+                    </p>
+                  </div>
+                  <div>
+                    <span class="postvoid-contributions__number">03</span>
+                    <h3>Blueprint programming</h3>
+                    <p>
+                      Used Unreal Engine's visual scripting
+                      system to build and experiment with 
+                      gameplay mechanics.
+                    </p>
+                  </div>
                 </div>
               </section>
-              
-              <h3 class="project-details__content-title">Design Goal</h3>
-              <p class="project-details__desc-para">
-                While the focus of the project was learning the engine and its programming language, I still had some 
-                goals for the design of the prototype.
+
+              <!-- 02 / DESIGN VISION -->
+              <section class="case-study-section" id="design-vision" aria-labelledby="vision-title">
+                <div class="case-study-section__heading">
+                  <span class="case-study-section__index">02 / DESIGN VISION</span>
+                  <h2 id="vision-title">Creating pressure without restricting player freedom</h2>
+                </div>
+
+                <p class="case-study-copy">
+                  I wanted to explore a different approach to tension in 
+                  fast-paced shooters.
+
+                  Rather than relying primarily on claustrophobic level layouts,
+                  my goal was to create urgency through systems that encouraged 
+                  continuous movement and quick decisions instead.
                 </p>
 
-              <p class="project-details__desc-para"><strong>The Problem</strong></p>
-              <ul class="project-details__list">
-                <li>Games like Post Void & Mullet MadJack are too often relying on claustrophobia in their level design
-                to infuse player tension.</li>
-                <li>The same games also combine health and a timer into the same entity.</li>
-              </ul>
+                <div class="case-study-callout">
+                  <h3>The Main Design Challenge</h3>
+                  <p>
+                    How can a fast-paced FPS encourage players to balance 
+                    <strong>speed</strong>, <strong>safety</strong>, and
+                    <strong>reward</strong> while still allowing freedom 
+                    of movement?
+                  </p>
+                </div>
+                <h3 class="postvoid-vision__subtitle">My approach</h3>
+                <div class="postvoid-vision__principles">
+                  <div>
+                    <span>01 / URGENCY</span>
+                    <h4>Make time a limited resource</h4>
+                    <p>
+                      A constantly decreasing timer pushes players to keep moving.
+                    </p>
+                  </div>
+                  <div>
+                    <span>02 / RISK AND REWARD</span>
+                    <h4>Make encounters a decision</h4>
+                    <p>
+                      Fighting enemies can provide additional time through 
+                      pickups, but avoiding danger may offer a safer route.
+                    </p>
+                  </div>
+                  <div>
+                    <span>03 / PLAYER FREEDOM</span>
+                    <h4>Support different routes</h4>
+                    <p>
+                      Open spaces, verticality, and movement options give players 
+                      opportunities to choose how they approach the level.
+                    </p>
+                  </div>
+                </div>
+              </section>
+              <!-- 03 / GAMEPLAY SYSTEMS -->
+              <section class="case-study-section" id="gameplay-systems" aria-labelledby="systems-title">
+                <div class="case-study-section__heading">
+                  <span class="case-study-section__index">03 / GAMEPLAY SYSTEMS</span>
+                  <h2 id="systems-title">Connecting urgency, combat, and survival</h2>
+                </div>
 
-              <p class="project-details__desc-para"><strong>The Objective</strong></p>
-              <p class="project-details__desc-para">
-                Introduce a different take on the genre.
+                <p class="case-study-copy">
+                  I designed the timer, pickups, and combat systems
+                  to support a shared goal: encourage players to
+                  make quick decisions under pressure.
                 </p>
 
-              <p class="project-details__desc-para"><strong>The Approach</strong></p>
-              <ul class="project-details__list">
-                <li>Make use of a more open level design, compared to other games in the genre.</li>
-                <li>Use other methods for punishing the player rather than directly reducing health/time.</li>
-              </ul>
+                <!-- PLAYER DECISION DIAGRAM -->
+                <figure class="postvoid-decision" aria-labelledby="postvoid-decision-title">
+                  <figcaption class="postvoid-decision__heading">
+                    <h3 id="postvoid-decision-title">Fight or keep moving?</h3>
+                  </figcaption>
+
+                  <!-- SHARED PRESSURE -->
+                  <div class="postvoid-decision__start">
+                    <div class="postvoid-decision__node">
+                      <span class="postvoid-decision__icon postvoid-decision__icon--timer" aria-hidden="true"></span>
+                      <strong>Time decreasing</strong>
+                    </div>
+                    <span class="postvoid-decision__arrow" aria-hidden="true">↓</span>
+                    <div class="postvoid-decision__node">
+                      <span class="postvoid-decision__alert" aria-hidden="true">!</span>
+                      <strong>Enemy encounter</strong>
+                    </div>
+                  </div>
+
+                  <!-- PLAYER CHOICE -->
+                  <div class="postvoid-decision__branches">
+                    <!-- FIGHT -->
+                    <div class="postvoid-decision__branch">
+                      <span class="postvoid-decision__branch-arrow" aria-hidden="true">↙</span>
+                      <div class="postvoid-decision__card">
+                        <h4>FIGHT</h4>
+                        <p>Defeat enemy</p>
+                        <span class="postvoid-decision__arrow" aria-hidden="true">↓</span>
+                        <div class="postvoid-decision__reward">
+                          <span class="postvoid-decision__icon postvoid-decision__icon--candy" aria-hidden="true"></span>
+                          <span>Collect candy</span>
+                        </div>
+                        <span class="postvoid-decision__arrow" aria-hidden="true">↓</span>
+                        <strong class="postvoid-decision__result">+ TIME</strong>
+                      </div>
+                    </div>
+
+                    <!-- AVOID -->
+                    <div class="postvoid-decision__branch">
+                      <span class="postvoid-decision__branch-arrow" aria-hidden="true">↘</span>
+                      <div class="postvoid-decision__card">
+                        <h4>AVOID</h4>
+                        <p>Bypass enemy</p>
+                        <span class="postvoid-decision__arrow" aria-hidden="true">↓</span>
+                        <strong class="postvoid-decision__result">Keep moving</strong>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- SHARED RULE -->
+                  <p class="postvoid-decision__footer">
+                    The timer keeps running during either choice.
+                    Candy pickups can also be found throughout the level.
+                  </p>
+                </figure>
+
+                <!-- GAMEPLAY DEMONSTRATIONS -->
+                <div class="postvoid-gameplay-demos">
+                  <!-- TIMER -->
+                  <figure class="postvoid-gameplay-demo">
+                    <img
+                            src="./assets/gif/postvoidtimer.gif"
+                            alt="Countdown timer decreasing during gameplay"
+                            loading="lazy">
+
+                    <figcaption class="postvoid-gameplay-demo__caption">
+                      <span>01 / TIMER</span>
+                      <h3>Time is your health</h3>
+                      <p>
+                        The timer warns the player by turning red
+                        near zero. Running out of time ends the run.
+                      </p>
+                    </figcaption>
+                  </figure>
+
+                  <!-- ENEMIES -->
+                  <figure class="postvoid-gameplay-demo">
+                    <img
+                            src="./assets/gif/postvoidenemy.gif"
+                            alt="Enemy behaviour during a gameplay encounter"
+                            loading="lazy">
+
+                    <figcaption class="postvoid-gameplay-demo__caption">
+                      <span>02 / ENEMY BEHAVIOUR</span>
+                      <h3>Enemies disrupt movement</h3>
+                      <p>
+                        Enemies pursue the player when detected.
+                        Contact causes knockback, with a cooldown
+                        preventing repeated immediate knockbacks.
+                      </p>
+                    </figcaption>
+                  </figure>
+                  <!-- ATTACKING -->
+                  <figure class="postvoid-gameplay-demo">
+                    <img
+                            src="./assets/gif/postvoidattack.gif"
+                            alt="Player attacking an enemy during gameplay"
+                            loading="lazy">
+
+                    <figcaption class="postvoid-gameplay-demo__caption">
+                      <span>03 / ATTACKING</span>
+                      <h3>Fight back</h3>
+                      <p>
+                        Attacks use a delayed raycast.
+                        Defeated enemies ragdoll and drop
+                        candy that can restore time.
+                      </p>
+                    </figcaption>
+                  </figure>
+                </div>
+                <p class="postvoid-gameplay-note">
+                  The starting timer is deliberately shorter than
+                  the time required to finish a level, making
+                  time recovery necessary.
+                </p>
+              </section>
+
+                <!-- 04 / MOVEMENT DESIGN -->
+              <section class="case-study-section" id="movement" aria-labelledby="movement-title">
+                <div class="case-study-section__heading">
+                  <span class="case-study-section__index">04 / MOVEMENT DESIGN</span>
+                  <h2 id="movement-title">Giving players more control over traversal</h2>
+                </div>
+                <div class="postvoid-movement-demo">
+
+                  <div class="postvoid-movement-demo__caption">
+                    <span>04 / MOVEMENT</span>
+                    <h3>Sliding adds momentum and terrain-based variation</h3>
+                    <p>
+                      The crouch input changes behaviour depending
+                      on whether the player is sprinting. When sliding,
+                      terrain affects speed, creating opportunities
+                      for level design to shape movement.
+                    </p>
+                  </div>
+                  <img
+                          src="./assets/gif/postvoidslide.gif"
+                          alt="Sliding and crouching movement in the Unreal Engine prototype"
+                          loading="lazy">
+                </div>
+
+                <figure class="postvoid-movement-logic" aria-labelledby="movement-logic-title">
+                  <figcaption>
+                    <h3 id="movement-logic-title">How the movement works</h3>
+                  </figcaption>
+                  <div class="postvoid-movement-logic__paths">
+                    <div class="postvoid-movement-logic__path">
+                      <span>WITHOUT SPRINTING</span>
+                      <div class="postvoid-movement-logic__sequence">
+                        <span>Crouch input</span>
+                        <span class="postvoid-movement-logic__arrow" aria-hidden="true">→</span>
+                        <span>Crouching</span>
+                      </div>
+                    </div>
+                    <div class="postvoid-movement-logic__path">
+                      <span>WHILE SPRINTING</span>
+                      <div class="postvoid-movement-logic__sequence">
+                        <span>Crouch input</span>
+                        <span class="postvoid-movement-logic__arrow" aria-hidden="true">→</span>
+                        <span>Sliding</span>
+                        <span class="postvoid-movement-logic__arrow" aria-hidden="true">→</span>
+                        <span>Crouching</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="postvoid-movement-logic__terrain">
+                    <div>
+                      <span>DOWNHILL</span>
+                      <p>Sliding speed increases.</p>
+                    </div>
+                    <div>
+                      <span>UPHILL</span>
+                      <p>Sliding speed decreases.</p>
+                    </div>
+                  </div>
+                </figure>
+                <p class="postvoid-movement-note">
+                  This allowed movement mechanics to influence level design,
+                  rather than existing as isolated features.
+                </p>
+              </section>
               
-              <h3 class="project-details__content-title">Lessons learned</h3>
-              <ul class="project-details__list">
-                <li>A grasp of the basics of Blueprints.</li>
-                <li>While Unreal Engine supports 2D games, it's far better adapted to 3D.</li>
-                <li>A reduction in scope of the project would have been appropriate.</li>
-              </ul>
+              <!-- 05 / LEVEL DESIGN -->
+              <section class="case-study-section" id="level-design" aria-labelledby="level-design-title">
+                <div class="case-study-section__heading">
+                  <span class="case-study-section__index">05 / LEVEL DESIGN</span>
+                  <h2 id="level-design-title">Designing spaces around movement</h2>
+                </div>
+                <div class="postvoid-level__gallery-intro">
+                  <section class="gallery" aria-label="Level layout screenshots and iterations">
+                    <div class="gallery-main">
+                      <button class="gallery-btn prev" type="button" aria-label="Previous level screenshot">&#10094;</button>
+                      <img src="./assets/png/postvoidLevel1.png" alt="Level design screenshot 1 of 18" class="gallery-image"/>
+                      <button class="gallery-btn next" type="button" aria-label="Next level screenshot">&#10095;</button>
+                    </div>
+                    <div class="gallery-thumbs">
+                      <img src="./assets/png/postvoidLevel1.png" class="active" alt="">
+                      <img src="./assets/png/postvoidLevel1.1.png" alt="">
+                      <img src="./assets/png/postvoidLevel1.2.png" alt="">
+                      <img src="./assets/png/postvoidLevel1.3.png" alt="">
+                      <img src="./assets/png/postvoidLevel1.4.png" alt="">
+                      <img src="./assets/png/postvoidLevel1.5.png" alt="">
+                      <img src="./assets/png/postvoidLevel2.png" alt="">
+                      <img src="./assets/png/postvoidLevel2.1.png" alt="">
+                      <img src="./assets/png/postvoidLevel2.2.png" alt="">
+                      <img src="./assets/png/postvoidLevel2.3.png" alt="">
+                      <img src="./assets/png/postvoidLevel3.png" alt="">
+                      <img src="./assets/png/postvoidLevel3.1.png" alt="">
+                      <img src="./assets/png/postvoidLevel3.2.png" alt="">
+                      <img src="./assets/png/postvoidLevel3.3.png" alt="">
+                      <img src="./assets/png/postvoidLevel4.png" alt="">
+                      <img src="./assets/png/postvoidLevel4.1.png" alt="">
+                      <img src="./assets/png/postvoidLevel4.2.png" alt="">
+                      <img src="./assets/png/postvoidLevel4.3.png" alt="">
+                    </div>
+                  </section>
+                  <div class="postvoid-level__takeaway">
+                    <h3>Connecting layout and gameplay</h3>
+    
+                    <p>
+                      The level design was intended to complement
+                      the game's time pressure rather than relying
+                      entirely on restrictive spaces.
+    
+                      By incorporating movement opportunities,
+                      environmental obstacles, and alternating
+                      spatial layouts, I wanted to encourage
+                      different approaches to traversal.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+
+              <!-- 06 / TECHNICAL WORK -->
+              <section class="case-study-section" id="technical-work" aria-labelledby="technical-title">
+                <div class="case-study-section__heading">
+                  <span class="case-study-section__index">06 / TECHNICAL WORK</span>
+                  <h2 id="technical-title">Preventing repeated knockback</h2>
+                </div>
+
+                <!-- INTERACTION FLOW -->
+                <article class="postvoid-technical-challenge">
+                  <span class="postvoid-technical-challenge__label">IMPLEMENTATION EXAMPLE · ENEMY COLLISIONS</span>
+                  <h3>Collision response and cooldown</h3>
+                  <p>
+                    When an enemy collides with the player,
+                    it launches them upwards and backwards,
+                    temporarily interrupting player control.
+                  </p>
+
+                  <p>
+                    I implemented a cooldown between knockback
+                    events to prevent the same interaction
+                    from continuously affecting the player.
+                  </p>
+
+                  <div class="postvoid-technical-challenge__sequence">
+                    <div>
+                      <strong>01 / Collision</strong>
+                      <span>Enemy makes contact with the player.</span>
+                    </div>
+
+                    <div>
+                      <strong>02 / Response</strong>
+                      <span>Apply knockback and interrupt control.</span>
+                    </div>
+
+                    <div>
+                      <strong>03 / Cooldown</strong>
+                      <span>Prevent another immediate knockback.</span>
+                    </div>
+                  </div>
+                </article>
+              </section>
+
+              <!-- 07 / REFLECTIONS -->
+              <section class="case-study-section" id="reflections" aria-labelledby="reflections-title">
+                <div class="case-study-section__heading">
+                  <span class="case-study-section__index">07 / REFLECTIONS</span>
+                  <h2 id="reflections-title">What I learned</h2>
+                </div>
+
+                <p class="case-study-copy">
+                  This project was primarily an opportunity to
+                  explore a new engine and develop my understanding
+                  of visual scripting while experimenting
+                  with fast-paced gameplay design.
+                </p>
+
+                <div class="postvoid-reflections">
+                  <article>
+                    <h3>Learning Blueprints</h3>
+                    <p>
+                      I developed a foundational understanding
+                      of Unreal Engine's Blueprint system
+                      through implementing gameplay mechanics.
+                    </p>
+                  </article>
+
+                  <article>
+                    <h3>Scope management</h3>
+                    <p>
+                      Looking back, I believe the project's scope
+                      should have been smaller.
+                      A more focused set of mechanics would have
+                      been more appropriate for a project
+                      primarily intended for learning.
+                    </p>
+                  </article>
+
+                  <article>
+                    <h3>Choosing the right tools</h3>
+                    <p>
+                      Working with Unreal Engine also shaped
+                      my perspective on its strengths.
+                      Although it supports 2D projects,
+                      I came away seeing it as better suited
+                      to 3D development.
+                    </p>
+                  </article>
+                </div>
+              </section>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </main>
     <div id="site-footer"></div>
     <script src="/site-footer.js"></script>
     <script src="./index.js"></script>
-    <script src="./index.js"></script>
+    <script src="./case-study-pattern.js"></script>
   </body>
 </html>

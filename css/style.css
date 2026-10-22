@@ -1596,3 +1596,30 @@ iframe {
   outline: 3px solid #41004b;
 }
 
+/* ==========================================================
+   18  SHARED MEDIA FRAMES
+   ========================================================== */
+
+/* Main images, GIFs, videos and gallery containers */
+
+.projects__row-img-cont,
+.project-details__showcase-img,
+.shoe-feature-media,
+.squeak-grading-iteration__image img,
+.squeak-concept__media img,
+.video-wrapper iframe,
+.project-details video:not(.project-preview__video),
+.gallery-main,
+.gallery-carousel__main {
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Gallery thumbnails */
+
+.gallery-thumbs > img,
+.gallery-carousel__thumb {
+  border: 2px solid var(--border);
+  border-radius: 6px;
+}
