@@ -1,19 +1,191 @@
-const elements = document.querySelectorAll(
-    '.case-section, .case-split, .case-full-image'
+/* ==========================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================== */
+
+const revealSelectors = [
+
+  // Existing case study elements
+  ".case-section",
+  ".case-split",
+  ".case-full-image",
+
+  // Featured Work
+  ".featured-work .heading-sec__main",
+  ".featured-work .heading-sec__sub",
+  ".featured-work .projects__row-img-cont",
+  ".featured-work .projects__specialty",
+  ".featured-work .projects__row-content-title",
+  ".featured-work .projects__row-content-desc",
+  ".featured-work .skills__skill",
+  ".featured-work .projects__row-content > .btn",
+
+  // About Me
+  ".about .heading-sec__main",
+  ".about .about__content-title",
+  ".about .about__content-details-para",
+  ".about .about__content-main > .btn",
+  ".about .skills__skill",
+  ".about .education-timeline__item",
+
+  // Other Projects
+  "#other-projects .heading-sec__main",
+  "#other-projects .other-project-card",
+
+  // Contact
+  "#contact .heading-sec__main",
+  "#contact .heading-sec__sub",
+  "#contact .contact__form-field",
+  "#contact .contact__btn"
+    
+];
+
+
+/* ==========================================
+   CASE STUDY SCROLL REVEALS
+   ========================================== */
+
+revealSelectors.push(
+
+    // ------------------------------------
+    // THE SHOE
+    // ------------------------------------
+
+    ".shoe-case-study .shoe-section__heading",
+    ".shoe-case-study .shoe-section > .shoe-copy",
+    ".shoe-case-study .shoe-feature-media",
+    ".shoe-case-study .shoe-contributions > div",
+    ".shoe-case-study .shoe-callout",
+
+    // Gameplay systems
+    ".shoe-case-study .shoe-system__header",
+    ".shoe-case-study .shoe-system__rows > div",
+    ".shoe-case-study .shoe-system > .gallery",
+    ".shoe-case-study .shoe-intox-gallery",
+
+    // Technical work
+    ".shoe-case-study .shoe-tech-feature > .shoe-section__index",
+    ".shoe-case-study .shoe-tech-feature > h3",
+    ".shoe-case-study .shoe-tech-feature > p",
+    ".shoe-case-study .shoe-architecture",
+    ".shoe-case-study .shoe-checkpoint > li",
+
+    // Additional visual breakdowns
+    ".shoe-case-study .shoe-spectrum",
+    ".shoe-case-study .shoe-qte-comparison",
+    ".shoe-case-study .shoe-flow__lane",
+    ".shoe-case-study .shoe-save-flow__phase",
+    ".shoe-case-study .shoe-shader-compare__card",
+
+    // Reflections and conclusion
+    ".shoe-case-study .shoe-testing > div",
+    ".shoe-case-study .shoe-detail-list > div",
+    ".shoe-case-study .shoe-bottom-cta",
+
+
+    // ------------------------------------
+    // SQUEAK N' SERVE
+    // ------------------------------------
+
+    ".squeak-case-study .case-study-section__heading",
+    ".squeak-case-study .case-study-section > .case-study-copy",
+    ".squeak-case-study .video-wrapper",
+    ".squeak-case-study .case-study-contributions > div",
+    ".squeak-case-study .case-study-callout",
+
+    // Gameplay systems
+    ".squeak-case-study .squeak-loop__caption",
+    ".squeak-case-study .squeak-loop__step",
+    ".squeak-case-study .squeak-loop__takeaway",
+    ".squeak-case-study .case-study-system__header",
+    ".squeak-case-study .case-study-system__rows > div",
+    ".squeak-case-study .case-study-system__example",
+    ".squeak-case-study .case-study-recipe",
+    ".squeak-case-study .squeak-cooking-stations__station",
+    ".squeak-case-study .squeak-grades",
+
+    // Iterations and concepts
+    ".squeak-case-study .squeak-grading-iteration__comparison > div",
+    ".squeak-case-study .squeak-grading-iteration__image",
+    ".squeak-case-study .squeak-concept",
+
+    // Onboarding, playtesting and reflections
+    ".squeak-case-study .squeak-onboarding__steps > div",
+    ".squeak-case-study .squeak-onboarding__feedback",
+    ".squeak-case-study .squeak-testing__card",
+    ".squeak-case-study .squeak-testing__response",
+    ".squeak-case-study .squeak-vfx__examples > div",
+    ".squeak-case-study .squeak-reflections > div",
+    ".squeak-case-study .case-study-bottom-cta",
+
+
+    // ------------------------------------
+    // POST VOID
+    // ------------------------------------
+
+    ".postvoid-case-study .case-study-section__heading",
+    ".postvoid-case-study .case-study-section > .case-study-copy",
+    ".postvoid-case-study .video-wrapper",
+    ".postvoid-case-study .postvoid-contributions > div",
+    ".postvoid-case-study .case-study-callout",
+
+    // Design vision and gameplay
+    ".postvoid-case-study .postvoid-vision__subtitle",
+    ".postvoid-case-study .postvoid-vision__principles > div",
+    ".postvoid-case-study .postvoid-decision",
+    ".postvoid-case-study .postvoid-gameplay-demo",
+    ".postvoid-case-study .postvoid-gameplay-note",
+
+    // Movement and level design
+    ".postvoid-case-study .postvoid-movement-demo",
+    ".postvoid-case-study .postvoid-movement-logic",
+    ".postvoid-case-study .postvoid-movement-note",
+    ".postvoid-case-study .gallery",
+    ".postvoid-case-study .postvoid-level__takeaway",
+
+    // Technical work and reflections
+    ".postvoid-case-study .postvoid-technical-challenge",
+    ".postvoid-case-study .postvoid-reflections > article"
+
 );
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.15 });
+const revealElements = document.querySelectorAll(
+    revealSelectors.join(",")
+);
 
-elements.forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (!prefersReducedMotion && "IntersectionObserver" in window) {
+
+  const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+
+        entries.forEach(entry => {
+
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("visible");
+
+          // Reveal only once
+          observer.unobserve(entry.target);
+
+        });
+
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30px 0px"
+      }
+  );
+
+  revealElements.forEach(element => {
+
+    element.classList.add("fade-in");
+    revealObserver.observe(element);
+
+  });
+}
 
 document.querySelectorAll(".gallery").forEach(gallery => {
 

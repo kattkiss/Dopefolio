@@ -1,11 +1,23 @@
 
 (() => {
+
+    document.querySelectorAll('link[rel~="icon"]')
+        .forEach(icon => icon.remove());
+
+    const favicon = document.createElement("link");
+
+    favicon.rel = "icon";
+    favicon.type = "image/svg+xml";
+    favicon.href = "/assets/svg/favicon.svg";
+
+    document.head.appendChild(favicon);
+    
     // All navigation links are defined in one place.
     const navigation = [
         { label: "Home", href: "/index.html" },
         { label: "Featured Work", href: "/index.html#featured-work" },
         { label: "About", href: "/index.html#about" },
-        { label: "More Projects", href: "/index.html#other-projects" },
+        { label: "Other Projects", href: "/index.html#other-projects" },
         { label: "Contact", href: "/index.html#contact" }
     ];
 
@@ -37,11 +49,7 @@
 
         <a href="/index.html" class="header__logo-container">
           <div class="header__logo-img-cont">
-            <img
-              src="/assets/png/headshot.png"
-              alt="Julian Jaako Ahlberger"
-              class="header__logo-img"
-            />
+            <span class="header__initials" aria-hidden="true">[JA]</span>
           </div>
           <span class="header__logo-sub">
             Julian Jaako Ahlberger

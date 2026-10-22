@@ -838,6 +838,81 @@ iframe {
   margin-bottom: 4rem;
 }
 
+/* Spacing between About Me skill categories */
+
+.about__content-skills > .about__content-title:not(:first-child) {
+  margin-top: 3rem;
+}
+
+
+/* ==========================================
+   EDUCATION TIMELINE
+   ========================================== */
+
+.education-timeline {
+  list-style: none;
+  margin-left: 0.6rem;
+  padding-left: 2.5rem;
+
+  border-left: 2px solid var(--border);
+}
+
+.education-timeline__item {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.education-timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* Timeline markers */
+
+.education-timeline__item::before {
+  content: "";
+  position: absolute;
+
+  left: -3.1rem;
+  top: 0.5rem;
+
+  width: 1.2rem;
+  height: 1.2rem;
+
+  background: var(--accent);
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+}
+
+/* Dates and status */
+
+.education-timeline__date {
+  display: block;
+  margin-bottom: 0.8rem;
+
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Degree titles */
+
+.education-timeline__degree {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 1.8vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.education-timeline__institution {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 1.7rem;
+  line-height: 1.5;
+}
+
 /* ==========================================================
    10  PROJECT ROWS & COMMON PROJECT CARDS
    ========================================================== */
@@ -929,6 +1004,177 @@ iframe {
   margin-bottom: 1.5rem;
 }
 
+/* ==========================================
+   OTHER PROJECTS — COMPACT CARD GRID
+   ========================================== */
+
+.other-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* Card */
+
+.other-project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
+  background: var(--surface);
+  color: var(--text-main);
+
+  border: 2px solid var(--border);
+  border-radius: 1.2rem;
+  overflow: hidden;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+  transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+}
+
+/* Image */
+
+.other-project-card__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--surface-soft);
+}
+
+/* Default: screenshots fill their container */
+
+.other-project-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Game icons: preserve the entire image */
+
+.other-project-card__media--contain {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.other-project-card__media--contain img {
+  object-fit: contain;
+}
+
+/* Content */
+
+.other-project-card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+  padding: 2.5rem;
+}
+
+.other-project-card__category {
+  color: var(--accent);
+  font-size: max(16px, 1.6rem);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.other-project-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  line-height: 1.25;
+}
+
+.other-project-card__year {
+  color: var(--text-muted);
+  font-size: 1.7rem;
+}
+
+.other-project-card p {
+  color: var(--text-main);
+  font-size: max(18px, 1.9rem);
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+.other-project-card__detail {
+  color: var(--text-muted);
+  font-size: max(16px, 1.6rem);
+  font-weight: 600;
+}
+
+/* Bottom link */
+
+.other-project-card__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto;
+  padding-top: 1.8rem;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--accent);
+  font-size: max(18px, 1.8rem);
+  font-weight: 700;
+}
+
+/* Interaction */
+
+@media (hover: hover) {
+  .other-project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.other-project-card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Tablet */
+
+@media (max-width: 62em) {
+  .other-projects__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 42em) {
+  .other-projects__grid {
+    grid-template-columns: 1fr;
+    max-width: 52rem;
+    margin-inline: auto;
+  }
+
+  .other-project-card__content {
+    padding: 2rem;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .other-project-card {
+    transition: none;
+  }
+
+  .other-project-card:hover {
+    transform: none;
+  }
+}
+
+
 /* ==========================================================
    11  FEATURED PROJECTS & VIDEO PREVIEWS
    ========================================================== */
@@ -946,13 +1192,51 @@ iframe {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-.featured-work .projects__row-img {
-  transition: transform 0.4s ease;
+
+/* ==========================================
+   FEATURED PROJECTS — HOVER ENLARGEMENT
+   ========================================== */
+
+.featured-work .project-preview {
+  position: relative;
+  z-index: 1;
+
+  transform-origin: center;
+  transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
 }
 
-@media (hover: hover) {
-  .featured-work .projects__row:hover .projects__row-img {
-    transform: scale(1.04);
+/* Enlarge the entire preview, including video */
+
+@media (min-width: 62em) and (hover: hover) and (pointer: fine) {
+  .featured-work .project-preview:hover {
+    transform: scale(1.16);
+    z-index: 10;
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Keyboard navigation */
+
+@media (min-width: 62em) {
+  .featured-work .project-preview:focus-within {
+    transform: scale(1.16);
+    z-index: 10;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-work .project-preview {
+    transition: none;
+  }
+
+  .featured-work .project-preview:hover,
+  .featured-work .project-preview:focus-within {
+    transform: none;
   }
 }
 
@@ -1622,4 +1906,253 @@ iframe {
 .gallery-carousel__thumb {
   border: 2px solid var(--border);
   border-radius: 6px;
+}
+
+/* ==========================================
+   SHARED CASE STUDY NAVIGATION
+   ========================================== */
+
+main :is(
+    .shoe-jumpnav,
+    .case-study-jumpnav,
+    .postvoid-jumpnav
+) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1.2rem;
+  padding: 0 0 3rem;
+  margin-bottom: 2rem;
+
+  border-bottom: 1px solid var(--border);
+}
+
+/* Navigation buttons */
+
+main :is(
+    .shoe-jumpnav,
+    .case-study-jumpnav,
+    .postvoid-jumpnav
+) a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 1.2rem 2rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+
+  color: var(--text-main);
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+/* Hover */
+
+main :is(
+    .shoe-jumpnav,
+    .case-study-jumpnav,
+    .postvoid-jumpnav
+) a:hover {
+  background: var(--surface-soft);
+  border-color: var(--accent);
+}
+
+/* Keyboard focus */
+
+main :is(
+    .shoe-jumpnav,
+    .case-study-jumpnav,
+    .postvoid-jumpnav
+) a:focus-visible {
+  outline: 3px solid var(--text-main);
+  outline-offset: 3px;
+}
+
+/* Mobile case study navigation */
+
+@media (max-width: 42em) {
+
+  main :is(
+        .shoe-jumpnav,
+        .case-study-jumpnav,
+        .postvoid-jumpnav
+    ) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
+    gap: 1rem;
+    overflow-x: auto;
+
+    padding-bottom: 2rem;
+    scrollbar-width: thin;
+  }
+
+  main :is(
+        .shoe-jumpnav,
+        .case-study-jumpnav,
+        .postvoid-jumpnav
+    ) a {
+    flex: 0 0 auto;
+    padding: 1.1rem 1.6rem;
+    font-size: 18px;
+  }
+}
+
+/* Typography-based personal logo */
+
+.header__logo-img-cont {
+  display: grid;
+  place-items: center;
+
+  background: #351447;
+  border-radius: 0.9rem;
+
+  overflow: hidden;
+}
+
+.header__initials {
+  color: white;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+/* ==========================================
+   SHARED CASE STUDY — TEXT ALIGNMENT
+   ========================================== */
+
+/* Justify text throughout the case studies */
+
+main:is(
+    .shoe-case-study,
+    .squeak-case-study,
+    .postvoid-case-study
+) {
+  text-align: justify;
+}
+
+/* Preserve left-aligned section headings */
+
+.shoe-case-study .shoe-section__heading,
+.squeak-case-study .case-study-section__heading,
+.postvoid-case-study .case-study-section__heading {
+  text-align: left;
+}
+
+/* Override Squeak N' Serve's existing
+   left-aligned paragraph rules */
+
+main.squeak-case-study :is(
+    .case-study-copy,
+    .case-study-system__header p,
+    .squeak-loop__step p
+) {
+  text-align: justify;
+  text-align-last: left;
+}
+
+
+@media (max-width: 42em) {
+
+  .other-projects__grid {
+    gap: 2rem;
+  }
+
+  .other-project-card__media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .other-project-card__media--square {
+    aspect-ratio: 1 / 1;
+  }
+
+  .other-project-card__content {
+    gap: 0.8rem;
+    padding: 1.8rem;
+  }
+
+  .other-project-card__link {
+    padding-top: 1.5rem;
+  }
+}
+
+/* Secret Simulator uses a square icon/poster */
+
+.other-project-card__media--square {
+  aspect-ratio: 1 / 1;
+  padding: 2.2rem;
+}
+
+.other-project-card__media--square img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ==========================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  .fade-in {
+    opacity: 0;
+    translate: 0 16px;
+
+    transition:
+            opacity 0.6s ease-out,
+            translate 0.6s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  /* Preserve existing card hover animations */
+
+  .other-project-card.fade-in {
+    transition:
+            opacity 0.6s ease-out,
+            translate 0.6s ease-out,
+            transform 0.2s ease,
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+  }
+
+  /* Preserve button hover animations */
+
+  .btn.fade-in {
+    transition:
+            opacity 0.6s ease-out,
+            translate 0.6s ease-out,
+            transform 0.3s ease;
+  }
+}
+
+/* ==========================================
+   TWILIGHT TROPICS
+   ========================================== */
+
+.twilight-case-study .video-wrapper {
+  max-width: 100%;
+  margin: 3rem 0 0;
+}
+
+.twilight-case-study .video-wrapper iframe {
+  display: block;
 }
