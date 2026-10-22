@@ -922,3 +922,25 @@
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ==========================================
+   THE SHOE — DECORATION THEME
+   ========================================== */
+
+.shoe-case-study {
+  --pattern-color: var(--accent);
+  --pattern-opacity: 0.16;
+}
+
+.shoe-case-study .pattern-shoe {
+  --icon: url("../assets/icons/patterns/theshoe/shoe.svg");
+}
+
+.shoe-case-study .pattern-bubbles {
+  --icon: url("../assets/icons/patterns/theshoe/bubbles.svg");
+}
+
+.shoe-case-study .pattern-bottle {
+  --icon: url("../assets/icons/patterns/theshoe/bottle.svg");
+}

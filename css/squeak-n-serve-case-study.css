@@ -879,3 +879,22 @@
     padding-bottom: 7rem;
   }
 }
+
+/* SQUEAK N SERVE — DECORATION THEME */
+
+.squeak-case-study {
+  --pattern-color: var(--accent);
+  --pattern-opacity: 0.16;
+}
+
+.squeak-case-study .pattern-hat {
+  --icon: url("../assets/icons/patterns/Squeaknserve/chef-hat.svg");
+}
+
+.squeak-case-study .pattern-rat {
+  --icon: url("../assets/icons/patterns/squeaknserve/rat.svg");
+}
+
+.squeak-case-study .pattern-spoon {
+  --icon: url("../assets/icons/patterns/squeaknserve/spoon.svg");
+}

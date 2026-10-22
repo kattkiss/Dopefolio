@@ -248,3 +248,72 @@
     padding-top: 3rem;
   }
 }
+
+.case-study-decorated {
+  position: relative;
+  isolation: isolate;
+}
+
+.case-study-decorated > .main-container {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ==========================================
+   SHARED CASE STUDY — DECORATIVE PATTERNS
+   ========================================== */
+
+/* Container for all decorative icons */
+.case-study-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Shared icon appearance */
+.case-study-pattern__icon {
+  --y: 0px;
+  --size: 80px;
+  --rotation: 0deg;
+  
+  position: absolute;
+  display: block;
+
+  top: var(--y);
+
+  width: var(--size, 80px);
+  height: var(--size, 80px);
+
+  background-color: var(--pattern-color);
+  opacity: var(--pattern-opacity, 0.16);
+
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+
+  transform:
+          translateX(var(--offset))
+          rotate(var(--rotation, 0deg));
+}
+
+/* Position icons along the left margin */
+.pattern-left {
+  left: calc(25% - 27rem);
+  --offset: -50%;
+}
+
+/* Position icons along the right margin */
+.pattern-right {
+  right: calc(25% - 27rem);
+  --offset: 50%;
+}
+
+/* Hide icons when side margins become too narrow */
+@media (max-width: 1300px) {
+  .case-study-pattern {
+    display: none;
+  }
+}
