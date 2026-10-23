@@ -36,7 +36,6 @@ const revealSelectors = [
   "#contact .heading-sec__sub",
   "#contact .contact__form-field",
   "#contact .contact__btn"
-    
 ];
 
 /* ==========================================
@@ -208,6 +207,18 @@ revealSelectors.push(
     ".escort-case-study .escort-reflection__card",
     ".escort-case-study .escort-reflection__next",
     ".escort-case-study .case-study-bottom-cta",
+
+    // ------------------------------------
+    // SECRET SIMULATOR
+    // ------------------------------------
+
+    ".secret-case-study .case-study-section__heading",
+    ".secret-case-study .case-study-section > .case-study-copy",
+    ".secret-case-study .project-details__showcase-img-cont",
+    ".secret-case-study .case-study-callout",
+    ".secret-case-study .gallery",
+    ".secret-case-study .case-study-system__rows > div",
+    ".secret-case-study .case-study-bottom-cta",
 
 );
 
@@ -435,3 +446,62 @@ document.querySelectorAll(".project-preview").forEach(preview => {
     }
   });
 });
+
+
+/* ==========================================
+   STICKY CASE STUDY NAVIGATION OFFSETS
+   ========================================== */
+
+(() => {
+
+  const header = document.querySelector(".header");
+
+  const jumpnav = document.querySelector(
+      "main :is(.shoe-jumpnav, .case-study-jumpnav, .postvoid-jumpnav)"
+  );
+
+  // Only run on pages containing a jumpnav.
+  if (!header || !jumpnav) return;
+
+  function updateNavigationOffsets() {
+
+    const headerHeight = Math.ceil(
+        header.getBoundingClientRect().height
+    );
+
+    const navHeight = Math.ceil(
+        jumpnav.getBoundingClientRect().height
+    );
+
+    document.documentElement.style.setProperty(
+        "--portfolio-header-height",
+        `${headerHeight}px`
+    );
+
+    document.documentElement.style.setProperty(
+        "--portfolio-jumpnav-height",
+        `${navHeight}px`
+    );
+  }
+
+  updateNavigationOffsets();
+
+  // Respond to resizing, font loading and navigation wrapping.
+  if ("ResizeObserver" in window) {
+
+    const observer = new ResizeObserver(
+        updateNavigationOffsets
+    );
+
+    observer.observe(header);
+    observer.observe(jumpnav);
+
+  } else {
+
+    window.addEventListener(
+        "resize",
+        updateNavigationOffsets
+    );
+  }
+
+})();

@@ -454,6 +454,29 @@ iframe {
   width: 100%;
 }
 
+
+/* Match hamburger icons to the header theme */
+
+/* Light theme */
+.header__main-ham-menu,
+.header__main-ham-menu-close {
+  filter: brightness(0);
+}
+
+/* System dark theme */
+@media (prefers-color-scheme: dark) {
+  .header__main-ham-menu,
+  .header__main-ham-menu-close {
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* Manually enabled dark mode */
+body.dark-mode .header__main-ham-menu,
+body.dark-mode .header__main-ham-menu-close {
+  filter: brightness(0) invert(1);
+}
+
 .header__sm-menu {
   background: var(--surface);
   position: absolute;
@@ -2082,7 +2105,8 @@ main :is(
 main:is(
     .shoe-case-study,
     .squeak-case-study,
-    .postvoid-case-study
+    .postvoid-case-study,
+    .secret-case-study
 ) {
   text-align: justify;
 }
@@ -2090,7 +2114,8 @@ main:is(
 /* Preserve left-aligned section headings */
 .shoe-case-study .shoe-section__heading,
 .squeak-case-study .case-study-section__heading,
-.postvoid-case-study .case-study-section__heading {
+.postvoid-case-study .case-study-section__heading,
+.secret-case-study .case-study-section__heading {
   text-align: left;
 }
 
@@ -3166,4 +3191,154 @@ main.squeak-case-study :is(
 .escort-case-study .case-study-copy {
   text-align: justify;
   text-align-last: left;
+}
+/* Secret Simulator — Mobile feedback layout */
+@media (max-width: 42em) {
+  .secret-case-study .case-study-system__rows > div {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+/* ==========================================
+   SECRET SIMULATOR — CLOSING CTA
+   ========================================== */
+
+.secret-case-study .case-study-bottom-cta > p {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+/* ==========================================
+   SECRET SIMULATOR — FEEDBACK & REFLECTIONS
+   ========================================== */
+
+.secret-case-study .case-study-system__rows h3 {
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.secret-case-study .case-study-system__rows p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+/* ==========================================
+   SECRET SIMULATOR — GALLERY
+   ========================================== */
+
+.secret-case-study .gallery-main {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.secret-case-study .gallery-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.secret-case-study .gallery-thumbs img:focus-visible {
+  opacity: 1;
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Account for the fixed header when navigating */
+.secret-case-study [id] {
+  scroll-margin-top: 11rem;
+}
+
+.secret-case-study .gallery-btn {
+  min-width: 44px;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+}
+
+
+/* ==========================================
+   SECRET SIMULATOR — GAME JAM LINK
+   ========================================== */
+
+.secret-jam-reference {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 3rem;
+}
+
+.secret-case-study .secret-jam-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+
+  max-width: 100%;
+  padding: 1.4rem 2.2rem;
+
+  background: var(--surface);
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 0.8rem;
+  box-shadow: none;
+
+  font-size: max(18px, 1.8rem);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: normal;
+}
+
+.secret-case-study .secret-jam-link:hover {
+  background: var(--surface-soft);
+}
+@media (max-width: 42em) {
+  .secret-hero .btn--bg {
+    max-width: 100%;
+    padding: 1.5rem 2.4rem;
+    font-size: 1.8rem;
+    white-space: normal;
+  }
+}
+
+
+/* ==========================================
+   SHARED CASE STUDY — STICKY NAVIGATION
+   ========================================== */
+
+main :is(
+    .shoe-jumpnav,
+    .case-study-jumpnav,
+    .postvoid-jumpnav
+) {
+  position: sticky;
+
+  /* Stay immediately beneath the fixed header */
+  top: var(--portfolio-header-height, 6.2rem);
+
+  /* Header uses z-index: 1000 */
+  z-index: 900;
+
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 0 0 10px 10px;
+
+  padding: 1rem;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Keep section headings visible when jumping */
+main.project-details [id] {
+  scroll-margin-top: calc(
+          var(--portfolio-header-height, 6.2rem)
+          + var(--portfolio-jumpnav-height, 8rem)
+          + 1.5rem
+  );
 }
