@@ -39,7 +39,6 @@ const revealSelectors = [
     
 ];
 
-
 /* ==========================================
    CASE STUDY SCROLL REVEALS
    ========================================== */
@@ -81,7 +80,6 @@ revealSelectors.push(
     ".shoe-case-study .shoe-detail-list > div",
     ".shoe-case-study .shoe-bottom-cta",
 
-
     // ------------------------------------
     // SQUEAK N' SERVE
     // ------------------------------------
@@ -116,8 +114,7 @@ revealSelectors.push(
     ".squeak-case-study .squeak-vfx__examples > div",
     ".squeak-case-study .squeak-reflections > div",
     ".squeak-case-study .case-study-bottom-cta",
-
-
+    
     // ------------------------------------
     // POST VOID
     // ------------------------------------
@@ -144,7 +141,73 @@ revealSelectors.push(
 
     // Technical work and reflections
     ".postvoid-case-study .postvoid-technical-challenge",
-    ".postvoid-case-study .postvoid-reflections > article"
+    ".postvoid-case-study .postvoid-reflections > article",
+
+    // Post Void — Closing CTA
+    ".postvoid-case-study .case-study-bottom-cta",
+    
+    // Twilight Tropics
+    ".twilight-case-study .case-study-section__heading",
+    ".twilight-case-study .case-study-copy",
+    ".twilight-case-study .twilight-vision__map",
+    ".twilight-case-study .case-study-callout",
+    ".twilight-case-study .twilight-vision__principles > div",
+    ".twilight-case-study .twilight-area-card",
+    ".twilight-case-study .twilight-structure__note",
+
+    // Twilight Tropics — Player Choice
+    ".twilight-case-study .twilight-route__checkpoint",
+    ".twilight-case-study .twilight-route__choice",
+    ".twilight-case-study .twilight-route__gallery-title",
+    ".twilight-case-study .twilight-route .gallery",
+    ".twilight-case-study .twilight-route__outcome",
+    ".twilight-case-study .twilight-route__next > div",
+    ".twilight-case-study .twilight-route__takeaway",
+
+    // Twilight Tropics — Supporting Areas
+    ".twilight-case-study .twilight-support__heading",
+    ".twilight-case-study .twilight-support__options > div",
+    ".twilight-case-study .twilight-support__area .gallery",
+
+    // Twilight Tropics — Reflections
+    ".twilight-case-study .twilight-reflection__card",
+    ".twilight-case-study .twilight-reflection__takeaway",
+
+    // Twilight Tropics — Overview
+    ".twilight-case-study #overview .video-wrapper",
+    ".twilight-case-study #overview .case-study-contributions > div",
+    
+    // Twilight Tropics — Closing CTA
+    ".twilight-case-study .case-study-bottom-cta",
+    
+    // ------------------------------------
+    // ESCORT GAME
+    // ------------------------------------
+
+    ".escort-case-study .case-study-section__heading",
+    ".escort-case-study .case-study-section > .case-study-copy",
+    ".escort-case-study .escort-overview__image",
+    ".escort-case-study .case-study-callout",
+    ".escort-case-study .escort-overview__role",
+
+    // Escort Game — Asymmetric Roles
+    ".escort-case-study .escort-role__heading",
+    ".escort-case-study .escort-role__media > figure",
+    ".escort-case-study .escort-role__details > div",
+    
+    // Escort Game — Cooperative Loop
+    ".escort-case-study .escort-loop__npc",
+    ".escort-case-study .escort-loop__encounters",
+    ".escort-case-study .escort-loop__outcomes > article",
+
+    // Escort Game — Technical Implementation
+    ".escort-case-study .escort-tech__feature",
+    ".escort-case-study .escort-tech__tradeoff",
+
+    // Escort Game — Reflections
+    ".escort-case-study .escort-reflection__card",
+    ".escort-case-study .escort-reflection__next",
+    ".escort-case-study .case-study-bottom-cta",
 
 );
 
@@ -371,5 +434,4 @@ document.querySelectorAll(".project-preview").forEach(preview => {
       stopPreview();
     }
   });
-
 });

@@ -149,6 +149,21 @@
   box-sizing: border-box;
 }
 
+/* Shared case study CTA heading */
+
+.case-study-bottom-cta > p {
+  color: var(--text-main);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  line-height: 1.3;
+
+  text-align: center;
+  text-align-last: center;
+
+  max-width: 80rem;
+  margin: 0;
+}
+
 
 /* ---------- 02 Sections, body copy, summary cards ---------- */
 

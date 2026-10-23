@@ -4,12 +4,12 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Escort Game Prototype (2024) (PC)</title>
-    <link rel="icon" href="./assets/png/headshot.png">
-    <meta name="description" content="Case study page of Project"/>
+    <title>Twilight Tropics — Level Design | Julian Jaako Ahlberger</title>
+    <meta name="description" content="Level design case study of Twilight Tropics, a solo Far Cry 5 Map Editor project exploring player choice, environmental storytelling, and different tactical approaches."/>
 
     <link rel="stylesheet" href="./css/style.css"/>
-
+    <link rel="stylesheet" href="./css/case-study-shared.css"/>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -21,208 +21,638 @@
 <div id="site-header"></div>
 <script src="/site-header.js"></script>
 
-<section class="project-cs-hero">
-    <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Twilight Tropics (2024) (PC)</h1>
-        <div class="project-cs-hero__info">
-            <p class="text-primary">
-                A level I made in the Far Cry 5 editor.
-                <br>
-                <br>
-                <strong>Engine/Tools:</strong> Far Cry 5 Map Editor
-                <br>
-                <strong>My Role(s):</strong> Level Designer
-                <br>
-                <strong>Team Size:</strong> 1 
-                <br>
-                <strong>Duration:</strong> 2 weeks - Half-time
-                <br>
-                <strong>Type:</strong> Level Design Project
+    <!-- HERO -->
+    <section class="project-cs-hero twilight-hero" id="top" aria-labelledby="twilight-title">
+        <div class="project-cs-hero__content">
+            <p class="case-study-hero__eyebrow">CASE STUDY · LEVEL DESIGN</p>
+            <h1 class="heading-primary" id="twilight-title">Twilight Tropics</h1>
+            <p class="case-study-hero__lead">
+                A tropical archipelago level built around a
+                bounty hunt, where players can approach
+                their objective through different routes,
+                tactics and levels of risk.
             </p>
-        </div>
-    </div>
-</section>
-<section class="project-details">
-    <div class="main-container">
-        <div class="project-details__content">
-            <div class="video-wrapper">
-                <iframe
-                    src="https://drive.google.com/file/d/174hLF0SW8IYfWRDwW-Mwzhixv20Gn-eU/preview"
-                    allowfullscreen>
-                </iframe>
+            <div class="case-study-hero__meta" aria-label="Project facts">
+                <span>Far Cry 5 Map Editor</span>
+                <span>PC · 2024</span>
+                <span>Solo project</span>
+                <span>2 weeks · Half-time</span>
             </div>
-            <div class="project-details__content-main">
-                <div class="project-details__desc">
-                    <br>
-                    <h2 class="project-details__content-title">Description of project</h2>
-                    <p class="project-details__desc-para">
-                        I wanted to practice my Level Design skills from a <strong>mechanical</strong> but also a 
-                        <strong>storytelling</strong> perspective. I used the Far Cry 5 Map Editor to save development 
-                        time compared to making something from scratch in a different game engine, like Unity.
+            <p class="case-study-hero__role"><strong>My role:</strong> Level Designer</p>
+        </div>
+    </section>
+
+    <main class="project-details twilight-case-study">
+        <div class="main-container">
+            <div class="project-details__content">
+                
+                <!-- CASE STUDY NAVIGATION -->
+                <nav class="case-study-jumpnav" aria-label="On this page">
+                    <a href="#overview">Overview</a>
+
+                    <a href="#design-vision">Design Vision</a>
+
+                    <a href="#level-structure">Level Structure</a>
+
+                    <a href="#player-choice">Player Choice</a>
+
+                    <a href="#supporting-areas">Supporting Areas</a>
+
+                    <a href="#reflections">Reflections</a>
+                </nav>
+
+                <!-- 01 / OVERVIEW -->
+                <section class="case-study-section" id="overview" aria-labelledby="overview-title">
+                    <div class="case-study-section__heading">
+                        <span class="case-study-section__index">01 / OVERVIEW</span>
+                        <h2 id="overview-title">A bounty hunt built around player choice</h2>
+                    </div>
+    
+                    <p class="case-study-copy">
+                        Twilight Tropics is a solo level-design project
+                        inspired by the tropical environments of the
+                        original Far Cry.
                     </p>
-                    <h3 class="project-details__content-title">Overall Vision</h3>
-                    <div class="project-details__showcase-img-cont">
+    
+                    <p class="case-study-copy">
+                        I created the level using the Far Cry 5 Map Editor
+                        to focus on spatial design, encounters and
+                        environmental storytelling rather than building
+                        gameplay mechanics from scratch.
+                    </p>
+    
+                    <p class="case-study-copy">
+                        <strong>The objective</strong>
+                        <br>
+                        Locate and eliminate a bounty target before 
+                        escaping the archipelago. I wanted players 
+                        to have multiple ways of completing this objective, 
+                        encouraging exploration and different tactical approaches.
+                    </p>
+    
+                    <!-- GAMEPLAY VIDEO -->
+                    <div class="video-wrapper">
+                        <iframe
+                                src="https://drive.google.com/file/d/174hLF0SW8IYfWRDwW-Mwzhixv20Gn-eU/preview"
+                                title="Twilight Tropics gameplay walkthrough"
+                                loading="lazy"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+    
+                    <!-- KEY DESIGN CONTRIBUTIONS -->
+                    <div class="case-study-contributions">
+    
+                        <div>
+                            <span class="case-study-contributions__number">01</span>
+                            <h3>Player choice</h3>
+                            <p>
+                                Designed alternative routes and traversal
+                                opportunities to support different
+                                approaches to the objective.
+                            </p>
+                        </div>
+    
+                        <div>
+                            <span class="case-study-contributions__number">02</span>
+                            <h3>Threat progression</h3>
+                            <p>
+                                Distributed enemy encounters across
+                                areas with different intended threat
+                                levels and playstyles.
+                            </p>
+                        </div>
+    
+                        <div>
+                            <span class="case-study-contributions__number">03</span>
+                            <h3>Environmental design</h3>
+                            <p>
+                                Used terrain, sightlines and rewards
+                                to encourage exploration and
+                                influence player decisions.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- 02 / DESIGN VISION -->
+                <section class="case-study-section" id="design-vision" aria-labelledby="vision-title">
+                    <div class="case-study-section__heading">
+                        <span class="case-study-section__index">02 / DESIGN VISION</span>
+                        <h2 id="vision-title">Designing freedom of approach</h2>
+                    </div>
+
+                    <p class="case-study-copy">
+                        I wanted the objective to remain clear without
+                        making the path toward it feel predetermined.
+                        My approach was to use recognizable landmarks,
+                        alternative routes and tactical opportunities
+                        to balance player guidance with freedom
+                        of exploration.
+                    </p>
+                    
+                    <!-- LEVEL OVERVIEW IMAGE -->
+                    <figure class="twilight-vision__map">
                         <img
                                 src="./assets/png/fc5Overview.png"
-                                alt="Project Image"
+                                alt="Overview of the Twilight Tropics archipelago"
                                 class="project-details__showcase-img"
+                                loading="lazy"
                         />
+                        <figcaption>
+                            Overview of the tropical archipelago
+                            and its different gameplay areas.
+                        </figcaption>
+                    </figure>
+
+                    <!-- CENTRAL DESIGN CHALLENGE -->
+                    <div class="case-study-callout">
+                        <h3>The Main Design Challenge</h3>
+                        <p>
+                            How can I guide players toward an
+                            assassination objective while allowing
+                            them to choose their own route and playstyle?
+                        </p>
+                    </div>
+
+                    <!-- DESIGN PRINCIPLES -->
+                    <div class="twilight-vision__principles">
+                        <div>
+                            <h3>Give direction</h3>
+                            <p>
+                                Use recognizable landmarks, routes
+                                and tactical opportunities to help
+                                players understand where they can go
+                                and what they can do.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Preserve choice</h3>
+                            <p>
+                                Provide different ways to traverse
+                                the environment and approach encounters,
+                                allowing players to favor stealth,
+                                direct combat or exploration.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                    
+                <!-- 03 / LEVEL STRUCTURE -->
+                <section class="case-study-section twilight-structure" id="level-structure" aria-labelledby="structure-title">
+                    <div class="case-study-section__heading">
+                        <span class="case-study-section__index">03 / LEVEL STRUCTURE</span>
+                        <h2 id="structure-title">Four areas, different tactical opportunities</h2>
+                    </div>
+
+                    <p class="case-study-copy">
+                        I divided the archipelago into four distinct 
+                        areas. Each area has its own purpose, intended 
+                        threat level and opportunities for different 
+                        approaches.
+                    </p>
+
+                    <p class="case-study-copy">
+                        The variation in enemy presence, traversal
+                        and available resources was intended to
+                        encourage players to evaluate their options
+                        rather than rely on a single playstyle.
+                    </p>
+
+                    <!-- AREA COMPARISON -->
+                    <div class="twilight-area-grid">
+                        <!-- CHECKPOINT -->
+                        <article class="twilight-area-card" style="--threat: 25%;">
+                            <span class="twilight-area-card__number">AREA 01</span>
+                            <h3>Checkpoint</h3>
+                            <span class="twilight-area-card__level">Low threat</span>
+                            <div class="twilight-area-card__meter" aria-hidden="true"></div>
+                            <p>
+                                A lightly guarded access point controlling
+                                the route to a zipline and maintaining
+                                radio contact with the complex.
+                            </p>
+                            <span class="twilight-area-card__playstyle">Intended approach: Stealth</span>
+                        </article>
+
+                        <!-- MOUNTAIN -->
+                        <article class="twilight-area-card" style="--threat: 50%;">
+                            <span class="twilight-area-card__number">AREA 02</span>
+
+                            <h3>Mountain</h3>
+                            <span class="twilight-area-card__level">Medium threat</span>
+                            <div class="twilight-area-card__meter" aria-hidden="true"></div>
+                            <p>
+                                A guarded radio tower with alternative
+                                ascent routes and a sniper vantage point
+                                overlooking the fort.
+                            </p>
+                            <span class="twilight-area-card__playstyle">Intended approach: Stealth</span>
+                        </article>
+                        <!-- STORAGE -->
+                        <article class="twilight-area-card" style="--threat: 75%;">
+                            <span class="twilight-area-card__number">AREA 03</span>
+                            <h3>Storage</h3>
+                            <span class="twilight-area-card__level">High threat</span>
+                            <div class="twilight-area-card__meter" aria-hidden="true"></div>
+                            <p>
+                                A heavily guarded supply area containing
+                                ammunition, health supplies and boats
+                                that can be used to reach the fort.
+                            </p>
+                            <span class="twilight-area-card__playstyle">Intended approach: Combat or stealth</span>
+                        </article>
+
+                        <!-- FORT -->
+                        <article class="twilight-area-card" style="--threat: 100%;">
+                            <span class="twilight-area-card__number">AREA 04</span>
+                            <h3>Fort</h3>
+                            <span class="twilight-area-card__level">Very high threat</span>
+                            <div class="twilight-area-card__meter" aria-hidden="true"></div>
+                            <p>
+                                The primary objective area containing
+                                the assassination target, with multiple
+                                possible entry points.
+                            </p>
+                            <span class="twilight-area-card__playstyle">Intended approach: Combat or stealth</span>
+                        </article>
                     </div>
                     
-                    <p class="project-details__desc-para"><strong>Features</strong></p>
-                    <ul class="project-details__list">
-                        <li>Tropical archipelago with a FC1 vibe.</li>
-                        <li>Bounty Hunt objective → Goal is to eliminate a target and escape.</li>
-                        <li>Promotes several different approaches.</li>
-                    </ul>
-                    
-                    <h3 class="project-details__content-title">Area: The Checkpoint</h3>
-                    <div class="project-details__showcase-img-cont">
+                    <p class="twilight-structure__note">
+                        Threat levels represent my intended encounter
+                        intensity, not measured difficulty or a
+                        required order of progression.
+                    </p>
+                </section>
+
+                <!-- 04 / DESIGNING PLAYER CHOICE -->
+                <section class="case-study-section twilight-route" id="player-choice" aria-labelledby="choice-title">
+                    <div class="case-study-section__heading">
+                        <span class="case-study-section__index">04 / DESIGNING PLAYER CHOICE</span>
+                        <h2 id="choice-title">One destination, two approaches</h2>
+                    </div>
+                    <p class="case-study-copy">
+                        One of my main design goals was to encourage
+                        players to explore alternative routes rather
+                        than always following the most obvious path.
+                    </p>
+                    <p class="case-study-copy">
+                        The Mountain provided an opportunity to
+                        experiment with this idea. Players can reach
+                        its radio tower by following the road or
+                        discovering a less obvious grappling route.
+                    </p>
+                    <!-- CHECKPOINT -->
+                    <figure class="twilight-route__checkpoint">
                         <img
                                 src="./assets/png/fc5Checkpoint.png"
-                                alt="Project Image"
-                                class="project-details__showcase-img"
+                                alt="Checkpoint area in Twilight Tropics"
+                                loading="lazy"
                         />
+                        <figcaption>
+                            The lightly guarded checkpoint controls
+                            access to the zipline leading toward
+                            the Mountain.
+                        </figcaption>
+                    </figure>
+
+                    <!-- ROUTE COMPARISON -->
+                    <div class="twilight-route__choices">
+                        <article class="twilight-route__choice">
+                            <span class="twilight-route__label">ROUTE 01 · DIRECT</span>
+                            <h3>The road</h3>
+                            <p>
+                                The road is the more obvious and safer
+                                route toward the summit.
+                            </p>
+                            <p>
+                                It offers players a straightforward
+                                approach without requiring them to
+                                discover an alternative path.
+                            </p>
+                        </article>
+
+                        <article class="twilight-route__choice">
+                            <span class="twilight-route__label">ROUTE 02 · EXPLORATION</span>
+                            <h3>The grappling route</h3>
+                            <p>
+                                The grappling route presents a more
+                                demanding alternative located slightly
+                                away from the main path.
+                            </p>
+
+                            <p>
+                                I used angled spatial guidance and
+                                partial concealment to encourage
+                                observant players to discover it.
+                            </p>
+                        </article>
                     </div>
-                    
-                    <p class="project-details__desc-para"><strong>Threat level</strong></p>
-                    <p class="project-details__desc-para">Low</p>
-                        
-                    <p class="project-details__desc-para"><strong>Intended playstyle</strong></p>
-                    <p class="project-details__desc-para">Stealth</p>
 
-                    <p class="project-details__desc-para"><strong>Description</strong></p>
-                    <p class="project-details__desc-para">
-                        The purpose of this checkpoint is to guards the path to the zipline, but it also communicates 
-                        with the other areas of the complex via radio. As this part of the complex isn't as important 
-                        to defend from a tactical standpoint and that the level is played at night, its threat level is 
-                        low.
-                    </p>
-                    
-                    <h3 class="project-details__content-title">Area: The Mountain</h3>
-                    <section class="gallery">
+                    <!-- DESIGN RATIONALE -->
+                    <div class="case-study-callout">
+                        <h3>My Intent</h3>
+                        <p>
+                            I wanted the grappling route to feel like
+                            a rewarding discovery without making it
+                            the only viable way forward. Players who
+                            prefer a safer approach can still follow
+                            the road.
+                        </p>
+                    </div>
+
+                    <!-- MOUNTAIN GALLERY -->
+                    <h3 class="twilight-route__gallery-title">The Mountain in practice</h3>
+                    <section class="gallery" aria-label="Mountain area screenshots">
                         <div class="gallery-main">
-                            <button class="gallery-btn prev">&#10094;</button>
-                            <img src="./assets/png/fc5Mountain.png" alt="Main Image" class="gallery-image"/>
-                            <button class="gallery-btn next">&#10095;</button>
+                            <button class="gallery-btn prev" type="button" aria-label="Previous Mountain screenshot">&#10094;</button>
+                            <img
+                                    src="./assets/png/fc5Mountain.png"
+                                    alt="Mountain area in Twilight Tropics"
+                                    class="gallery-image"
+                            />
+
+                            <button class="gallery-btn next" type="button" aria-label="Next Mountain screenshot">&#10095;</button>
                         </div>
                         <div class="gallery-thumbs">
-                            <img src="./assets/png/fc5Mountain.png" class="active" alt="">
-                            <img src="./assets/png/fc5Mountain2.png" alt="">
-                            <img src="./assets/png/fc5Mountain3.png" alt="">
-                            <img src="./assets/png/fc5Mountain4.png" alt="">
-                            <img src="./assets/png/fc5Mountain5.png" alt="">
-                            <img src="./assets/gif/fc5Mountain6.gif" alt="">
-                            <img src="./assets/png/fc5Mountain7.png" alt="">
-                            <img src="./assets/png/fc5Mountain8.png" alt="">
-                            <img src="./assets/png/fc5Mountain9.png" alt="">
+                            <img src="./assets/png/fc5Mountain.png"
+                                 class="active" alt="Mountain screenshot 1">
+                            <img src="./assets/png/fc5Mountain2.png"
+                                 alt="Mountain screenshot 2">
+                            <img src="./assets/png/fc5Mountain3.png"
+                                 alt="Mountain screenshot 3">
+                            <img src="./assets/png/fc5Mountain4.png"
+                                 alt="Mountain screenshot 4">
+                            <img src="./assets/png/fc5Mountain5.png"
+                                 alt="Mountain screenshot 5">
+                            <img src="./assets/gif/fc5Mountain6.gif"
+                                 alt="Mountain screenshot 6">
+                            <img src="./assets/png/fc5Mountain7.png"
+                                 alt="Mountain screenshot 7">
+                            <img src="./assets/png/fc5Mountain8.png"
+                                 alt="Mountain screenshot 8">
+                            <img src="./assets/png/fc5Mountain9.png"
+                                 alt="Mountain screenshot 9">
                         </div>
                     </section>
-                    <p class="project-details__desc-para"><strong>Threat level</strong></p>
-                    <p class="project-details__desc-para">Medium</p>
 
-                    <p class="project-details__desc-para"><strong>Intended playstyle</strong></p>
-                    <p class="project-details__desc-para">Stealth</p>
+                    <!-- VANTAGE POINT -->
+                    <div class="twilight-route__outcome">
+                        <span class="twilight-route__label">SHARED DESTINATION</span>
+                        <h3>The radio tower</h3>
+                        <p>
+                            Reaching the summit gives players access
+                            to a sniper rifle and a vantage point
+                            overlooking the fort.
+                        </p>
+                        <p>
+                            However, the assassination target remains
+                            obscured from this position. Players can
+                            use the vantage point to engage other
+                            enemies, but must still consider how to
+                            approach the objective itself.
+                        </p>
+                    </div>
 
-                    <p class="project-details__desc-para"><strong>Description</strong></p>
-                    <p class="project-details__desc-para">
-                        The Mountain provides contact to the outside world for the entire complex through its tall radio
-                        tower. This makes it something important to guard, thus the zipline to it as well as the path
-                        up to the tower is reasonably guarded. There are two ways for the player to ascend it, taking 
-                        <strong>the road</strong> or using <strong>the grappling hook</strong>. Once on top, the player 
-                        can climb the radio tower to find a sniper rifle.
-                        <br>
-                        <br>
-                        The idea behind this design is that the road is the obvious and safest route but using the 
-                        grappling hook poses more of a challenge but is in turn more rewarding for the player if they 
-                        succeed. Also, who doesn't love using grappling hooks? As using the grappling hook is the 
-                        approach I think most people will enjoy more, I attempt to guide the player towards it by 
-                        making use of an obtuse angle towards it. To not make it too obvious, I do hide it slightly by 
-                        putting it off of the beaten path in the hope that the player would feel a bit clever by not 
-                        taking the obvious path.  
-                        <br>
-                        <br>
-                        The radio tower is placed in such a way that the player can get a good sight picture of the 
-                        fort with the sniper rifle to take out some enemies. The assassination target remains 
-                        obscured, forcing the player to be clever or get closer to the island. They can simply wingsuit 
-                        from the tower or backtrack.
+                    <!-- NEXT DECISION -->
+                    <div class="twilight-route__next">
+                        <div>
+                            <h4>Wingsuit</h4>
+                            <p>
+                                Continue toward the fort using
+                                aerial traversal.
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Backtrack</h4>
+                            <p>
+                                Return through the level and approach
+                                the objective differently.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="twilight-route__takeaway">
+                        The intent was to offer meaningful traversal
+                        choices while preserving a clear destination.
+                        Different routes provide different experiences
+                        without requiring the player to follow one
+                        predetermined solution.
                     </p>
+                </section>
                     
-                    <h3 class="project-details__content-title">Area: The Storage</h3>
-                    <section class="gallery">
-                        <div class="gallery-main">
-                            <button class="gallery-btn prev">&#10094;</button>
-                            <img src="./assets/png/fc5Storage.png" alt="Main Image" class="gallery-image"/>
-                            <button class="gallery-btn next">&#10095;</button>
-                        </div>
-                        <div class="gallery-thumbs">
-                            <img src="./assets/png/fc5Storage.png" class="active" alt="">
-                            <img src="./assets/png/fc5Storage3.png" alt="">
-                            <img src="./assets/png/fc5Storage4.png" alt="">
-                            <img src="./assets/png/fc5Storage5.png" alt="">
-                            <img src="./assets/png/fc5Storage6.png" alt="">
-                        </div>
-                    </section>
-                    <p class="project-details__desc-para"><strong>Threat level</strong></p>
-                    <p class="project-details__desc-para">High</p>
+                <!-- 05 / SUPPORTING AREAS -->
+                <section class="case-study-section twilight-support" id="supporting-areas" aria-labelledby="support-title">
+                    <div class="case-study-section__heading">
+                        <span class="case-study-section__index">05 / SUPPORTING AREAS</span>
+                        <h2 id="support-title">Preparing for and reaching the objective</h2>
+                    </div>
 
-                    <p class="project-details__desc-para"><strong>Intended playstyle</strong></p>
-                    <p class="project-details__desc-para">Loud but stealth is possible.</p>
-
-                    <p class="project-details__desc-para"><strong>Description</strong></p>
-                    <p class="project-details__desc-para">
-                        The Storage contains a lot of ammunition, health kits and armor scattered within it. It's the 
-                        main port of which soldiers get to and from the fort to replenish themselves. The area
-                        is therefore heavily guarded. The player enter it either by smashing through the gates with a 
-                        vehicle or by climbing over the west wall via a fallen tree. The player can find boats here 
-                        that they can take to the fort. 
+                    <p class="case-study-copy">
+                        While the Mountain focuses on traversal choices
+                        and tactical positioning, Storage and the Fort
+                        introduce other decisions about how to approach
+                        encounters and reach the assassination target.
                     </p>
+
+                    <!-- STORAGE -->
+                    <article class="twilight-support__area">
+                        <div class="twilight-support__heading">
+                            <span class="twilight-support__label">AREA 03 · HIGH THREAT</span>
+                            <h3>Storage — supplies and transport</h3>
+                        </div>
+
+                        <p class="case-study-copy">
+                            Storage is a heavily guarded supply area
+                            containing ammunition, health kits and armor.
+                            It also provides access to boats that can
+                            transport players toward the Fort.
+                        </p>
+
+                        <p class="case-study-copy">
+                            I provided two ways to enter the area,
+                            supporting both a direct and a less
+                            confrontational approach.
+                        </p>
+
+                        <div class="twilight-support__options">
+                            <div>
+                                <h4>Vehicle entry</h4>
+                                <p>
+                                    Break through the gates with a vehicle
+                                    for a direct approach.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4>Western wall</h4>
+                                <p>
+                                    Use a fallen tree to climb over
+                                    the wall instead.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- STORAGE GALLERY -->
+                        <section class="gallery" aria-label="Storage area screenshots">
+                            <div class="gallery-main">
+                                <button class="gallery-btn prev" type="button" aria-label="Previous Storage screenshot">&#10094;</button>
+                                <img
+                                        src="./assets/png/fc5Storage.png"
+                                        alt="Storage area in Twilight Tropics"
+                                        class="gallery-image"
+                                />
+                                <button class="gallery-btn next" type="button" aria-label="Next Storage screenshot">&#10095;</button>
+                            </div>
+
+                            <div class="gallery-thumbs">
+                                <img src="./assets/png/fc5Storage.png"
+                                     class="active"
+                                     alt="Storage screenshot 1">
+                                <img src="./assets/png/fc5Storage3.png"
+                                     alt="Storage screenshot 2">
+                                <img src="./assets/png/fc5Storage4.png"
+                                     alt="Storage screenshot 3">
+                                <img src="./assets/png/fc5Storage5.png"
+                                     alt="Storage screenshot 4">
+                                <img src="./assets/png/fc5Storage6.png"
+                                     alt="Storage screenshot 5">
+                            </div>
+                        </section>
+                    </article>
+
+                    <!-- FORT -->
+                    <article class="twilight-support__area">
+                        <div class="twilight-support__heading">
+                            <span class="twilight-support__label">AREA 04 · VERY HIGH THREAT</span>
+                            <h3>The Fort — the final objective</h3>
+                        </div>
+
+                        <p class="case-study-copy">
+                            The Fort is a heavily guarded research
+                            facility containing the assassination target.
+                            It represents the primary objective of
+                            the bounty hunt.
+                        </p>
+
+                        <p class="case-study-copy">
+                            I designed several ways to reach and
+                            enter the island so that players could
+                            choose their preferred approach.
+                        </p>
+
+                        <div class="twilight-support__options">
+                            <div>
+                                <h4>Reaching the island</h4>
+                                <p>
+                                    Swim, glide or travel by boat
+                                    to reach the Fort.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h4>Entering the Fort</h4>
+                                <p>
+                                    Approach from the air, use the
+                                    main gate, or enter through
+                                    a pipe on the western side.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- FORT GALLERY -->
+                        <section class="gallery" aria-label="Fort area screenshots">
+                            <div class="gallery-main">
+                                <button class="gallery-btn prev" type="button" aria-label="Previous Fort screenshot">&#10094;</button>
+                                <img
+                                        src="./assets/png/fc5Fort.png"
+                                        alt="Fort area in Twilight Tropics"
+                                        class="gallery-image"
+                                />
+
+                                <button class="gallery-btn next" type="button" aria-label="Next Fort screenshot">&#10095;</button>
+                            </div>
+                            <div class="gallery-thumbs">
+                                <img src="./assets/png/fc5Fort.png"
+                                     class="active"
+                                     alt="Fort screenshot 1">
+                                <img src="./assets/png/fc5Fort2.png"
+                                     alt="Fort screenshot 2">
+                                <img src="./assets/png/fc5Fort3.png"
+                                     alt="Fort screenshot 3">
+                                <img src="./assets/png/fc5Fort4.png"
+                                     alt="Fort screenshot 4">
+                                <img src="./assets/png/fc5Fort5.png"
+                                     alt="Fort screenshot 5">
+                                <img src="./assets/png/fc5Fort6.png"
+                                     alt="Fort screenshot 6">
+                                <img src="./assets/png/fc5Fort7.png"
+                                     alt="Fort screenshot 7">
+                            </div>
+                        </section>
+                    </article>
+                </section>
                     
-                    <h3 class="project-details__content-title">Area: The Fort</h3>
-                    <section class="gallery">
-                        <div class="gallery-main">
-                            <button class="gallery-btn prev">&#10094;</button>
-                            <img src="./assets/png/fc5Fort.png" alt="Main Image" class="gallery-image"/>
-                            <button class="gallery-btn next">&#10095;</button>
-                        </div>
-                        <div class="gallery-thumbs">
-                            <img src="./assets/png/fc5Fort.png" class="active" alt="">
-                            <img src="./assets/png/fc5Fort2.png" alt="">
-                            <img src="./assets/png/fc5Fort3.png" alt="">
-                            <img src="./assets/png/fc5Fort4.png" alt="">
-                            <img src="./assets/png/fc5Fort5.png" alt="">
-                            <img src="./assets/png/fc5Fort6.png" alt="">
-                            <img src="./assets/png/fc5Fort7.png" alt="">
-                        </div>
-                    </section>
-                    <p class="project-details__desc-para"><strong>Threat level</strong></p>
-                    <p class="project-details__desc-para">Very High</p>
+                <!-- 06 / REFLECTIONS -->
+                <section class="case-study-section twilight-reflection" id="reflections" aria-labelledby="reflections-title">
+                    <div class="case-study-section__heading">
+                        <span class="case-study-section__index">06 / REFLECTIONS</span>
+                        <h2 id="reflections-title">Designing beyond my own preferences</h2>
+                    </div>
+                    <p class="case-study-copy">
+                        One of the challenges of level design is
+                        balancing the experience I personally find
+                        enjoyable with the different ways other
+                        players may prefer to approach a level.
+                    </p>
 
-                    <p class="project-details__desc-para"><strong>Intended playstyle</strong></p>
-                    <p class="project-details__desc-para">Both</p>
-                        
-                    <p class="project-details__desc-para"><strong>Description</strong></p>
-                    <p class="project-details__desc-para">
-                        A highly guarded research facility and is the island of which the assassination target is 
-                        located. The player can get to it by either swimming, gliding or traveling by boat. It's 
-                        possible to get in via the air, main gate or a pipe on the west side of the island. 
+                    <div class="twilight-reflection__grid">
+
+                        <article class="twilight-reflection__card">
+                            <h3>What I learned</h3>
+                            <p>
+                                Designing an interesting route is
+                                not enough on its own. Alternative
+                                approaches should remain worthwhile,
+                                even when they do not match my own
+                                preferred way of playing.
+                            </p>
+                        </article>
+
+                        <article class="twilight-reflection__card">
+                            <h3>What I would validate</h3>
+                            <p>
+                                I would test whether players notice
+                                the alternative routes, understand
+                                their options, and experience the
+                                intended differences in encounter
+                                difficulty.
+                            </p>
+                        </article>
+                    </div>
+                    <p class="twilight-reflection__takeaway">
+                        Twilight Tropics taught me to think beyond
+                        individual encounters and consider how
+                        routes, resources and environmental guidance
+                        work together to support player choice.
                     </p>
-                    
-                    <h3 class="project-details__content-title">Lessons learned</h3>
-                    <p class="project-details__desc-para">
-                        It's very easy to either over or underthink every design decision as everyone is different and 
-                        finds joy in different things. Initially chasing what <strong>YOU</strong> think is fun is 
-                        helpful but needs to be careful as a designer to not only allow one playstyle but multiple, even if it 
-                        wouldn't be your preference.
-                    </p>
-                </div>
+
+                    <!-- CLOSING CTA -->
+                    <div class="case-study-bottom-cta">
+                        <p>Interested in more of my design work?</p>
+
+                        <a href="./index.html#other-projects"
+                           class="btn btn--med btn--theme">
+                            Explore More Projects
+                            <span aria-hidden="true">↗</span>
+                        </a>
+                    </div>
+                </section>
             </div>
         </div>
-    </div>
-</section>
+    </main>
 <div id="site-footer"></div>
 <script src="/site-footer.js"></script>
-<script src="./index.js"></script>
 <script src="./index.js"></script>
 </body>
 </html>

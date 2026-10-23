@@ -515,7 +515,6 @@ iframe {
 }
 
 /* Refined header appearance */
-
 .header {
   border-bottom: 1px solid var(--border);
   box-shadow: 0 6px 24px rgba(17, 10, 26, 0.08);
@@ -526,7 +525,6 @@ iframe {
 }
 
 /* Logo typography */
-
 .header__logo-img-cont {
   flex-shrink: 0;
 }
@@ -540,7 +538,6 @@ iframe {
 }
 
 /* Desktop navigation */
-
 .header__links {
   gap: 0.4rem;
 }
@@ -554,7 +551,6 @@ iframe {
 }
 
 /* Animated underline */
-
 .header__link::after {
   content: "";
   position: absolute;
@@ -581,7 +577,6 @@ iframe {
 }
 
 /* Hamburger button */
-
 .header__main-ham-menu-cont {
   width: 44px;
   height: 44px;
@@ -591,7 +586,6 @@ iframe {
 }
 
 /* Mobile navigation */
-
 .header__sm-menu-link a {
   padding: 1.5rem 2.5rem;
   font-size: max(18px, 1.8rem);
@@ -605,7 +599,6 @@ iframe {
 }
 
 /* Switch earlier to hamburger navigation */
-
 @media only screen and (max-width: 75em) {
   .header__links {
     display: none;
@@ -624,7 +617,6 @@ iframe {
 }
 
 /* Allow the name to wrap on small screens */
-
 @media only screen and (max-width: 37.5em) {
   .header__content {
     padding: 0.7rem 1.3rem;
@@ -638,7 +630,6 @@ iframe {
 }
 
 /* Reduced motion */
-
 @media (prefers-reduced-motion: reduce) {
   .header__link::after {
     transition: none;
@@ -839,7 +830,6 @@ iframe {
 }
 
 /* Spacing between About Me skill categories */
-
 .about__content-skills > .about__content-title:not(:first-child) {
   margin-top: 3rem;
 }
@@ -867,7 +857,6 @@ iframe {
 }
 
 /* Timeline markers */
-
 .education-timeline__item::before {
   content: "";
   position: absolute;
@@ -884,7 +873,6 @@ iframe {
 }
 
 /* Dates and status */
-
 .education-timeline__date {
   display: block;
   margin-bottom: 0.8rem;
@@ -897,7 +885,6 @@ iframe {
 }
 
 /* Degree titles */
-
 .education-timeline__degree {
   color: var(--text-main);
   font-family: var(--font-display);
@@ -1016,7 +1003,6 @@ iframe {
 }
 
 /* Card */
-
 .other-project-card {
   display: flex;
   flex-direction: column;
@@ -1032,13 +1018,12 @@ iframe {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 
   transition:
-          transform 0.2s ease,
-          box-shadow 0.2s ease,
-          border-color 0.2s ease;
+  transform 0.2s ease,
+  box-shadow 0.2s ease,
+  border-color 0.2s ease;
 }
 
 /* Image */
-
 .other-project-card__media {
   aspect-ratio: 16 / 10;
   overflow: hidden;
@@ -1046,7 +1031,6 @@ iframe {
 }
 
 /* Default: screenshots fill their container */
-
 .other-project-card__media img {
   display: block;
   width: 100%;
@@ -1055,19 +1039,25 @@ iframe {
   object-position: center;
 }
 
-/* Game icons: preserve the entire image */
-
+/* Preserve icons within the shared card media ratio */
 .other-project-card__media--contain {
-  display: grid;
-  place-items: center;
-  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem;
+  background: var(--surface-soft);
 }
 
 .other-project-card__media--contain img {
-  object-fit: contain;
-}
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 
-/* Content */
+  object-fit: contain;
+  object-position: center;
+}
 
 .other-project-card__content {
   display: flex;
@@ -1109,7 +1099,6 @@ iframe {
 }
 
 /* Bottom link */
-
 .other-project-card__link {
   display: flex;
   justify-content: space-between;
@@ -1126,7 +1115,6 @@ iframe {
 }
 
 /* Interaction */
-
 @media (hover: hover) {
   .other-project-card:hover {
     transform: translateY(-4px);
@@ -1141,7 +1129,6 @@ iframe {
 }
 
 /* Tablet */
-
 @media (max-width: 62em) {
   .other-projects__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1149,7 +1136,6 @@ iframe {
 }
 
 /* Mobile */
-
 @media (max-width: 42em) {
   .other-projects__grid {
     grid-template-columns: 1fr;
@@ -1163,7 +1149,6 @@ iframe {
 }
 
 /* Reduced motion */
-
 @media (prefers-reduced-motion: reduce) {
   .other-project-card {
     transition: none;
@@ -1193,34 +1178,59 @@ iframe {
 }
 
 
-/* ==========================================
-   FEATURED PROJECTS — HOVER ENLARGEMENT
-   ========================================== */
-
 .featured-work .project-preview {
   position: relative;
   z-index: 1;
 
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  min-height: 24rem;
+
+  background: #17121D;
+
   transform-origin: center;
+
   transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
+  opacity 0.6s ease-out,
+  translate 0.6s ease-out,
+  transform 0.3s ease,
+  box-shadow 0.3s ease;
 }
 
-/* Enlarge the entire preview, including video */
 
-@media (min-width: 62em) and (hover: hover) and (pointer: fine) {
+/* Featured project thumbnails */
+.featured-work .project-preview__link > .projects__row-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+
+/* ==========================================
+   FEATURED PROJECTS — HOVER ENLARGEMENT
+   ========================================== */
+
+/* Mouse hover — desktop */
+
+@media (min-width: 56.25em) and
+(hover: hover) and
+(pointer: fine) {
+
   .featured-work .project-preview:hover {
-    transform: scale(1.16);
+    transform: scale(1.2);
     z-index: 10;
 
     box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
   }
 }
 
-/* Keyboard navigation */
+/* Keyboard focus */
 
-@media (min-width: 62em) {
+@media (min-width: 56.25em) {
+
   .featured-work .project-preview:focus-within {
     transform: scale(1.16);
     z-index: 10;
@@ -1228,7 +1238,6 @@ iframe {
 }
 
 /* Accessibility */
-
 @media (prefers-reduced-motion: reduce) {
   .featured-work .project-preview {
     transition: none;
@@ -1244,13 +1253,6 @@ iframe {
   .featured-work .projects__row-img {
     transition: none;
   }
-}
-
-.featured-work .project-preview {
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  min-height: 24rem;
 }
 
 .project-preview__link {
@@ -1802,16 +1804,10 @@ iframe {
 .gallery-carousel__thumb.active {
   opacity: 1;
   transform: scale(1.05);
-  border: 2px solid #41004b;
-}
-
-.gallery-carousel__thumbnails::-webkit-scrollbar {
-  display: none;
+  border: 2px solid var(--accent);
 }
 
 .gallery-carousel__thumbnails {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
   scroll-snap-type: x mandatory;
 }
 
@@ -1877,7 +1873,62 @@ iframe {
 
 .gallery-thumbs img.active {
   opacity: 1;
-  outline: 3px solid #41004b;
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+
+/* ==========================================
+   GALLERY — CUSTOM HORIZONTAL SCROLLBARS
+   ========================================== */
+
+/* Shared scrollbar behavior */
+.gallery-thumbs,
+.gallery-carousel__thumbnails {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-bottom: 1.2rem;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--surface-soft);
+}
+
+/* Chrome, Edge, Safari */
+.gallery-thumbs::-webkit-scrollbar,
+.gallery-carousel__thumbnails::-webkit-scrollbar {
+  height: 12px;
+}
+
+/* Scrollbar track */
+.gallery-thumbs::-webkit-scrollbar-track,
+.gallery-carousel__thumbnails::-webkit-scrollbar-track {
+  background: var(--surface-soft);
+
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+/* Draggable scrollbar thumb */
+.gallery-thumbs::-webkit-scrollbar-thumb,
+.gallery-carousel__thumbnails::-webkit-scrollbar-thumb {
+  background: var(--accent);
+
+  border: 3px solid var(--surface-soft);
+  border-radius: 999px;
+}
+
+/* Slightly emphasize on hover */
+.gallery-thumbs::-webkit-scrollbar-thumb:hover,
+.gallery-carousel__thumbnails::-webkit-scrollbar-thumb:hover {
+  border-width: 2px;
+}
+
+/* Keep thumbnails at their intended sizes */
+.gallery-thumbs img,
+.gallery-carousel__thumb {
+  flex-shrink: 0;
 }
 
 /* ==========================================================
@@ -1885,7 +1936,6 @@ iframe {
    ========================================================== */
 
 /* Main images, GIFs, videos and gallery containers */
-
 .projects__row-img-cont,
 .project-details__showcase-img,
 .shoe-feature-media,
@@ -1901,7 +1951,6 @@ iframe {
 }
 
 /* Gallery thumbnails */
-
 .gallery-thumbs > img,
 .gallery-carousel__thumb {
   border: 2px solid var(--border);
@@ -1930,7 +1979,6 @@ main :is(
 }
 
 /* Navigation buttons */
-
 main :is(
     .shoe-jumpnav,
     .case-study-jumpnav,
@@ -1958,7 +2006,6 @@ main :is(
 }
 
 /* Hover */
-
 main :is(
     .shoe-jumpnav,
     .case-study-jumpnav,
@@ -1969,7 +2016,6 @@ main :is(
 }
 
 /* Keyboard focus */
-
 main :is(
     .shoe-jumpnav,
     .case-study-jumpnav,
@@ -1980,7 +2026,6 @@ main :is(
 }
 
 /* Mobile case study navigation */
-
 @media (max-width: 42em) {
 
   main :is(
@@ -2010,7 +2055,6 @@ main :is(
 }
 
 /* Typography-based personal logo */
-
 .header__logo-img-cont {
   display: grid;
   place-items: center;
@@ -2035,7 +2079,6 @@ main :is(
    ========================================== */
 
 /* Justify text throughout the case studies */
-
 main:is(
     .shoe-case-study,
     .squeak-case-study,
@@ -2045,7 +2088,6 @@ main:is(
 }
 
 /* Preserve left-aligned section headings */
-
 .shoe-case-study .shoe-section__heading,
 .squeak-case-study .case-study-section__heading,
 .postvoid-case-study .case-study-section__heading {
@@ -2054,7 +2096,6 @@ main:is(
 
 /* Override Squeak N' Serve's existing
    left-aligned paragraph rules */
-
 main.squeak-case-study :is(
     .case-study-copy,
     .case-study-system__header p,
@@ -2063,7 +2104,6 @@ main.squeak-case-study :is(
   text-align: justify;
   text-align-last: left;
 }
-
 
 @media (max-width: 42em) {
 
@@ -2075,10 +2115,6 @@ main.squeak-case-study :is(
     aspect-ratio: 16 / 9;
   }
 
-  .other-project-card__media--square {
-    aspect-ratio: 1 / 1;
-  }
-
   .other-project-card__content {
     gap: 0.8rem;
     padding: 1.8rem;
@@ -2087,20 +2123,6 @@ main.squeak-case-study :is(
   .other-project-card__link {
     padding-top: 1.5rem;
   }
-}
-
-/* Secret Simulator uses a square icon/poster */
-
-.other-project-card__media--square {
-  aspect-ratio: 1 / 1;
-  padding: 2.2rem;
-}
-
-.other-project-card__media--square img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
 }
 
 /* ==========================================
@@ -2114,8 +2136,8 @@ main.squeak-case-study :is(
     translate: 0 16px;
 
     transition:
-            opacity 0.6s ease-out,
-            translate 0.6s ease-out;
+    opacity 0.6s ease-out,
+    translate 0.6s ease-out;
   }
 
   .fade-in.visible {
@@ -2124,23 +2146,21 @@ main.squeak-case-study :is(
   }
 
   /* Preserve existing card hover animations */
-
   .other-project-card.fade-in {
     transition:
-            opacity 0.6s ease-out,
-            translate 0.6s ease-out,
-            transform 0.2s ease,
-            border-color 0.2s ease,
-            box-shadow 0.2s ease;
+    opacity 0.6s ease-out,
+    translate 0.6s ease-out,
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
   }
 
   /* Preserve button hover animations */
-
   .btn.fade-in {
     transition:
-            opacity 0.6s ease-out,
-            translate 0.6s ease-out,
-            transform 0.3s ease;
+    opacity 0.6s ease-out,
+    translate 0.6s ease-out,
+    transform 0.3s ease;
   }
 }
 
@@ -2155,4 +2175,995 @@ main.squeak-case-study :is(
 
 .twilight-case-study .video-wrapper iframe {
   display: block;
+}
+
+
+/* ==========================================
+   TWILIGHT TROPICS — DESIGN VISION
+   ========================================== */
+
+/* Level overview image */
+.twilight-vision__map {
+  margin: 3rem 0;
+}
+
+.twilight-vision__map img {
+  display: block;
+  width: 100%;
+}
+
+.twilight-vision__map figcaption {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 1.7rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Design principles */
+.twilight-vision__principles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.twilight-vision__principles > div {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  padding: 2.5rem;
+}
+
+.twilight-vision__principles h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  line-height: 1.3;
+  margin-bottom: 1.2rem;
+}
+
+.twilight-vision__principles p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+/* Mobile */
+@media (max-width: 42em) {
+
+  .twilight-vision__principles {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ==========================================
+   TWILIGHT TROPICS — LEVEL STRUCTURE
+   ========================================== */
+
+.twilight-area-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Area cards */
+.twilight-area-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 2.5rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+/* Area number */
+.twilight-area-card__number {
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Area title */
+.twilight-area-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  line-height: 1.3;
+}
+
+/* Threat label */
+.twilight-area-card__level {
+  color: var(--text-muted);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+/* Threat visualization */
+.twilight-area-card__meter {
+  width: 100%;
+  height: 0.8rem;
+
+  background: var(--surface-soft);
+  border-radius: 999px;
+  overflow: hidden;
+
+  margin: 0.5rem 0;
+}
+
+.twilight-area-card__meter::before {
+  content: "";
+  display: block;
+
+  height: 100%;
+  width: var(--threat);
+
+  background: var(--accent);
+  border-radius: inherit;
+}
+
+/* Descriptions */
+.twilight-area-card p {
+  color: var(--text-main);
+  font-size: max(18px, 1.9rem);
+  line-height: 1.6;
+}
+
+/* Intended playstyle */
+.twilight-area-card__playstyle {
+  margin-top: auto;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid var(--border);
+
+  color: var(--text-muted);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Supporting note */
+.twilight-structure__note {
+  color: var(--text-muted);
+  font-size: 1.7rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 42em) {
+
+  .twilight-area-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .twilight-area-card {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================
+   TWILIGHT TROPICS — PLAYER CHOICE
+   ========================================== */
+
+/* Checkpoint image */
+.twilight-route__checkpoint {
+  margin: 3rem 0;
+}
+
+.twilight-route__checkpoint img {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+}
+
+.twilight-route__checkpoint figcaption {
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Route comparison */
+.twilight-route__choices {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.twilight-route__choice {
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+/* Labels */
+.twilight-route__label {
+  display: block;
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 1rem;
+}
+
+/* Titles */
+.twilight-route__choice h3,
+.twilight-route__outcome h3,
+.twilight-route__gallery-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+/* Paragraphs */
+.twilight-route__choice p,
+.twilight-route__outcome p,
+.twilight-route__next p,
+.twilight-route__takeaway {
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+  color: var(--text-main);
+}
+
+.twilight-route__choice p + p,
+.twilight-route__outcome p + p {
+  margin-top: 1.5rem;
+}
+
+/* Gallery */
+.twilight-route__gallery-title {
+  margin-top: 4rem;
+}
+
+.twilight-route .gallery {
+  margin: 2rem auto 4rem;
+}
+
+/* Shared outcome */
+.twilight-route__outcome {
+  padding: 3rem;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+/* Next decision */
+.twilight-route__next {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.twilight-route__next > div {
+  padding: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.twilight-route__next h4 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Design takeaway */
+.twilight-route__takeaway {
+  margin-top: 3rem;
+  padding-left: 2rem;
+  border-left: 4px solid var(--accent);
+}
+
+/* Mobile */
+@media (max-width: 42em) {
+
+  .twilight-route__choices,
+  .twilight-route__next {
+    grid-template-columns: 1fr;
+  }
+
+  .twilight-route__choice,
+  .twilight-route__outcome,
+  .twilight-route__next > div {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================
+   TWILIGHT TROPICS — SUPPORTING AREAS
+   ========================================== */
+
+/* Use the same content width as the newer case studies */
+.twilight-case-study .project-details__content {
+  max-width: 108rem;
+}
+
+/* Individual area breakdowns */
+.twilight-support__area {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.twilight-support__heading {
+  margin-bottom: 2rem;
+}
+
+.twilight-support__label {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.twilight-support__heading h3 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.3;
+}
+
+/* Approach comparison cards */
+.twilight-support__options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.twilight-support__options > div {
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.twilight-support__options h4 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.twilight-support__options p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.6;
+}
+
+/* Screenshot galleries */
+.twilight-support__area .gallery {
+  max-width: 100%;
+  margin: 3rem auto 0;
+}
+
+/* ==========================================
+   TWILIGHT TROPICS — REFLECTIONS
+   ========================================== */
+
+.twilight-reflection__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.twilight-reflection__card {
+  padding: 2.5rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.twilight-reflection__card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  margin-bottom: 1.5rem;
+}
+
+.twilight-reflection__card p,
+.twilight-reflection__takeaway {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+.twilight-reflection__takeaway {
+  margin-top: 3rem;
+  padding-left: 2rem;
+  border-left: 4px solid var(--accent);
+}
+
+/* Mobile */
+@media (max-width: 42em) {
+
+  .twilight-support__options,
+  .twilight-reflection__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .twilight-support__options > div,
+  .twilight-reflection__card {
+    padding: 2rem;
+  }
+}
+
+/* Offset anchor navigation for the fixed header */
+.twilight-case-study [id] {
+  scroll-margin-top: 11rem;
+}
+
+/* Twilight Tropics — responsive galleries */
+.twilight-case-study .gallery-main {
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.twilight-case-study .gallery-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Twilight Tropics — tablet readability */
+@media (max-width: 52em) {
+
+  .twilight-vision__principles,
+  .twilight-area-grid,
+  .twilight-route__choices,
+  .twilight-route__next,
+  .twilight-support__options,
+  .twilight-reflection__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gallery keyboard focus */
+.twilight-case-study .gallery-thumbs img:focus-visible {
+  opacity: 1;
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================
+   ESCORT GAME — OVERVIEW
+   ========================================== */
+
+/* Wider case-study content */
+.escort-case-study .project-details__content {
+  max-width: 108rem;
+}
+
+/* Split-screen image */
+.escort-overview__image {
+  margin: 3rem 0;
+}
+
+.escort-overview__image img {
+  display: block;
+  width: 100%;
+}
+
+.escort-overview__image figcaption {
+  margin-top: 1rem;
+
+  color: var(--text-muted);
+  font-size: 1.7rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Player role comparison */
+.escort-overview__roles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.escort-overview__role {
+  padding: 2.5rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.escort-overview__role span {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.escort-overview__role h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  margin-bottom: 1.5rem;
+}
+
+.escort-overview__role p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+/* Mobile and smaller tablets */
+@media (max-width: 52em) {
+
+  .escort-overview__roles {
+    grid-template-columns: 1fr;
+  }
+
+  .escort-overview__role {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================
+   ESCORT GAME — ASYMMETRIC ROLES
+   ========================================== */
+
+/* Individual role sections */
+.escort-role {
+  padding: 3rem;
+  margin: 3rem 0;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+/* Role introduction */
+.escort-role__heading {
+  margin-bottom: 3rem;
+}
+
+.escort-role__label {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.escort-role__heading h3 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.escort-role__heading p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.7;
+  max-width: 85ch;
+}
+
+/* Gameplay GIFs */
+.escort-role__media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.escort-role__media figure {
+  min-width: 0;
+}
+
+.escort-role__media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+
+  background: var(--surface-soft);
+}
+
+.escort-role__media figcaption {
+  margin-top: 1rem;
+  color: var(--text-muted);
+  font-size: 1.7rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Mechanical explanations */
+.escort-role__details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.escort-role__details > div {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.escort-role__details h4 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.escort-role__details p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+/* Mobile and tablets */
+@media (max-width: 52em) {
+
+  .escort-role__media,
+  .escort-role__details {
+    grid-template-columns: 1fr;
+  }
+
+  .escort-role {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================
+   ESCORT GAME — COOPERATIVE LOOP
+   ========================================== */
+
+/* Shared labels */
+.escort-loop__label {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Headings */
+.escort-loop__npc h3,
+.escort-loop__encounters h3,
+.escort-loop__outcomes h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.3vw, 28px);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+/* Body text */
+.escort-loop__npc p,
+.escort-loop__encounters p,
+.escort-loop__outcomes p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+.escort-loop__npc p + p,
+.escort-loop__encounters p + p {
+  margin-top: 1.5rem;
+}
+
+/* NPC introduction */
+.escort-loop__npc {
+  padding: 3rem;
+  margin: 3rem 0;
+
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+/* Enemy spawning */
+.escort-loop__encounters {
+  margin: 4rem 0;
+  padding: 3rem;
+
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.escort-loop__encounters figure {
+  margin-top: 3rem;
+}
+
+.escort-loop__encounters img {
+  display: block;
+  width: 100%;
+}
+
+.escort-loop__encounters figcaption {
+  margin-top: 1rem;
+
+  color: var(--text-muted);
+  font-size: 1.7rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Success and failure */
+.escort-loop__outcomes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.escort-loop__outcomes > article {
+  padding: 2.5rem;
+
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.escort-loop__outcomes span {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* Responsive layouts */
+@media (max-width: 52em) {
+  
+  .escort-loop__outcomes {
+    grid-template-columns: 1fr;
+  }
+
+  .escort-loop__npc,
+  .escort-loop__encounters {
+    padding: 2rem;
+  }
+  
+  .escort-loop__outcomes > article {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================
+   ESCORT GAME — TECHNICAL IMPLEMENTATION
+   ========================================== */
+
+/* Shared technical blocks */
+.escort-tech__feature {
+  margin: 3rem 0;
+  padding: 3rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.escort-tech__label {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.escort-tech__feature h3,
+.escort-tech__tradeoff h3 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.escort-tech__feature p,
+.escort-tech__tradeoff p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+.escort-tech__feature p + p,
+.escort-tech__tradeoff > p + p {
+  margin-top: 1.5rem;
+}
+
+/* Viewport diagram */
+.escort-tech__diagram {
+  margin-top: 3rem;
+}
+
+.escort-tech__viewport-stack {
+  overflow: hidden;
+
+  border: 2px solid var(--border);
+  border-radius: 1rem;
+}
+
+.escort-tech__viewport {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 12rem;
+  padding: 2rem;
+
+  background: var(--surface-soft);
+  text-align: center;
+  gap: 0.6rem;
+}
+
+.escort-tech__viewport strong {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+}
+
+.escort-tech__viewport span {
+  color: var(--text-muted);
+  font-size: 1.7rem;
+}
+
+/* Original empty divider */
+.escort-tech__divider {
+  padding: 1.2rem;
+
+  background: #17121D;
+  color: #FFFFFF;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Diagram caption */
+.escort-tech__diagram figcaption {
+  margin-top: 1rem;
+
+  color: var(--text-muted);
+  font-size: 1.7rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Technical tradeoff */
+.escort-tech__tradeoff {
+  padding: 3rem;
+  margin: 3rem 0;
+
+  background: var(--surface-soft);
+  border-left: 5px solid var(--accent);
+  border-radius: 0 1.2rem 1.2rem 0;
+}
+
+/* Proposed improvement */
+.escort-tech__solution {
+  padding: 2.5rem;
+  margin-top: 2.5rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.escort-tech__solution h4 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 26px);
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 52em) {
+
+  .escort-tech__feature,
+  .escort-tech__tradeoff {
+    padding: 2rem;
+  }
+
+  .escort-tech__solution {
+    padding: 2rem;
+  }
+}
+
+/* ==========================================
+   ESCORT GAME — REFLECTIONS
+   ========================================== */
+
+.escort-reflection__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+/* Reflection cards */
+.escort-reflection__card {
+  padding: 2.5rem;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+}
+
+.escort-reflection__label {
+  display: block;
+  margin-bottom: 1rem;
+
+  color: var(--accent);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.escort-reflection__card h3,
+.escort-reflection__next h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.3vw, 28px);
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+.escort-reflection__card p,
+.escort-reflection__next p {
+  color: var(--text-main);
+  font-size: max(20px, 2.1rem);
+  line-height: 1.65;
+}
+
+.escort-reflection__card p + p,
+.escort-reflection__next p + p {
+  margin-top: 1.5rem;
+}
+
+/* Future improvements */
+.escort-reflection__next {
+  margin-top: 3rem;
+  padding: 3rem;
+
+  background: var(--surface-soft);
+  border-left: 5px solid var(--accent);
+  border-radius: 0 1.2rem 1.2rem 0;
+}
+
+/* Tablet and mobile */
+@media (max-width: 52em) {
+
+  .escort-reflection__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .escort-reflection__card,
+  .escort-reflection__next {
+    padding: 2rem;
+  }
+
+}
+
+/* Offset section links for the fixed header */
+.escort-case-study [id] {
+  scroll-margin-top: 11rem;
+}
+
+.escort-case-study .case-study-copy {
+  text-align: justify;
+  text-align-last: left;
 }
