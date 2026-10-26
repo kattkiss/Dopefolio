@@ -3298,6 +3298,17 @@ main.squeak-case-study :is(
 .secret-case-study .secret-jam-link:hover {
   background: var(--surface-soft);
 }
+
+.secret-case-study .case-study-callout {
+  margin-inline: auto;
+}
+
+/* Keep case study headings left-aligned */
+.secret-case-study .case-study-system__rows h3 {
+  text-align: left;
+  text-align-last: left;
+}
+
 @media (max-width: 42em) {
   .secret-hero .btn--bg {
     max-width: 100%;
